@@ -1,0 +1,71 @@
+$breakpoints: (
+    "xs": 30em,
+    "sm": 36em,
+    "md": 48em,
+    "lg": 64em,
+    "xl": 76.5em,
+    "xxl": 114em,
+);
+
+@mixin media($width, $type: min) {
+    @if map_has_key($breakpoints, $width) {
+        $width: map_get($breakpoints, $width);
+    }
+
+    @if $type ==max {
+        @media only screen and (width < $width) {
+            @content;
+        }
+    } @else {
+        @media only screen and (width >= $width) {
+            @content;
+        }
+    }
+}
+
+@mixin placeholder() {
+    &::-webkit-input-placeholder {
+        @content;
+    }
+
+    &:-moz-placeholder {
+        @content;
+    }
+
+    &::-moz-placeholder {
+        @content;
+    }
+
+    &:-ms-input-placeholder {
+        @content;
+    }
+}
+
+@mixin scroll-bar($width: 15px, $height: 15px, $bg: #fff, $color: var(--main-color)) {
+    scrollbar-width: $width;
+    scrollbar-color: $color;
+
+    // ширина scrollbar
+    &::-webkit-scrollbar {
+        width: $width;
+    }
+    // Цвет дорожки
+    &::-webkit-scrollbar-track {
+        background-color: $bg;
+        border-radius: 10px;
+    }
+    // Плашка
+    &::-webkit-scrollbar-thumb {
+        background-color: $color;
+        border-radius: 10px;
+    }
+}
+
+@mixin clamp($numbers: 3, $line-height: 1.3) {
+    max-block-size: $numbers * $line-height * 1em;
+    line-height: $line-height;
+    display: -webkit-box;
+    -webkit-line-clamp: $numbers;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}

@@ -1,0 +1,10 @@
+@font-face {
+  font-family: 'Autumn Sweater';
+  src:
+    local('Autumn Sweater'),
+    local('Autumn-Sweater'),
+    url(./Autumn-Sweater.woff) format('woff'),
+    url(./Autumn-Sweater.woff2) format('woff2');
+  font-weight: normal;
+  font-display: swap;
+}
