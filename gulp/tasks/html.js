@@ -24,7 +24,7 @@ export default () => {
     gulp
       .src(path.html.src)
       .pipe(fileInclude())
-      .pipe(webpHtml())
+      // .pipe(webpHtml())
       .pipe(
         plumber({
           errorHandler: notify.onError((error) => ({

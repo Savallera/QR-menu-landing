@@ -3,25 +3,35 @@
 @import './extends';
 @import './globals';
 @import './variables';
+@import './animations';
+
+// design
+@import '../blocks/list-bullet-decor/list-bullet-decor';
+@import '../blocks/text-decor/text-decor';
 
 // UI
 // @import '../blocks/icon/icon';
 // @import '../blocks/icon-button/icon-button';
-// @import '../blocks/button/button';
+@import '../blocks/button/button';
 // @import '../blocks/field/field';
 
 // layout
-// @import '../blocks/page/page';
+@import '../blocks/page/page';
 @import '../blocks/header/header';
+@import '../blocks/section/section';
 @import '../blocks/footer/footer';
 
 // Sections
+@import '../blocks/lead/lead';
+@import '../blocks/statistics/statistics';
+@import '../blocks/how/how';
+@import '../blocks/hiw/hiw';
 // @import '../blocks/not-found/not-found';
 
 // Modals
 // @import '../blocks/popup/popup';
 
 // Blocks
-// @import '../blocks/menu/menu';
-// @import '../blocks/card/card';
+@import '../blocks/card/card';
+@import '../blocks/splide/splide';
 // @import '../blocks/visually-hidden/visually-hidden';

@@ -1,3 +1,90 @@
 .footer {
-  block-size: 100px;
+  padding: 0.75em 1.5em;
+  border-radius: var(--border-radius-xl) var(--border-radius-xl) 0 0;
+  background-color: var(--bg-secondary-color);
+
+  &__columns {
+    padding: var(--indent-xxl) var(--indent-xxxl);
+    display: flex;
+  }
+
+  &__column {
+    flex: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+
+    &_content_logo {
+      flex-basis: 50%;
+
+      .footer__nav {
+        margin-block-start: 0.875em;
+      }
+    }
+  }
+
+  &__logo {
+    flex: none;
+    display: block;
+    inline-size: 220px;
+    block-size: 53px;
+    background-position: center;
+    background-size: contain;
+    background-image: url('../images/logo.svg');
+  }
+
+  &__copyright {
+    font-size: 1em;
+    font-weight: 500;
+    color: var(--text-secondary-color);
+  }
+
+  &__nav {
+  }
+
+  &__nav-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+  }
+
+  &__title {
+    font-weight: 700;
+    font-size: var(--heading-xxs);
+  }
+
+  &__link {
+    font-size: 1em;
+    font-weight: 500;
+    color: var(--text-secondary-color);
+    text-decoration: none;
+    transition: color 0.3s;
+
+    &:hover {
+      color: var(--main-color);
+    }
+
+    &:focus-visible {
+      outline: 2px solid;
+    }
+
+    &_active {
+      color: var(--main-color);
+      pointer-events: default;
+    }
+  }
+
+  &__link-icon {
+    flex: none;
+    display: inline-block;
+    vertical-align: middle;
+    margin-inline-end: 0.5em;
+    inline-size: 1.25em;
+    block-size: 1.25em;
+
+    & svg {
+      inline-size: 100%;
+      block-size: 100%;
+    }
+  }
 }

@@ -1,0 +1,6 @@
+.text-decor {
+  color: var(--main-color);
+  &_accent {
+    color: var(--accent-color);
+  }
+}

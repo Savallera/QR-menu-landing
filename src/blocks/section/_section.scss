@@ -1,0 +1,52 @@
+.section {
+  padding: 0.75em 1.5em;
+
+  &__indent {
+    padding: var(--indent-xxl) var(--indent-xxxl);
+  }
+
+  &__card {
+    border-radius: var(--border-radius-xl);
+
+    &_bg_accent {
+      background-color: var(--bg-accent-color);
+      color: var(--white);
+    }
+
+    &_bg_main-color {
+      background-color: var(--main-color);
+      color: var(--white);
+    }
+  }
+
+  &__title {
+    font-weight: 700;
+    font-size: var(--heading-md);
+    text-align: center;
+    margin-block-end: var(--indent-md);
+
+    &_section-indent {
+      @extend .section__indent;
+    }
+  }
+
+  &__list {
+    @extend %reset-list;
+  }
+
+  &__two-columns {
+    display: grid;
+    gap: var(--indent-xxs);
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  &__three-columns {
+    display: grid;
+    gap: var(--indent-xl) var(--indent-xxl);
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  &_no-indent {
+    padding: 0;
+  }
+}

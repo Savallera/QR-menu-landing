@@ -1,0 +1,15 @@
+@keyframes move-right-initial {
+    to {
+        transform: translate3d(250%, 0, 0);
+    }
+}
+
+@keyframes move-right-end {
+    from {
+        transform: translate3d(-150%, 0, 0);
+    }
+
+    to {
+        transform: translate3d(0, 0, 0);
+    }
+}

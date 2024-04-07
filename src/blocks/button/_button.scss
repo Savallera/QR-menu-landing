@@ -1,0 +1,127 @@
+.button {
+  @extend %reset-btn;
+
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+  min-block-size: 3.375rem;
+  padding: 1rem 2.375rem;
+  text-align: center;
+  border: 1px solid currentColor;
+  outline: 4px solid transparent;
+  border-radius: var(--border-radius-sm);
+  transition: all 0.3s;
+
+  &__text {
+    font-size: var(--text-md);
+    line-height: 1.2;
+    font-weight: 700;
+    flex: auto;
+    color: inherit;
+  }
+
+  &__icon {
+    flex: none;
+    min-inline-size: 1.5em;
+    max-inline-size: 1.5em;
+    inline-size: 1.5em;
+    block-size: 1.5em;
+
+    & svg {
+      transition: transform 0.25s ease-in;
+    }
+  }
+
+  // &:hover {}
+
+  &:active {
+    transform: translateY(1px);
+  }
+
+  &:focus-visible {
+    outline-color: rgba(var(--main-color-opacity), .5);
+  }
+
+  &_theme {
+    &_main {
+      background-color: var(--main-color);
+      border-color: var(--main-color);
+      color: var(--white);
+    }
+
+    &_outline-grey {
+      background-color: var(--white);
+      color: var(--text-secondary-color);
+      border-color: var(--text-secondary-color);
+
+      &:hover {
+        border-color: var(--main-color);
+        color: var(--main-color);
+      }
+    }
+  }
+
+  &_content {
+    &_icon-arrow-next {
+      padding-inline-end: 0.5em;
+
+      &:hover .button__icon svg {
+        animation:
+          move-right-initial 0.2s forwards,
+          move-right-end 0.4s forwards 0.2s;
+      }
+
+      .button__icon {
+        overflow: hidden;
+        inline-size: 2.75em;
+        min-inline-size: 2.75em;
+        max-inline-size: 2.75em;
+        margin-inline-start: -10px;
+
+        & svg {
+          inline-size: 1.5em;
+        }
+      }
+    }
+  }
+}
+
+.advantages-card {
+  &__image {
+  }
+
+  &__content {
+  }
+
+  &__title {
+  }
+
+  &__description {
+  }
+}
+
+.steps-card {
+  &__image {
+  }
+
+  &__content {
+  }
+
+  &__label-text {
+  }
+
+  &__title {
+  }
+
+  &__description {
+  }
+
+  &__progress {
+  }
+
+  &__progress-item {
+    &_active {
+    }
+  }
+}

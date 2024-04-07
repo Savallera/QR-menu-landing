@@ -1,0 +1,30 @@
+.statistics {
+  margin-block-start: -196px;
+  position: relative;
+
+  &__list {
+    @extend %reset-list;
+    display: flex;
+    justify-content: space-between;
+    gap: var(--indent-md) var(--indent-lg);
+    flex-wrap: wrap;
+  }
+
+  &__item {
+    flex-basis: 400px;
+  }
+
+  &__title {
+    font-size: var(--text-md);
+    font-weight: 500;
+    line-height: 1.5;
+  }
+
+  &__title-span {
+    display: block;
+  }
+
+  &__title-strong {
+    font-size: 64px;
+  }
+}

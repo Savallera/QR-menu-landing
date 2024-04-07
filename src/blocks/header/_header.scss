@@ -1,3 +1,94 @@
 .header {
-  block-size: 100px;
+  padding: 0.75em 1.5em;
+
+  &__indent {
+    padding: var(--indent-xs) var(--indent-xxxl);
+    display: flex;
+    align-items: center;
+    gap: var(--indent-lg);
+  }
+
+  &__logo {
+    flex: none;
+    display: block;
+    inline-size: 167px;
+    block-size: 2.5em;
+    background-position: center;
+    background-size: contain;
+    background-image: url('../images/logo.svg');
+  }
+
+  &__menu {
+    flex: auto;
+    display: flex;
+    gap: var(--indent-lg);
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__list {
+    flex: auto;
+    display: flex;
+    gap: var(--indent-lg);
+    align-items: center;
+  }
+
+  &__link {
+    padding-block: 1em;
+    font-size: 1em;
+    font-weight: 500;
+    text-decoration: none;
+    transition: color 0.3s;
+
+    &:hover {
+      color: var(--main-color);
+    }
+
+    &:focus-visible {
+      outline: 2px solid;
+    }
+
+    &_active {
+      color: var(--main-color);
+      pointer-events: default;
+    }
+  }
+
+  &__social-list {
+    display: flex;
+    gap: var(--indent-xs);
+    align-items: center;
+  }
+
+  &__social-link {
+    color: var(--text-secondary-color);
+    transition: color 0.3s;
+
+    &:hover {
+      color: var(--main-color);
+
+      .header__social-icon {
+        transform: translateX(-2.5%) scale(1.1);
+      }
+    }
+
+    &:focus-visible {
+      outline: 2px solid;
+    }
+  }
+
+  &__social-icon {
+    display: block;
+    inline-size: 2.5em;
+    block-size: 2.5em;
+    color: currentColor;
+    transition: transform 0.25s ease-in;
+  }
+
+  &__burger {
+    display: none;
+  }
+
+  &__burger-item {
+  }
 }

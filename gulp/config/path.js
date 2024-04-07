@@ -20,6 +20,12 @@ export default {
     dest: pathDest + '/styles',
   },
 
+  stylesLibs: {
+    src: pathSrc + '/styles/libs/*.css',
+    watch: [pathSrc + '/styles/libs/*.css'],
+    dest: pathDest + '/styles/libs',
+  },
+
   scripts: {
     src: pathSrc + '/scripts/*.js',
     watch: [
@@ -28,6 +34,12 @@ export default {
       pathSrc + '/blocks/**/*.js',
     ],
     dest: pathDest + '/scripts',
+  },
+
+  scriptsLibs: {
+    src: [pathSrc + '/scripts/libs/*.js'],
+    watch: [pathSrc + '/scripts/libs/*.js'],
+    dest: pathDest + '/scripts/libs',
   },
 
   images: {

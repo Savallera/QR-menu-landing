@@ -2,37 +2,71 @@
 <html lang="ru">
   @@include("../blocks/head/head.html", {"title": "Главная"})
   <body>
-    <div class="page">
+    <div class="page page_with_lead-image">
       @@include("../blocks/header/header.html")
       <main class="page__content">
         <!-- Главный баннер -->
         <section class="lead section">
-          <div class="section__indent">
-            <h1 class="lead__title">
-              <span class="lead__title-span"><span class="text-decor">QR</span>-меню</span>
-              <span class="lead__title-span lead__title-span_size-sm">для заведений</span>
-            </h1>
-            <div class="lead__description">
-              <p>
-                Забудьте про печать меню, необходимости перепечатывать из за изменения цен, печати сезонных меню, порванных и испорченных меню
-              </p>
+          <div class="section__indent lead__inner">
+            <div class="lead__content">
+              <h1 class="lead__title">
+                <span class="lead__title-span"
+                  ><span class="text-decor">QR</span>-меню</span
+                >
+                <span class="lead__title-span lead__title-span_size-sm"
+                  >для заведений</span
+                >
+              </h1>
+              <div class="lead__description">
+                <p>
+                  Забудьте про печать меню, необходимости перепечатывать из за
+                  изменения цен, печати сезонных меню, порванных и испорченных
+                  меню
+                </p>
+              </div>
+              <div class="lead__controls">
+                <button
+                  class="button button_theme_main button_content_icon-arrow-next"
+                >
+                  <span class="button__text">Попробовать</span>
+                  <span class="button__icon">
+                    <svg
+                      aria-hidden="true"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                    >
+                      <use href="./images/icons.svg#arrow-right"></use>
+                    </svg>
+                  </span>
+                </button>
+                <button class="button button_theme_outline-grey">
+                  <span class="button__text">Демо версия</span>
+                </button>
+              </div>
             </div>
-            <div class="lead__controls">
-              <button class="button button_theme_main">
-                <span class="button__text">Попробовать</span>
-                <span class="button__icon">
-                  <svg
-                    aria-hidden="true"
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 24 24"
-                  >
-                    <use href="./images/icons.svg#arrow-right"></use>
-                  </svg>
-                </span>
-              </button>
-              <button class="button button_theme_outline">
-                <span class="button__text">Демо версия</span>
-              </button>
+            <div class="lead__images">
+              <picture>
+                <source
+                  srcset="./images/lead__image-light.webp"
+                  type="image/webp"
+                />
+                <img
+                  class="lead__image lead__image_content_light"
+                  src="./images/lead__image-light.png"
+                  alt=""
+                />
+              </picture>
+              <picture>
+                <source
+                  srcset="./images/lead__image-dark.webp"
+                  type="image/webp"
+                />
+                <img
+                  class="lead__image lead__image_content_dark"
+                  src="./images/lead__image-dark.png"
+                  alt=""
+                />
+              </picture>
             </div>
           </div>
         </section>
@@ -44,16 +78,26 @@
                 <p class="statistics__title">
                   <span class="statistics__title-span">
                     <span>на</span>
-                    <span class="statistics__title-strong">80<span class="text-decor text-decor_accent">%</span></span>
+                    <span class="statistics__title-strong"
+                      >80<span class="text-decor text-decor_accent"
+                        >%</span
+                      ></span
+                    >
                   </span>
-                  <span class="statistics__title-span">дешевле, чем бумажное меню</span>
+                  <span class="statistics__title-span"
+                    >дешевле, чем бумажное меню</span
+                  >
                 </p>
               </li>
               <li class="statistics__item">
                 <p class="statistics__title">
                   <span class="statistics__title-span">
                     <span>на</span>
-                    <span class="statistics__title-strong">15<span class="text-decor text-decor_accent">%</span></span>
+                    <span class="statistics__title-strong"
+                      >15<span class="text-decor text-decor_accent"
+                        >%</span
+                      ></span
+                    >
                   </span>
                   <span class="statistics__title-span">выше средний чек</span>
                 </p>
@@ -62,44 +106,93 @@
                 <p class="statistics__title">
                   <span class="statistics__title-span">
                     <span>более</span>
-                    <span class="statistics__title-strong">75<span class="text-decor text-decor_accent">%</span></span>
+                    <span class="statistics__title-strong"
+                      >75<span class="text-decor text-decor_accent"
+                        >%</span
+                      ></span
+                    >
                   </span>
-                  <span class="statistics__title-span">потребителей считают, что электронные меню упрощают выбор блюд</span>
+                  <span class="statistics__title-span"
+                    >потребителей считают, что электронные меню упрощают выбор
+                    блюд</span
+                  >
                 </p>
               </li>
               <li class="statistics__item">
                 <p class="statistics__title">
                   <span class="statistics__title-span">
                     <span>на</span>
-                    <span class="statistics__title-strong">17<span class="text-decor text-decor_accent">%</span></span>
+                    <span class="statistics__title-strong"
+                      >17<span class="text-decor text-decor_accent"
+                        >%</span
+                      ></span
+                    >
                   </span>
-                  <span class="statistics__title-span">экономия времени работы официантов при обслуживании клиентов</span>
+                  <span class="statistics__title-span"
+                    >экономия времени работы официантов при обслуживании
+                    клиентов</span
+                  >
                 </p>
               </li>
               <li class="statistics__item">
                 <p class="statistics__title">
                   <span class="statistics__title-span">
                     <span>более</span>
-                    <span class="statistics__title-strong">70<span class="text-decor text-decor_accent">%</span></span>
+                    <span class="statistics__title-strong"
+                      >70<span class="text-decor text-decor_accent"
+                        >%</span
+                      ></span
+                    >
                   </span>
-                  <span class="statistics__title-span">клиентов считают, что изображения блюд в меню помогают им принимать решение о заказе</span>
+                  <span class="statistics__title-span"
+                    >клиентов считают электронное меню более удобным, чем
+                    бумажное</span
+                  >
+                </p>
+              </li>
+              <li class="statistics__item">
+                <p class="statistics__title">
+                  <span class="statistics__title-span">
+                    <span>более</span>
+                    <span class="statistics__title-strong"
+                      >70<span class="text-decor text-decor_accent"
+                        >%</span
+                      ></span
+                    >
+                  </span>
+                  <span class="statistics__title-span"
+                    >клиентов считают, что изображения блюд в&nbsp;меню помогают
+                    им принимать решение о&nbsp;заказе</span
+                  >
                 </p>
               </li>
             </ul>
           </div>
         </section>
         <!-- Преимущества -->
-        <section class="splide" aria-label="Преимущества">
+        <section
+          class="splide"
+          id="advantages-slider"
+          aria-label="Преимущества"
+        >
           <div class="splide__track">
             <ul class="splide__list">
               <li class="splide__slide">
                 <article class="advantages-card">
-                  <img class="advantages-card__image" src="./images/advantages__image_01.jpg" alt="">
+                  <img
+                    class="advantages-card__image"
+                    src="./images/advantages__image-01.jpg"
+                    alt=""
+                  />
                   <div class="advantages-card__content">
-                    <h2 class="advantages-card__title">Инновация и современность</h2>
+                    <h2 class="advantages-card__title">
+                      Инновация и современность
+                    </h2>
                     <div class="advantages-card__description">
                       <p>
-                        Электронное меню поможет ресторану выделиться на фоне конкурентов и создать впечатление современного заведения, привлекающего внимание клиентов.
+                        Электронное меню поможет ресторану выделиться на фоне
+                        конкурентов и создать впечатление современного
+                        заведения, привлекающего внимание клиентов.
                       </p>
                     </div>
                   </div>
@@ -107,12 +200,21 @@
               </li>
               <li class="splide__slide">
                 <article class="advantages-card">
-                  <img class="advantages-card__image" src="./images/advantages__image_01.jpg" alt="">
+                  <img
+                    class="advantages-card__image"
+                    src="./images/advantages__image-01.jpg"
+                    alt=""
+                  />
                   <div class="advantages-card__content">
-                    <h2 class="advantages-card__title">Интерактивность для клиентов</h2>
+                    <h2 class="advantages-card__title">
+                      Интерактивность для клиентов
+                    </h2>
                     <div class="advantages-card__description">
                       <p>
-                        Электронное меню предоставляет клиентам возможность интерактивного просмотра блюд, просмотра фотографий и описаний, что делает процесс выбора более увлекательным и привлекательным.
+                        Электронное меню предоставляет клиентам возможность
+                        интерактивного просмотра блюд, просмотра фотографий и
+                        описаний, что делает процесс выбора более увлекательным
+                        и привлекательным.
                       </p>
                     </div>
                   </div>
@@ -120,12 +222,21 @@
               </li>
               <li class="splide__slide">
                 <article class="advantages-card">
-                  <img class="advantages-card__image" src="./images/advantages__image_01.jpg" alt="">
+                  <img
+                    class="advantages-card__image"
+                    src="./images/advantages__image-01.jpg"
+                    alt=""
+                  />
                   <div class="advantages-card__content">
-                    <h2 class="advantages-card__title">Улучшенное клиентское обслуживание</h2>
+                    <h2 class="advantages-card__title">
+                      Улучшенное клиентское обслуживание
+                    </h2>
                     <div class="advantages-card__description">
                       <p>
-                        Электронное меню может помочь сократить время ожидания клиентов на заказы, так как они могут быстро просматривать меню и делать выбор, улучшая общее качество обслуживания и удовлетворенность клиентов.
+                        Электронное меню может помочь сократить время ожидания
+                        клиентов на заказы, так как они могут быстро
+                        просматривать меню и делать выбор, улучшая общее
+                        качество обслуживания и удовлетворенность клиентов.
                       </p>
                     </div>
                   </div>
@@ -133,12 +244,20 @@
               </li>
               <li class="splide__slide">
                 <article class="advantages-card">
-                  <img class="advantages-card__image" src="./images/advantages__image_01.jpg" alt="">
+                  <img
+                    class="advantages-card__image"
+                    src="./images/advantages__image-01.jpg"
+                    alt=""
+                  />
                   <div class="advantages-card__content">
-                    <h2 class="advantages-card__title">Экономия средств на печати и обслуживание меню</h2>
+                    <h2 class="advantages-card__title">
+                      Экономия средств на печати и обслуживание меню
+                    </h2>
                     <div class="advantages-card__description">
                       <p>
-                        Использование электронного меню позволяет ресторанам сэкономить деньги, которые ранее были затрачены на печать, обновление и переработку бумажных меню.
+                        Использование электронного меню позволяет ресторанам
+                        сэкономить деньги, которые ранее были затрачены на
+                        печать, обновление и переработку бумажных меню.
                       </p>
                     </div>
                   </div>
@@ -146,12 +265,21 @@
               </li>
               <li class="splide__slide">
                 <article class="advantages-card">
-                  <img class="advantages-card__image" src="./images/advantages__image_01.jpg" alt="">
+                  <img
+                    class="advantages-card__image"
+                    src="./images/advantages__image-01.jpg"
+                    alt=""
+                  />
                   <div class="advantages-card__content">
-                    <h2 class="advantages-card__title">Улучшенная аналитика и отчетность</h2>
+                    <h2 class="advantages-card__title">
+                      Улучшенная аналитика и отчетность
+                    </h2>
                     <div class="advantages-card__description">
                       <p>
-                        Системы электронного меню обычно предоставляют владельцам ресторанов доступ к аналитике и отчетности о предпочтениях клиентов, позволяя им принимать более обоснованные решения по управлению меню и маркетингу.
+                        Системы электронного меню обычно предоставляют
+                        владельцам ресторанов доступ к аналитике и отчетности о
+                        предпочтениях клиентов, позволяя им принимать более
+                        обоснованные решения по управлению меню и маркетингу.
                       </p>
                     </div>
                   </div>
@@ -159,12 +287,21 @@
               </li>
               <li class="splide__slide">
                 <article class="advantages-card">
-                  <img class="advantages-card__image" src="./images/advantages__image_01.jpg" alt="">
+                  <img
+                    class="advantages-card__image"
+                    src="./images/advantages__image-01.jpg"
+                    alt=""
+                  />
                   <div class="advantages-card__content">
-                    <h2 class="advantages-card__title">Обновление в реальном времени</h2>
+                    <h2 class="advantages-card__title">
+                      Обновление в реальном времени
+                    </h2>
                     <div class="advantages-card__description">
                       <p>
-                        Владельцы ресторанов могут легко обновлять цены, добавлять новые блюда и управлять меню в реальном времени, без необходимости печатать новые бумажные версии.
+                        Владельцы ресторанов могут легко обновлять цены,
+                        добавлять новые блюда и управлять меню в реальном
+                        времени, без необходимости печатать новые бумажные
+                        версии.
                       </p>
                     </div>
                   </div>
@@ -172,12 +309,21 @@
               </li>
               <li class="splide__slide">
                 <article class="advantages-card">
-                  <img class="advantages-card__image" src="./images/advantages__image_01.jpg" alt="">
+                  <img
+                    class="advantages-card__image"
+                    src="./images/advantages__image-01.jpg"
+                    alt=""
+                  />
                   <div class="advantages-card__content">
-                    <h2 class="advantages-card__title">Экологическая ответственность</h2>
+                    <h2 class="advantages-card__title">
+                      Экологическая ответственность
+                    </h2>
                     <div class="advantages-card__description">
                       <p>
-                        Использование электронного меню позволяет сократить использование бумаги и уменьшить экологический след ресторана, что может быть привлекательно для клиентов, ценящих экологическую ответственность.
+                        Использование электронного меню позволяет сократить
+                        использование бумаги и уменьшить экологический след
+                        ресторана, что может быть привлекательно для клиентов,
+                        ценящих экологическую ответственность.
                       </p>
                     </div>
                   </div>
@@ -189,124 +335,195 @@
         <!-- Почему пользуются -->
         <section class="section">
           <div class="section__indent">
-            <h2 class="section__title">Почему рестораны пользуются <span class="text-decor">нашей системой</span></h2>
-            <ul class="section__list">
+            <h2 class="section__title">
+              Почему рестораны пользуются <br />
+              <span class="text-decor">нашей системой</span>
+            </h2>
+            <ul class="section__list section__two-columns">
               <li>
-                <article class="card card_theme_bg-secondary card_content_check-arrow">
+                <article
+                  class="card card_theme_bg-secondary card_content_check-arrow"
+                >
                   <span class="card__icon">
-                    <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                      <use href="./images/icons.svg#clock"></use>
+                    <svg
+                      aria-hidden="true"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 48 48"
+                    >
+                      <use href="./images/icons.svg#increase"></use>
                     </svg>
                   </span>
                   <h3 class="card__title">Помогаем ресторанам расти</h3>
                   <div class="card__description">
                     <p>
-                      Каждая функция поможет увеличить доходы, сократить издержки и упростить управление ресторанным бизнесом.
+                      Каждая функция поможет увеличить доходы, сократить
+                      издержки и упростить управление ресторанным бизнесом.
                     </p>
                   </div>
                 </article>
               </li>
               <li>
-                <article class="card card_theme_bg-secondary card_content_check-arrow">
+                <article
+                  class="card card_theme_bg-secondary card_content_check-arrow"
+                >
                   <span class="card__icon">
-                    <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                      <use href="./images/icons.svg#clock"></use>
+                    <svg
+                      aria-hidden="true"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 48 48"
+                    >
+                      <use href="./images/icons.svg#support"></use>
                     </svg>
                   </span>
                   <h3 class="card__title">Бесплатная быстрая поддержка</h3>
                   <div class="card__description">
                     <p>
-                      Если что‑то не получится — мы всегда рядом. Там, где вам удобно: в мессенджерах или по телефону.
+                      Если что‑то не получится — мы всегда рядом. Там,
+                      где вам удобно: в мессенджерах или по телефону.
                     </p>
                   </div>
                 </article>
               </li>
               <li>
-                <article class="card card_theme_bg-secondary card_content_check-arrow">
+                <article
+                  class="card card_theme_bg-secondary card_content_check-arrow"
+                >
                   <span class="card__icon">
-                    <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                      <use href="./images/icons.svg#clock"></use>
+                    <svg
+                      aria-hidden="true"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 48 48"
+                    >
+                      <use href="./images/icons.svg#holder"></use>
                     </svg>
                   </span>
                   <h3 class="card__title">Прозрачная цена без доплат</h3>
                   <div class="card__description">
                     <p>
-                      Полный доступ ко всем функциям по фиксированной цене — без дополнительных оплат и скрытых платежей.
+                      Полный доступ ко всем функциям по фиксированной цене —
+                      без дополнительных оплат и скрытых платежей.
                     </p>
                   </div>
                 </article>
               </li>
               <li>
-                <article class="card card_theme_bg-secondary card_content_check-arrow">
+                <article
+                  class="card card_theme_bg-secondary card_content_check-arrow"
+                >
                   <span class="card__icon">
-                    <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                      <use href="./images/icons.svg#clock"></use>
+                    <svg
+                      aria-hidden="true"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 48 48"
+                    >
+                      <use href="./images/icons.svg#holder"></use>
                     </svg>
                   </span>
                   <h3 class="card__title">Уменьшение ошибок</h3>
                   <div class="card__description">
                     <p>
-                      Благодаря автоматизации процесса заказа, электронное меню снижает вероятность ошибок, связанных с неправильным принятием заказа, что повышает удовлетворенность клиентов и сокращает количество возвратов.
+                      Благодаря автоматизации процесса заказа, электронное меню
+                      снижает вероятность ошибок, связанных с неправильным
+                      принятием заказа, что повышает удовлетворенность клиентов
+                      и сокращает количество возвратов.
                     </p>
                   </div>
                 </article>
               </li>
               <li>
-                <article class="card card_theme_bg-secondary card_content_check-arrow">
+                <article
+                  class="card card_theme_bg-secondary card_content_check-arrow"
+                >
                   <span class="card__icon">
-                    <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                      <use href="./images/icons.svg#clock"></use>
+                    <svg
+                      aria-hidden="true"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 48 48"
+                    >
+                      <use href="./images/icons.svg#holder"></use>
                     </svg>
                   </span>
                   <h3 class="card__title">Гибкость в управлении меню</h3>
                   <div class="card__description">
                     <p>
-                      Рестораны могут легко обновлять меню в реальном времени, добавлять новые блюда или акции, а также адаптировать меню к изменениям в сезонности или спросе, что позволяет быстрее реагировать на изменяющиеся требования рынка, не неся лишних затрат на бумажное меню
+                      Рестораны могут легко обновлять меню в реальном времени,
+                      добавлять новые блюда или акции, а также адаптировать меню
+                      к изменениям в сезонности или спросе, что позволяет
+                      быстрее реагировать на изменяющиеся требования рынка, не
+                      неся лишних затрат на бумажное меню
                     </p>
                   </div>
                 </article>
               </li>
               <li>
-                <article class="card card_theme_bg-secondary card_content_check-arrow">
+                <article
+                  class="card card_theme_bg-secondary card_content_check-arrow"
+                >
                   <span class="card__icon">
-                    <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                      <use href="./images/icons.svg#clock"></use>
+                    <svg
+                      aria-hidden="true"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 48 48"
+                    >
+                      <use href="./images/icons.svg#holder"></use>
                     </svg>
                   </span>
                   <h3 class="card__title">Улучшенная аналитика и отчетность</h3>
                   <div class="card__description">
                     <p>
-                      Системы электронного меню обеспечивают доступ к данным аналитики и отчетности, помогая ресторанам анализировать предпочтения клиентов, отслеживать популярность блюд и принимать обоснованные решения по управлению меню и запасами.
+                      Системы электронного меню обеспечивают доступ к данным
+                      аналитики и отчетности, помогая ресторанам анализировать
+                      предпочтения клиентов, отслеживать популярность блюд и
+                      принимать обоснованные решения по управлению меню и
+                      запасами.
                     </p>
                   </div>
                 </article>
               </li>
               <li>
-                <article class="card card_theme_bg-secondary card_content_check-arrow">
+                <article
+                  class="card card_theme_bg-secondary card_content_check-arrow"
+                >
                   <span class="card__icon">
-                    <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                      <use href="./images/icons.svg#clock"></use>
+                    <svg
+                      aria-hidden="true"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 48 48"
+                    >
+                      <use href="./images/icons.svg#holder"></use>
                     </svg>
                   </span>
                   <h3 class="card__title">Меньше контактов</h3>
                   <div class="card__description">
                     <p>
-                      В условиях пандемии COVID-19, электронное меню позволяет сократить количество контактов между персоналом ресторана и клиентами, что способствует соблюдению мер безопасности и уменьшает риск распространения инфекции.
+                      В условиях пандемии COVID-19, электронное меню позволяет
+                      сократить количество контактов между персоналом ресторана
+                      и клиентами, что способствует соблюдению мер безопасности
+                      и уменьшает риск распространения инфекции.
                     </p>
                   </div>
                 </article>
               </li>
               <li>
-                <article class="card card_theme_bg-secondary card_content_check-arrow">
+                <article
+                  class="card card_theme_bg-secondary card_content_check-arrow"
+                >
                   <span class="card__icon">
-                    <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                      <use href="./images/icons.svg#clock"></use>
+                    <svg
+                      aria-hidden="true"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 48 48"
+                    >
+                      <use href="./images/icons.svg#holder"></use>
                     </svg>
                   </span>
                   <h3 class="card__title">Повышение конкурентоспособности</h3>
                   <div class="card__description">
                     <p>
-                      Внедрение электронного меню помогает ресторанам дифференцироваться на рынке, привлекать внимание клиентов и оставаться конкурентоспособными в условиях быстро меняющейся индустрии общественного питания.
+                      Внедрение электронного меню помогает ресторанам
+                      дифференцироваться на рынке, привлекать внимание клиентов
+                      и оставаться конкурентоспособными в условиях быстро
+                      меняющейся индустрии общественного питания.
                     </p>
                   </div>
                 </article>
@@ -318,19 +535,25 @@
         <section class="section how">
           <div class="section__indent section__card how__card">
             <div class="how__image-wrap">
-              <img class="how__image" src="./images/qr-code.png" alt="">
+              <img
+                class="how__image"
+                src="./images/advantages__image-01.jpg"
+                alt=""
+              />
             </div>
             <div class="how__content">
               <h2 class="section__title">Как это работает?</h2>
               <div class="how__description">
                 <p>
-                  QR-меню не требует специальных навыков или обучения для использования.
-                  Наведите камеру вашего смартфона на QR-код и перейдите
-                  по ссылке на электронное меню демо-ресторана. Приложение устанавливать не нужно.
+                  QR-меню не требует специальных навыков или обучения
+                  для использования. Наведите камеру вашего смартфона на QR-код
+                  и перейдите по ссылке на электронное меню демо-ресторана.
+                  Приложение устанавливать не нужно.
                 </p>
                 <p>
-                  QR-код вашего онлайн меню можно разместить в любом
-                  удобном для гостя месте. Обеспечивают дополнительную безопасность, так как защищают от подделок или изменений в меню.
+                  QR-код вашего онлайн меню можно разместить в любом удобном
+                  для гостя месте. Обеспечивают дополнительную безопасность,
+                  так как защищают от подделок или изменений в меню.
                 </p>
               </div>
               <button class="button button_theme_main" type="button">
@@ -342,19 +565,26 @@
         <!-- Особенности -->
         <section class="section">
           <div class="section__indent">
-            <h2 class="section__title">Особенности нашего <span class="text-decor">Qr-меню</span></h2>
-            <ul class="section__list">
+            <h2 class="section__title">
+              Особенности нашего <span class="text-decor">Qr-меню</span>
+            </h2>
+            <ul class="section__list section__three-columns">
               <li>
                 <article class="card card_theme_outline card_content_border">
                   <span class="card__icon">
-                    <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                      <use href="./images/icons.svg#clock"></use>
+                    <svg
+                      aria-hidden="true"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 102 102"
+                    >
+                      <use href="./images/icons.svg#time"></use>
                     </svg>
                   </span>
                   <h3 class="card__title">Быстрый старт</h3>
                   <div class="card__description">
                     <p>
-                      Подключите за 15 минут без сложных настроек, покупки дорогого оборудования и обучения персонала.
+                      Подключите за 15 минут без сложных настроек, покупки
+                      дорогого оборудования и обучения персонала.
                     </p>
                   </div>
                 </article>
@@ -362,14 +592,21 @@
               <li>
                 <article class="card card_theme_outline card_content_border">
                   <span class="card__icon">
-                    <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                      <use href="./images/icons.svg#clock"></use>
+                    <svg
+                      aria-hidden="true"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 102 102"
+                    >
+                      <use href="./images/icons.svg#establishments"></use>
                     </svg>
                   </span>
-                  <h3 class="card__title">Нет ограничений по количеству заведений у организации</h3>
+                  <h3 class="card__title">
+                    Нет ограничений по количеству заведений у организации
+                  </h3>
                   <div class="card__description">
                     <p>
-                      Заводите разные меню для каждого заведения, используйте уникальные меню для бизнес ланчей и завтраков
+                      Заводите разные меню для каждого заведения, используйте
+                      уникальные меню для бизнес ланчей и завтраков
                     </p>
                   </div>
                 </article>
@@ -377,14 +614,21 @@
               <li>
                 <article class="card card_theme_outline card_content_border">
                   <span class="card__icon">
-                    <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                      <use href="./images/icons.svg#clock"></use>
+                    <svg
+                      aria-hidden="true"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 102 102"
+                    >
+                      <use href="./images/icons.svg#theme"></use>
                     </svg>
                   </span>
-                  <h3 class="card__title">Комфортная цветовая схема день/ночь</h3>
+                  <h3 class="card__title">
+                    Комфортная цветовая схема день/ночь
+                  </h3>
                   <div class="card__description">
                     <p>
-                      Обеспечивает удобство восприятия информации, улучшает общее впечатление от сайта.
+                      Обеспечивает удобство восприятия информации, улучшает
+                      общее впечатление от сайта.
                     </p>
                   </div>
                 </article>
@@ -392,14 +636,19 @@
               <li>
                 <article class="card card_theme_outline card_content_border">
                   <span class="card__icon">
-                    <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                      <use href="./images/icons.svg#clock"></use>
+                    <svg
+                      aria-hidden="true"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 102 102"
+                    >
+                      <use href="./images/icons.svg#language"></use>
                     </svg>
                   </span>
                   <h3 class="card__title">Возможность выбора языка</h3>
                   <div class="card__description">
                     <p>
-                      Поможет привлечь больше клиентов и сделать ваш бизнес более интернациональным.
+                      Поможет привлечь больше клиентов и сделать ваш бизнес
+                      более интернациональным.
                     </p>
                   </div>
                 </article>
@@ -407,14 +656,21 @@
               <li>
                 <article class="card card_theme_outline card_content_border">
                   <span class="card__icon">
-                    <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                      <use href="./images/icons.svg#clock"></use>
+                    <svg
+                      aria-hidden="true"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 102 102"
+                    >
+                      <use href="./images/icons.svg#banner"></use>
                     </svg>
                   </span>
-                  <h3 class="card__title">Загрузите фирменный баннер и логотип</h3>
+                  <h3 class="card__title">
+                    Загрузите фирменный баннер и логотип
+                  </h3>
                   <div class="card__description">
                     <p>
-                      Передайте гостям уникальную атмосферу заведения, повысьте узнаваемость бренда и улучшите имидж компании.
+                      Передайте гостям уникальную атмосферу заведения, повысьте
+                      узнаваемость бренда и улучшите имидж компании.
                     </p>
                   </div>
                 </article>
@@ -422,14 +678,19 @@
               <li>
                 <article class="card card_theme_outline card_content_border">
                   <span class="card__icon">
-                    <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                      <use href="./images/icons.svg#clock"></use>
+                    <svg
+                      aria-hidden="true"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 102 102"
+                    >
+                      <use href="./images/icons.svg#colors"></use>
                     </svg>
                   </span>
                   <h3 class="card__title">Укажите фирменный цвет</h3>
                   <div class="card__description">
                     <p>
-                      Упростит навигацию на странице для гостей, повысит лояльность к бренду.
+                      Упростит навигацию на странице для гостей, повысит
+                      лояльность к бренду.
                     </p>
                   </div>
                 </article>
@@ -437,14 +698,20 @@
               <li>
                 <article class="card card_theme_outline card_content_border">
                   <span class="card__icon">
-                    <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                      <use href="./images/icons.svg#clock"></use>
+                    <svg
+                      aria-hidden="true"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 102 102"
+                    >
+                      <use href="./images/icons.svg#borders"></use>
                     </svg>
                   </span>
                   <h3 class="card__title">Настройте тонкий дизайн страницы</h3>
                   <div class="card__description">
                     <p>
-                      Возможность закругления углов для карточек в трёх режимах позволит сделать страницу уникальной и наиболее приблизить её к бренду.
+                      Возможность закругления углов для карточек в трёх режимах
+                      позволит сделать страницу уникальной и наиболее приблизить
+                      её к бренду.
                     </p>
                   </div>
                 </article>
@@ -452,14 +719,19 @@
               <li>
                 <article class="card card_theme_outline card_content_border">
                   <span class="card__icon">
-                    <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                      <use href="./images/icons.svg#clock"></use>
+                    <svg
+                      aria-hidden="true"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 102 102"
+                    >
+                      <use href="./images/icons.svg#menu"></use>
                     </svg>
                   </span>
                   <h3 class="card__title">Удобное настраиваемое меню</h3>
                   <div class="card__description">
                     <p>
-                      Предусмотрена возможность добавления нескольких меню и категорий при необходимости.
+                      Предусмотрена возможность добавления нескольких меню
+                      и категорий при необходимости.
                     </p>
                   </div>
                 </article>
@@ -467,14 +739,20 @@
               <li>
                 <article class="card card_theme_outline card_content_border">
                   <span class="card__icon">
-                    <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                      <use href="./images/icons.svg#clock"></use>
+                    <svg
+                      aria-hidden="true"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 102 102"
+                    >
+                      <use href="./images/icons.svg#icons"></use>
                     </svg>
                   </span>
                   <h3 class="card__title">Красивая и удобная графика</h3>
                   <div class="card__description">
                     <p>
-                      Подобраны уникальные иконки для категорий меню, заглушки для фото карточек товаров, что упростит гостям навигацию на странице.
+                      Подобраны уникальные иконки для категорий меню, заглушки
+                      для фото карточек товаров, что упростит гостям навигацию
+                      на странице.
                     </p>
                   </div>
                 </article>
@@ -482,14 +760,19 @@
               <li>
                 <article class="card card_theme_outline card_content_border">
                   <span class="card__icon">
-                    <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                      <use href="./images/icons.svg#clock"></use>
+                    <svg
+                      aria-hidden="true"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 102 102"
+                    >
+                      <use href="./images/icons.svg#images"></use>
                     </svg>
                   </span>
                   <h3 class="card__title">Добавляйте свои фото</h3>
                   <div class="card__description">
                     <p>
-                      Добавляйте яркие и сочные фото в категории и карточки, сделайте меню ещё привлекательнее для гостей.
+                      Добавляйте яркие и сочные фото в категории и карточки,
+                      сделайте меню ещё привлекательнее для гостей.
                     </p>
                   </div>
                 </article>
@@ -503,131 +786,131 @@
             <h2 class="section__title">Как работает наше Qr-меню</h2>
             <ul class="hiw__list">
               <li class="hiw__list-item">
-                  <h3 class="hiw__list-item-title">Гость сканирует QR-код</h3>
-                  <div class="hiw__list-item-description">
-                    <p>
-                      Гости смогут посмотреть меню прямо со своего смартфона — достаточно просканировать QR-код, размещённый на столике.
-                    </p>
-                    <ul class="list-bullet-decor">
-                      <li>Не нужно устанавливать приложение</li>
-                      <li>Не нужно ждать официанта</li>
-                      <li>Отлично работает на смартфонах и любых других устройствах</li>
-                    </ul>
-                  </div>
+                <h3 class="hiw__list-item-title">Гость сканирует QR-код</h3>
+                <div class="hiw__list-item-description">
+                  <p>
+                    Гости смогут посмотреть меню прямо со своего смартфона —
+                    достаточно просканировать QR-код, размещённый на столике.
+                  </p>
+                  <ul class="list-bullet-decor">
+                    <li>Не нужно устанавливать приложение</li>
+                    <li>Не нужно ждать официанта</li>
+                    <li>
+                      Отлично работает на смартфонах и любых других устройствах
+                    </li>
+                  </ul>
+                </div>
               </li>
               <li class="hiw__list-item">
-                  <h3 class="hiw__list-item-title">Главная</h3>
-                  <div class="hiw__list-item-description">
-                    <p>
-                      Небольшое описание
-                    </p>
-                    <ul class="list-bullet-decor">
-                      <li>Пункты</li>
-                      <li>Пункты</li>
-                      <li>Пункты</li>
-                    </ul>
-                  </div>
+                <h3 class="hiw__list-item-title">Главная</h3>
+                <div class="hiw__list-item-description">
+                  <p>Небольшое описание</p>
+                  <ul class="list-bullet-decor">
+                    <li>Пункты</li>
+                    <li>Пункты</li>
+                    <li>Пункты</li>
+                  </ul>
+                </div>
               </li>
               <li class="hiw__list-item">
-                  <h3 class="hiw__list-item-title">Выбор позиций</h3>
-                  <div class="hiw__list-item-description">
-                    <p>
-                      Небольшое описание
-                    </p>
-                    <ul class="list-bullet-decor">
-                      <li>Пункты</li>
-                      <li>Пункты</li>
-                      <li>Пункты</li>
-                    </ul>
-                  </div>
+                <h3 class="hiw__list-item-title">Выбор позиций</h3>
+                <div class="hiw__list-item-description">
+                  <p>Небольшое описание</p>
+                  <ul class="list-bullet-decor">
+                    <li>Пункты</li>
+                    <li>Пункты</li>
+                    <li>Пункты</li>
+                  </ul>
+                </div>
               </li>
               <li class="hiw__list-item">
-                  <h3 class="hiw__list-item-title">Просмотр деталей</h3>
-                  <div class="hiw__list-item-description">
-                    <p>
-                      Небольшое описание
-                    </p>
-                    <ul class="list-bullet-decor">
-                      <li>Пункты</li>
-                      <li>Пункты</li>
-                      <li>Пункты</li>
-                    </ul>
-                  </div>
+                <h3 class="hiw__list-item-title">Просмотр деталей</h3>
+                <div class="hiw__list-item-description">
+                  <p>Небольшое описание</p>
+                  <ul class="list-bullet-decor">
+                    <li>Пункты</li>
+                    <li>Пункты</li>
+                    <li>Пункты</li>
+                  </ul>
+                </div>
               </li>
               <li class="hiw__list-item">
-                  <h3 class="hiw__list-item-title">Просмотр фотографии блюда</h3>
-                  <div class="hiw__list-item-description">
-                    <p>
-                      Небольшое описание
-                    </p>
-                    <ul class="list-bullet-decor">
-                      <li>Пункты</li>
-                      <li>Пункты</li>
-                      <li>Пункты</li>
-                    </ul>
-                  </div>
+                <h3 class="hiw__list-item-title">Просмотр фотографии блюда</h3>
+                <div class="hiw__list-item-description">
+                  <p>Небольшое описание</p>
+                  <ul class="list-bullet-decor">
+                    <li>Пункты</li>
+                    <li>Пункты</li>
+                    <li>Пункты</li>
+                  </ul>
+                </div>
               </li>
               <li class="hiw__list-item">
-                  <h3 class="hiw__list-item-title">Фиксация сверху меню для быстрого доступа</h3>
-                  <div class="hiw__list-item-description">
-                    <p>
-                      Небольшое описание
-                    </p>
-                    <ul class="list-bullet-decor">
-                      <li>Пункты</li>
-                      <li>Пункты</li>
-                      <li>Пункты</li>
-                    </ul>
-                  </div>
+                <h3 class="hiw__list-item-title">
+                  Фиксация сверху меню для быстрого доступа
+                </h3>
+                <div class="hiw__list-item-description">
+                  <p>Небольшое описание</p>
+                  <ul class="list-bullet-decor">
+                    <li>Пункты</li>
+                    <li>Пункты</li>
+                    <li>Пункты</li>
+                  </ul>
+                </div>
               </li>
               <li class="hiw__list-item">
-                  <h3 class="hiw__list-item-title">Оформление заказа</h3>
-                  <div class="hiw__list-item-description">
-                    <p>
-                      Небольшое описание
-                    </p>
-                    <ul class="list-bullet-decor">
-                      <li>Пункты</li>
-                      <li>Пункты</li>
-                      <li>Пункты</li>
-                    </ul>
-                  </div>
+                <h3 class="hiw__list-item-title">Оформление заказа</h3>
+                <div class="hiw__list-item-description">
+                  <p>Небольшое описание</p>
+                  <ul class="list-bullet-decor">
+                    <li>Пункты</li>
+                    <li>Пункты</li>
+                    <li>Пункты</li>
+                  </ul>
+                </div>
               </li>
               <li class="hiw__list-item">
-                  <h3 class="hiw__list-item-title">Подтверждение заказа</h3>
-                  <div class="hiw__list-item-description">
-                    <p>
-                      Небольшое описание
-                    </p>
-                    <ul class="list-bullet-decor">
-                      <li>Пункты</li>
-                      <li>Пункты</li>
-                      <li>Пункты</li>
-                    </ul>
-                  </div>
+                <h3 class="hiw__list-item-title">Подтверждение заказа</h3>
+                <div class="hiw__list-item-description">
+                  <p>Небольшое описание</p>
+                  <ul class="list-bullet-decor">
+                    <li>Пункты</li>
+                    <li>Пункты</li>
+                    <li>Пункты</li>
+                  </ul>
+                </div>
               </li>
             </ul>
           </div>
         </section>
         <!-- Настройте Qr-меню -->
         <section class="section section_no_indent">
-          <h2 class="section__title section__title_section-indent">Настройте Qr-меню легко и быстро</h2>
+          <h2 class="section__title section__title_section-indent">
+            Настройте Qr-меню легко и быстро
+          </h2>
           <div class="splide">
             <div class="splide__track">
               <ul class="splide__list">
                 <li class="splide__slide">
                   <article class="steps-card">
-                    <img class="steps-card__image" src="./images/steps__image_01.jpg" alt="">
+                    <img
+                      class="steps-card__image"
+                      src="./images/advantages__image-01.jpg"
+                      alt=""
+                    />
                     <div class="steps-card__content">
                       <p class="steps-card__label-text">Шаг 1</p>
                       <h3 class="steps-card__title">Зарегистрируйтесь</h3>
                       <div class="steps-card__description">
                         <p>
-                          первые 14 дней использования системы полностью бесплатны
+                          первые 14 дней использования системы полностью
+                          бесплатны
                         </p>
                       </div>
                       <div class="steps-card__progress">
-                        <span class="steps-card__progress-item steps-card__progress-item_active"></span>
+                        <span
+                          class="steps-card__progress-item steps-card__progress-item_active"
+                        ></span>
                         <span class="steps-card__progress-item"></span>
                         <span class="steps-card__progress-item"></span>
                         <span class="steps-card__progress-item"></span>
@@ -637,18 +920,24 @@
                 </li>
                 <li class="splide__slide">
                   <article class="steps-card">
-                    <img class="steps-card__image" src="./images/steps__image_01.jpg" alt="">
+                    <img
+                      class="steps-card__image"
+                      src="./images/advantages__image-01.jpg"
+                      alt=""
+                    />
                     <div class="steps-card__content">
                       <p class="steps-card__label-text">Шаг 2</p>
                       <h3 class="steps-card__title">Зарегистрируйтесь</h3>
                       <div class="steps-card__description">
-                        <p>
-                          steps-card__progress-item
-                        </p>
+                        <p>steps-card__progress-item</p>
                       </div>
                       <div class="steps-card__progress">
-                        <span class="steps-card__progress-item steps-card__progress-item_active"></span>
-                        <span class="steps-card__progress-item steps-card__progress-item_active"></span>
+                        <span
+                          class="steps-card__progress-item steps-card__progress-item_active"
+                        ></span>
+                        <span
+                          class="steps-card__progress-item steps-card__progress-item_active"
+                        ></span>
                         <span class="steps-card__progress-item"></span>
                         <span class="steps-card__progress-item"></span>
                       </div>
@@ -657,19 +946,27 @@
                 </li>
                 <li class="splide__slide">
                   <article class="steps-card">
-                    <img class="steps-card__image" src="./images/steps__image_01.jpg" alt="">
+                    <img
+                      class="steps-card__image"
+                      src="./images/advantages__image-01.jpg"
+                      alt=""
+                    />
                     <div class="steps-card__content">
                       <p class="steps-card__label-text">Шаг 3</p>
                       <h3 class="steps-card__title">Настройте</h3>
                       <div class="steps-card__description">
-                        <p>
-                          Укажите название заведения, загрузите баннер
-                        </p>
+                        <p>Укажите название заведения, загрузите баннер</p>
                       </div>
                       <div class="steps-card__progress">
-                        <span class="steps-card__progress-item steps-card__progress-item_active"></span>
-                        <span class="steps-card__progress-item steps-card__progress-item_active"></span>
-                        <span class="steps-card__progress-item steps-card__progress-item_active"></span>
+                        <span
+                          class="steps-card__progress-item steps-card__progress-item_active"
+                        ></span>
+                        <span
+                          class="steps-card__progress-item steps-card__progress-item_active"
+                        ></span>
+                        <span
+                          class="steps-card__progress-item steps-card__progress-item_active"
+                        ></span>
                         <span class="steps-card__progress-item"></span>
                       </div>
                     </div>
@@ -677,20 +974,30 @@
                 </li>
                 <li class="splide__slide">
                   <article class="steps-card">
-                    <img class="steps-card__image" src="./images/steps__image_01.jpg" alt="">
+                    <img
+                      class="steps-card__image"
+                      src="./images/advantages__image-01.jpg"
+                      alt=""
+                    />
                     <div class="steps-card__content">
                       <p class="steps-card__label-text">Шаг 4</p>
                       <h3 class="steps-card__title">Распечатайте меню</h3>
                       <div class="steps-card__description">
-                        <p>
-                          Распечатайте QR-код и разместите его на столиках
-                        </p>
+                        <p>Распечатайте QR-код и разместите его на столиках</p>
                       </div>
                       <div class="steps-card__progress">
-                        <span class="steps-card__progress-item steps-card__progress-item_active"></span>
-                        <span class="steps-card__progress-item steps-card__progress-item_active"></span>
-                        <span class="steps-card__progress-item steps-card__progress-item_active"></span>
-                        <span class="steps-card__progress-item steps-card__progress-item_active"></span>
+                        <span
+                          class="steps-card__progress-item steps-card__progress-item_active"
+                        ></span>
+                        <span
+                          class="steps-card__progress-item steps-card__progress-item_active"
+                        ></span>
+                        <span
+                          class="steps-card__progress-item steps-card__progress-item_active"
+                        ></span>
+                        <span
+                          class="steps-card__progress-item steps-card__progress-item_active"
+                        ></span>
                       </div>
                     </div>
                   </article>
@@ -700,11 +1007,15 @@
           </div>
         </section>
         <section class="section section_no_indent">
-          <h2 class="section__title section__title_section-indent">Комфортная цветовая схема <span class="text-decor text-decor_accent">день/ночь</span></h2>
+          <h2 class="section__title section__title_section-indent">
+            Комфортная цветовая схема
+            <span class="text-decor text-decor_accent">день/ночь</span>
+          </h2>
         </section>
       </main>
       @@include("../blocks/footer/footer.html")
     </div>
-    <script src="./scripts/main.js" defer></script>
+    <script src="./scripts/libs/splide.min.js"></script>
+    <script src="./scripts/main.js"></script>
   </body>
 </html>

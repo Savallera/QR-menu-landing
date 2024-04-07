@@ -5,10 +5,11 @@
 }
 
 %reset-btn {
-  cursor: pointer;
+  appearance: none;
   outline: none;
   border: none;
   background: none;
+  cursor: pointer;
 }
 
 %reset-input {

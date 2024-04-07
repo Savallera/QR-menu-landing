@@ -24,15 +24,26 @@
 
   --main-font-family: 'Raleway', sans-serif;
 
+  // indent
+  --indent-xxs: 16px;
+  --indent-xs: 20px;
+  --indent-sm: 24px;
+  --indent-md: 30px;
+  --indent-lg: 40px;
+  --indent-xl: 60px;
+  --indent-xxl: 100px;
+  --indent-xxxl: 234px;
+
   // typography
-  --display-md: 128px;
   --display-sm: 80px;
-  --heading-md: 60px;
-  --heading-sm: 40px;
+  --display-md: 128px;
+  --heading-xxs: 20px;
   --heading-xs: 24px;
+  --heading-sm: 40px;
+  --heading-md: 60px;
   --text-sm: 16px;
   --text-md: 20px;
-  --text-lx: 24px;
+  --text-lg: 24px;
 
   --box-shadow-md: 0 8px 16px rgb(100 112 103 / 0.05);
 
