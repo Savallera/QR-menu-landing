@@ -1,17 +1,53 @@
 .how {
-
   &__card {
-  }
+    background-color: var(--bg-accent-color);
+    background-position: center;
+    background-size: cover;
+    background-image: linear-gradient(
+        to bottom,
+        rgba(var(--bg-accent-color-opacity), 0.75) 0% 100%
+      ),
+      url('../images/how__bg-image.jpg');
+    background-image: linear-gradient(
+        to bottom,
+        rgba(var(--bg-accent-color-opacity), 0.75) 0% 100%
+      ),
+      url('../images/how__bg-image.webp');
 
-  &__image-wrap {
+    color: var(--white);
+    display: flex;
+    gap: var(--indent-xxxl);
   }
 
   &__image {
+    flex: none;
+    inline-size: 400px;
+    block-size: 400px;
+    object-fit: contain;
+    object-position: center;
+    border-radius: var(--border-radius-lg);
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow:
+      0px 0px 10.9px 0px rgba(255, 255, 255, 0.26) inset,
+      0px 14px 16px 0px rgba(0, 0, 0, 0.26),
+      0px 4px 0px 0px rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(9px);
   }
 
   &__content {
+    flex: auto;
+  }
+
+  &__title {
+    text-align: left;
+    margin-block-end: var(--indent-xxs);
   }
 
   &__description {
+    color: var(--grey-200);
+    font-size: var(--text-md);
+    font-weight: 500;
+    line-height: 150%;
+    margin-block-end: var(--indent-lg);
   }
 }

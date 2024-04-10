@@ -1,0 +1,37 @@
+.banner-card {
+  inline-size: 100%;
+  block-size: 100%;
+
+  padding: var(--indent-xxl);
+  background-color: var(--bg-secondary-color);
+  border-radius: var(--border-radius-xl);
+  display: flex;
+  gap: 90px;
+  align-items: center;
+
+  &__image {
+    flex: auto;
+    align-self: stretch;
+    object-fit: cover;
+    object-position: center;
+    background-color: var(--bg-secondary-color);
+    border-radius: var(--border-radius-lg);
+  }
+
+  &__content {
+    flex: auto;
+  }
+
+  &__title {
+    font-weight: 700;
+    font-size: var(--heading-md);
+    margin-block-end: var(--indent-xxs);
+  }
+
+  &__description {
+    color: var(--text-secondary-color);
+    font-size: var(--text-md);
+    font-weight: 500;
+    line-height: 150%;
+  }
+}

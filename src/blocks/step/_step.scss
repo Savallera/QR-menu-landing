@@ -1,0 +1,68 @@
+.step {
+  &__card {
+    inline-size: 100%;
+    block-size: 100%;
+
+    background-color: var(--bg-secondary-color);
+    border-radius: var(--border-radius-xl);
+    display: flex;
+    align-items: center;
+  }
+
+  &__card-image {
+    flex: 0 0 50%;
+    min-block-size: 410px;
+    align-self: stretch;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  &__card-content {
+    flex: 0 0 50%;
+    padding: var(--indent-xxl) var(--indent-xxl) var(--indent-xxl) 0;
+  }
+
+  &__card-label-text {
+    inline-size: max-content;
+    min-block-size: 3.375rem;
+    padding: 1rem 2.375rem;
+    text-align: center;
+    border: 1px solid currentColor;
+    background-color: var(--white);
+    border-radius: var(--border-radius-sm);
+    font-size: var(--text-md);
+    font-weight: 700;
+  }
+
+  &__card-title {
+    font-weight: 700;
+    font-size: var(--heading-sm);
+    margin-block-start: var(--indent-lg);
+    margin-block-end: var(--indent-xxs);
+  }
+
+  &__card-description {
+    margin-block-end: var(--indent-lg);
+    color: var(--text-secondary-color);
+    font-size: var(--text-md);
+    font-weight: 500;
+    line-height: 150%;
+  }
+
+  &__card-progress {
+    display: flex;
+    gap: 0.5em;
+  }
+
+  &__card-progress-item {
+    flex: auto;
+    block-size: 15px;
+    border-radius: 24px;
+    background-color: var(--grey-200);
+
+    &_active {
+      background-color: var(--accent-color);
+    }
+  }
+}

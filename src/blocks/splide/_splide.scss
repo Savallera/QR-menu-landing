@@ -1,5 +1,4 @@
 .splide {
-
   &__track {
   }
 
@@ -7,5 +6,60 @@
   }
 
   &__slide {
+  }
+
+  &__pagination {
+    position: static;
+    padding-block: var(--indent-sm);
+
+    .splide__pagination__page {
+      block-size: 1.25em;
+      inline-size: 1.25em;
+      margin: 0 4px;
+      border-radius: 24px;
+      opacity: 1;
+      background-color: rgba(var(--bg-accent-color-opacity), 0.15);
+      transition:
+        inline-size 0.3s,
+        background-color 0.3s;
+
+      &.is-active {
+        transform: none;
+        inline-size: 6em;
+        background-color: var(--bg-accent-color);
+      }
+    }
+  }
+
+  &_transparent-arrows {
+    .splide__arrow {
+      block-size: 100%;
+      width: var(--indent-xxxxl);
+      border-radius: 0;
+      background-color: transparent;
+      opacity: 1;
+
+      &--prev {
+        left: 0;
+        background-image: linear-gradient(
+          to left,
+          rgba(255, 255, 255, 0) 0%,
+          #fff 100%
+        );
+      }
+
+      &--next {
+        right: 0;
+        background-image: linear-gradient(
+          to right,
+          rgba(255, 255, 255, 0) 0%,
+          #fff 100%
+        );
+      }
+
+      svg {
+        fill: transparent;
+      }
+    }
   }
 }

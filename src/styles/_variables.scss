@@ -12,11 +12,12 @@
   --bg-main-color: var(--white);
   --bg-secondary-color: var(--grey-100);
   --bg-accent-color: var(--grey-800);
+  --bg-accent-color-opacity: 47, 60, 51;
 
   --main-color: #f43f5e;
   --main-color-opacity: 244, 63, 94;
 
-  --accent-color: #84CC16;
+  --accent-color: #84cc16;
   --accent-color-opacity: 132, 204, 22;
 
   --text-main-color: var(--grey-800);
@@ -32,7 +33,8 @@
   --indent-lg: 40px;
   --indent-xl: 60px;
   --indent-xxl: 100px;
-  --indent-xxxl: 234px;
+  --indent-xxxl: 150px;
+  --indent-xxxxl: 234px;
 
   // typography
   --display-sm: 80px;
