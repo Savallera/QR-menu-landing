@@ -10,12 +10,13 @@
 
     &_bg_accent {
       background-color: var(--bg-accent-color);
-      color: var(--white);
+      color: var(--text-accent-color);
     }
 
     &_bg_main-color {
       background-color: var(--main-color);
-      color: var(--white);
+      color: var(--text-accent-color);
+
     }
   }
 

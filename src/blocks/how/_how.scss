@@ -1,8 +1,5 @@
 .how {
   &__card {
-    background-color: var(--bg-accent-color);
-    background-position: center;
-    background-size: cover;
     background-image: linear-gradient(
         to bottom,
         rgba(var(--bg-accent-color-opacity), 0.75) 0% 100%
@@ -13,8 +10,9 @@
         rgba(var(--bg-accent-color-opacity), 0.75) 0% 100%
       ),
       url('../images/how__bg-image.webp');
+    background-position: center;
+    background-size: cover;
 
-    color: var(--white);
     display: flex;
     gap: var(--indent-xxxl);
   }
@@ -44,7 +42,7 @@
   }
 
   &__description {
-    color: var(--grey-200);
+    color: var(--text-accent-secondary-color);
     font-size: var(--text-md);
     font-weight: 500;
     line-height: 150%;

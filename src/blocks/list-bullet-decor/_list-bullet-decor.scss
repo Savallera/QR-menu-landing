@@ -1,2 +1,18 @@
 .list-bullet-decor {
+  padding-inline-start: 16px;
+  li {
+    position: relative;
+    padding-inline-start: 18px;
+
+    &::before {
+      content: '';
+      position: absolute;
+      inset: 10px auto auto 0;
+      display: block;
+      inline-size: 10px;
+      block-size: 10px;
+      border: 2px solid var(--accent-color);
+      border-radius: 4px;
+    }
+  }
 }

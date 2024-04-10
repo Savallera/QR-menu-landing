@@ -1,14 +1,67 @@
 .hiw {
+  &__card {
+    background-image: radial-gradient(
+      40% 100% at 70% 50%,
+      rgba(255, 255, 255, 0.17) 0%,
+      rgba(255, 255, 255, 0) 100%
+    );
+  }
+
+  &__container {
+    display: flex;
+    align-items: flex-start;
+    padding: 128px var(--indent-sm) var(--indent-sm);
+    gap: 16px;
+  }
+
+  &__images {
+    flex: auto;
+    position: sticky;
+    top: var(--indent-lg);
+
+    display: grid;
+    max-block-size: 100vh;
+    max-block-size: 100dvb;
+    justify-content: center;
+  }
+
+  &__image {
+    grid-area: 1/2/1/2;
+    object-position: center;
+    object-fit: contain;
+    opacity: 0;
+    pointer-events: none;
+
+    &_active {
+      opacity: 1;
+      pointer-events: initial;
+    }
+  }
 
   &__list {
+    flex-basis: 550px;
+    display: flex;
+    flex-direction: column;
+    gap: 228px;
   }
 
   &__list-item {
+    padding-inline-start: var(--indent-sm);
+    border-inline-start: 4px solid var(--accent-color);
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
   }
 
   &__list-item-title {
+    font-size: var(--heading-xs);
+    font-weight: 700;
   }
 
   &__list-item-description {
+    color: var(--text-accent-secondary-color);
+    font-size: var(--text-md);
+    font-weight: 500;
+    line-height: 150%;
   }
 }
