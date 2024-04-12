@@ -16,4 +16,8 @@
     background-position-y: top;
     background-size: 75%;
   }
+
+  @include media(lg, max) {
+    padding-block-start: var(--header-block-size);
+  }
 }

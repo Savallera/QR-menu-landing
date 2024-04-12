@@ -1,17 +1,8 @@
 .header {
-  padding: 0.75em var(--indent-sm);
-
-  &__indent {
-    display: flex;
-    align-items: center;
-    gap: var(--indent-lg);
-    padding: var(--indent-xs) var(--indent-xxxxl);
-
-    @include media(lg, max) {
-      display: grid;
-      grid-template-columns: auto 1fr auto;
-    }
-  }
+  display: flex;
+  align-items: center;
+  gap: var(--indent-lg);
+  padding: var(--indent-xs) var(--indent-main-wide);
 
   &__burger {
     @extend %reset-btn;
@@ -80,7 +71,7 @@
       grid-column: 1/-1;
       flex-direction: column;
       align-items: flex-start;
-      padding: var(--indent-xs) var(--indent-xxxxl);
+      // padding: var(--indent-xs) var(--indent-main-wide);
     }
   }
 
@@ -90,7 +81,7 @@
 
     @include media(lg, max) {
       flex-direction: column;
-      padding-block-end: var(--indent-xxxxl);
+      // padding-block-end: var(--indent-main-wide);
       border-block-end: 1px solid var(--text-secondary-color);
     }
   }
@@ -186,10 +177,12 @@
   }
 
   @include media(lg, max) {
-    padding: 0;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
     position: absolute;
     inset: 0 0 auto 0;
 
+    background-color: var(--bg-main-color);
     background-image: linear-gradient(
       to bottom,
       var(--bg-main-color) 0% 4.875em,
@@ -198,14 +191,14 @@
     background-size: 0;
 
     overflow: hidden;
-    block-size: 4.875em;
+    block-size: var(--header-block-size);
     transition:
       all 0.3s ease-in,
       background-color 0.5s ease-in;
 
     &_menu-opened {
       block-size: 100%;
-      background-color: var(--bg-main-color);
+      // background-color: var(--bg-main-color);
       background-size: 100%;
 
       transition-delay: 0.25s;

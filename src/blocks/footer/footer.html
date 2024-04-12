@@ -1,29 +1,40 @@
 <footer class="footer">
   <div class="footer__columns">
-    <div class="footer__column footer__column_content_logo">
-      <a class="footer__logo"></a>
-      <p class="footer__copyright">© 2024 Все права защищены</p>
-      <nav class="footer__nav">
-        <ul class="footer__nav-list">
-          <li><a class="footer__link" href="#0">Политика обработки персональных данных</a></li>
-          <li><a class="footer__link" href="#0">Согласие на обработку персональных данных</a></li>
-          <li><a class="footer__link" href="#0">Правила оплаты</a></li>
-        </ul>
-      </nav>
-    </div>
-    <div class="footer__column">
+    <a class="footer__logo">
+      <img
+        class="footer__logo-image"
+        src="./images/logo.svg"
+        alt="Логотип Qr-меню"
+      />
+    </a>
+    <p class="footer__copyright">© 2024 Все права защищены</p>
+    <nav class="footer__nav footer__nav_content_policy">
+      <ul class="footer__nav-list">
+        <li>
+          <a class="footer__link" href="#0"
+            >Политика обработки персональных данных</a
+          >
+        </li>
+        <li>
+          <a class="footer__link" href="#0"
+            >Согласие на обработку персональных данных</a
+          >
+        </li>
+        <li><a class="footer__link" href="#0">Правила оплаты</a></li>
+      </ul>
+    </nav>
+    <div class="footer__column footer__column_content_menu">
       <h2 class="footer__title">Меню</h2>
       <nav class="footer__nav">
         <ul class="footer__nav-list">
           <li><a class="footer__link" href="#0">Главная</a></li>
-          <li><a class="footer__link" href="#0">Преимущества</a></li>
           <li><a class="footer__link" href="#0">Преимущества</a></li>
           <li><a class="footer__link" href="#0">Тарифы</a></li>
           <li><a class="footer__link" href="#0">FAQ</a></li>
         </ul>
       </nav>
     </div>
-    <div class="footer__column">
+    <div class="footer__column footer__column_content_social">
       <h2 class="footer__title text-decor">Контакты</h2>
       <nav class="footer__nav">
         <ul class="footer__nav-list">
@@ -38,7 +49,7 @@
                   <use href="./images/icons.svg#phone"></use>
                 </svg>
               </span>
-              +7 916 165-55-55
+              <span class="footer__link-text">+7 916 165-55-55</span>
             </a>
           </li>
           <li>
@@ -52,7 +63,7 @@
                   <use href="./images/icons.svg#telegram"></use>
                 </svg>
               </span>
-              Telegram
+              <span class="footer__link-text">Telegram</span>
             </a>
           </li>
           <li>
@@ -66,7 +77,7 @@
                   <use href="./images/icons.svg#whatsapp"></use>
                 </svg>
               </span>
-              WhatsApp
+              <span class="footer__link-text">WhatsApp</span>
             </a>
           </li>
           <li>
@@ -80,7 +91,7 @@
                   <use href="./images/icons.svg#email"></use>
                 </svg>
               </span>
-              qr-menu@test.tu
+              <span class="footer__link-text">qr-menu@test.tu</span>
             </a>
           </li>
         </ul>

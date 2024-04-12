@@ -11,7 +11,7 @@ window.addEventListener('DOMContentLoaded', () => {
         autoplay: true,
         gap: 'var(--indent-sm)',
         // autoWidth: true,
-        padding: 'var(--indent-xxxxl)',
+        padding: 'var(--indent-main-wide)',
       });
       newsSlider.mount();
     }
