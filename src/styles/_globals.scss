@@ -28,6 +28,11 @@ p {
   margin: 0;
 }
 
+menu {
+  margin: 0;
+  padding: 0;
+}
+
 ul {
   margin: 0;
   padding: 0;
@@ -47,6 +52,7 @@ a {
   line-height: inherit;
 }
 
-:focus, :focus-visible {
+:focus,
+:focus-visible {
   outline: none;
 }

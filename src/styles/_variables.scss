@@ -28,26 +28,26 @@
   --main-font-family: 'Raleway', sans-serif;
 
   // indent
-  --indent-xxs: 16px;
-  --indent-xs: 20px;
-  --indent-sm: 24px;
-  --indent-md: 30px;
-  --indent-lg: 40px;
-  --indent-xl: 60px;
-  --indent-xxl: 100px;
-  --indent-xxxl: 150px;
-  --indent-xxxxl: 234px;
+  --indent-xxs: clamp(0.75rem, 0.6893rem + 0.2589vw, 1rem); // 16
+  --indent-xs: clamp(0.875rem, 0.784rem + 0.3883vw, 1.25rem); // 20
+  --indent-sm: clamp(1rem, 0.8786rem + 0.5178vw, 1.5rem); // 24
+  --indent-md: clamp(1rem, 0.7876rem + 0.9061vw, 1.875rem); // 30
+  --indent-lg: clamp(1.25rem, 0.9466rem + 1.2945vw, 2.5rem); // 40
+  --indent-xl: clamp(1rem, 0.3325rem + 2.8479vw, 3.75rem); // 60
+  --indent-xxl: clamp(1rem, -0.2743rem + 5.4369vw, 6.25rem); // 100
+  --indent-xxxl: clamp(1rem, -1.0328rem + 8.6731vw, 9.375rem); // 150 в одном месте
+  --indent-xxxxl: clamp(1rem, -14.5714rem + 24.3304vw, 14.625rem); // 234 для секций
 
   // typography
-  --display-sm: 80px;
-  --display-md: 128px;
-  --heading-xxs: 20px;
-  --heading-xs: 24px;
-  --heading-sm: 40px;
-  --heading-md: 60px;
-  --text-sm: 16px;
-  --text-md: 20px;
-  --text-lg: 24px;
+  --display-sm: clamp(2rem, 1.2718rem + 3.1068vw, 5rem); // 80
+  --display-md: clamp(3rem, 1.7864rem + 5.178vw, 8rem); // 128
+  --heading-xxs: clamp(1rem, 0.9393rem + 0.2589vw, 1.25rem); // 20
+  --heading-xs: clamp(1.25rem, 1.1893rem + 0.2589vw, 1.5rem); // 24
+  --heading-sm: clamp(1.875rem, 1.7233rem + 0.6472vw, 2.5rem); // 40
+  --heading-md: clamp(2.5rem, 2.1966rem + 1.2945vw, 3.75rem); // 60
+  --text-sm: clamp(0.875rem, 0.8447rem + 0.1294vw, 1rem); // 16
+  --text-md: clamp(1rem, 0.9393rem + 0.2589vw, 1.25rem); // 20
+  --text-lg: clamp(1.25rem, 1.1893rem + 0.2589vw, 1.5rem); // 24
 
   --box-shadow-md: 0 8px 16px rgb(100 112 103 / 0.05);
 

@@ -1,13 +1,19 @@
 .page {
   display: flex;
   flex-direction: column;
+  min-block-size: 100vh;
+  min-block-size: 100dvb;
 
   &__content {
     flex: auto;
   }
 
   &_with_lead-image {
-    background: url('../images/bg-image.png') no-repeat top center / contain;
-    background: url('../images/bg-image.webp') no-repeat top center / contain;
+    background-image: url('../images/bg-image.png');
+    background-image: url('../images/bg-image.webp');
+    background-repeat: no-repeat;
+    background-position-x: 210%;
+    background-position-y: top;
+    background-size: 75%;
   }
 }
