@@ -3,7 +3,7 @@
 
   &_theme {
     &_bg-secondary {
-      padding: var(--indent-md);
+      padding: 1.875rem;
       border-radius: var(--border-radius-lg);
       background-color: var(--bg-secondary-color);
 
@@ -36,7 +36,7 @@
       &::after {
         content: '';
         position: absolute;
-        inset: var(--indent-md) var(--indent-md) auto auto;
+        inset: 1.875rem 1.875rem auto auto;
         block-size: 32px;
         inline-size: 32px;
         background-color: var(--accent-color);

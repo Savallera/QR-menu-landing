@@ -16,22 +16,24 @@
 
   &__inner {
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
     gap: 2em;
-    padding-block-start: clamp(4rem, -1.4286rem + 8.4821vw, 8.75rem); // 140
+    padding-block-start: clamp(3rem, -3.5714rem + 10.2679vw, 8.75rem); // 140
     padding-block-end: clamp(4rem, -4.8571rem + 13.8393vw, 11.75rem); // 188
 
-    @include media(md, max) {
-      flex-direction: column;
+    @include media(md) {
+      flex-direction: row;
     }
   }
 
   &__content {
     flex-basis: min(692px, 100%);
     flex-grow: 1;
+    text-align: center;
 
-    @include media(md, max) {
-      text-align: center;
+    @include media(md) {
+      text-align: left;
     }
   }
 
@@ -59,52 +61,47 @@
   &__controls {
     margin-block-start: var(--indent-xl);
     display: flex;
-    align-items: center;
+    flex-direction: column;
     gap: 1.25em;
 
-    @include media(md, max) {
-      flex-direction: column;
-      align-items: initial;
+    @include media(md) {
+      flex-direction: row;
+      align-items: center;
     }
   }
 
   &__images {
-    flex-basis: min(650px, 100%);
-    flex-grow: 0;
     position: relative;
+    flex: 1 1 min(400px, 100%);
+    min-block-size: clamp(200px, 40vh, 400px);
 
-    @include media(md, max) {
-      flex: auto;
-      min-block-size: 300px;
-    }
-
-    @include media(lg, max) {
-      flex-basis: min(400px, 100%);
+    @include media(lg) {
+      flex-basis: min(650px, 100%);
     }
   }
 
   &__image {
     position: absolute;
-    inline-size: min(411px, 27vw);
+    inline-size: 50vw;
 
     &_content_light {
-      inset: -18% auto auto 15%;
+      inset: 0 auto auto 0;
 
-      @include media(lg, max) {
-        inset: 0 auto auto 0;
+      @include media(lg) {
+        inset: -18% auto auto 15%;
       }
     }
 
     &_content_dark {
-      inset: 38% auto auto 85%;
+      inset: 30% auto auto 45%;
 
-      @include media(lg, max) {
-        inset: 30% auto auto 45%;
+      @include media(lg) {
+        inset: 38% auto auto 85%;
       }
     }
 
-    @include media(md, max) {
-      inline-size: 50vw;
+    @include media(md) {
+      inline-size: min(411px, 27vw);
     }
   }
 }

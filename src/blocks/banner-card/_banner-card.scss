@@ -5,13 +5,13 @@
   padding: var(--indent-xxl);
   background-color: var(--bg-secondary-color);
   border-radius: var(--border-radius-xl);
-  display: flex;
-  gap: 90px;
-  align-items: center;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(1.875rem, -2.4107rem + 6.6964vw, 5.625rem); // 90
 
   &__image {
-    flex: auto;
-    align-self: stretch;
+    inline-size: 100%;
+    block-size: 100%;
     object-fit: cover;
     object-position: center;
     background-color: var(--bg-secondary-color);
@@ -19,7 +19,12 @@
   }
 
   &__content {
-    flex: auto;
+    align-self: center;
+    text-align: center;
+
+    @include media(md) {
+      text-align: left;
+    }
   }
 
   &__title {
@@ -33,5 +38,13 @@
     font-size: var(--text-md);
     font-weight: 500;
     line-height: 150%;
+  }
+
+  @include media(md) {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @include media(lg) {
+    grid-template-columns: 0.9fr 1fr;
   }
 }

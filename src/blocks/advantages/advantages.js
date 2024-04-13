@@ -4,14 +4,13 @@ window.addEventListener('DOMContentLoaded', () => {
       let newsSlider = new Splide('#advantages-slider', {
         type: 'slide',
         perPage: 1,
-        start: 2,
+        start: 1,
         arrows: true,
         pagination: true,
         rewind: true,
         autoplay: true,
         gap: 'var(--indent-sm)',
-        // autoWidth: true,
-        padding: 'var(--indent-main-wide)',
+        padding: 'var(--indent-main)',
       });
       newsSlider.mount();
     }

@@ -35,12 +35,12 @@
   --indent-md: clamp(1rem, 0.7876rem + 0.9061vw, 1.875rem); // 30
   --indent-lg: clamp(1.25rem, 0.9466rem + 1.2945vw, 2.5rem); // 40
   --indent-xl: clamp(1rem, 0.3325rem + 2.8479vw, 3.75rem); // 60
-  --indent-xxl: clamp(1rem, -0.2743rem + 5.4369vw, 6.25rem); // 100
+  --indent-xxl: clamp(3rem, -0.7143rem + 5.8036vw, 6.25rem); // 48-100
   --indent-xxxl: clamp(1rem, -1.0328rem + 8.6731vw, 9.375rem); // 150 в одном месте
 
-  --indent-hor-card: clamp(4rem, 1.4286rem + 4.0179vw, 6.25rem);; // 100
   --indent-main: 1em;
   --indent-main-wide: 1em;
+  --indent-main-horizontal: clamp(1.875rem, -0.2679rem + 3.3482vw, 3.75rem); // 60
 
   // typography
   --display-sm: clamp(2rem, 1.2718rem + 3.1068vw, 5rem); // 80
@@ -48,8 +48,8 @@
 
   --heading-xxs: clamp(1rem, 0.9393rem + 0.2589vw, 1.25rem); // 20
   --heading-xs: clamp(1.25rem, 1.1893rem + 0.2589vw, 1.5rem); // 24
-  --heading-sm: clamp(1.875rem, 1.7233rem + 0.6472vw, 2.5rem); // 40
-  --heading-md: clamp(2.5rem, 2.1966rem + 1.2945vw, 3.75rem); // 60
+  --heading-sm: clamp(1.5rem, 0.3571rem + 1.7857vw, 2.5rem); // 40
+  --heading-md: clamp(2rem, 0rem + 3.125vw, 3.75rem); // 60
 
   --text-sm: clamp(0.875rem, 0.8447rem + 0.1294vw, 1rem); // 16
   --text-md: clamp(1rem, 0.9393rem + 0.2589vw, 1.25rem); // 20
@@ -59,7 +59,7 @@
 
   --border-radius-sm: 24px;
   --border-radius-md: 36px;
-  --border-radius-lg: 64px;
+  --border-radius-lg: clamp(3rem, 1.8571rem + 1.7857vw, 4rem); // 48-64
   --border-radius-xl: clamp(6rem, 0rem + 9.375vw, 11.25rem); // 96-180
 
   --header-block-size: 4.875em;

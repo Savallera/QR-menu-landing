@@ -7,29 +7,27 @@
   &__list {
     @extend %reset-list;
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     gap: var(--indent-md) var(--indent-lg);
     flex-wrap: wrap;
 
-    @include media(md, max) {
-      flex-direction: column;
-      align-items: center;
+    @include media(md) {
+      flex-direction: row;
+      align-items: stretch;
     }
 
-    @include media(lg, max) {
-      justify-content: center;
+    @include media(lg) {
+      justify-content: space-between;
     }
   }
 
   &__item {
-    flex-basis: min(25em, 100%); // 400
+    flex-basis: min(17em, 100%);
 
-    @include media(md, max) {
-      max-inline-size: min(17em, 100%);
-    }
-
-    @include media(lg, max) {
-      flex-basis: min(17em, 100%);
+    @include media(lg) {
+      flex-basis: min(25em, 100%); // 400
     }
   }
 
@@ -41,9 +39,10 @@
 
   &__title-span {
     display: block;
+    text-align: center;
 
-    @include media(md, max) {
-      text-align: center;
+    @include media(md) {
+      text-align: left;
     }
   }
 

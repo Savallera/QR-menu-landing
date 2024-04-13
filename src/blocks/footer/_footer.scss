@@ -1,24 +1,24 @@
 .footer {
-  padding: var(--indent-hor-card) var(--indent-main-wide);
+  padding: var(--indent-xxl) var(--indent-main-wide);
   border-radius: var(--border-radius-xl) var(--border-radius-xl) 0 0;
   background-color: var(--bg-secondary-color);
 
   &__columns {
     display: grid;
     gap: 1em;
-    grid-template-columns: 1fr 0.5fr 0.5fr;
-    grid-template-rows: auto auto 1fr;
 
-    @include media(md, max) {
-      grid-template-columns: 1fr;
-      grid-template-rows: auto;
-      text-align: center;
-      justify-items: center;
+    text-align: center;
+    justify-items: center;
+
+    @include media(md) {
+      text-align: left;
+      justify-items: start;
+      grid-template-columns: 1fr 0.5fr 0.5fr;
+      grid-template-rows: auto auto 1fr;
     }
   }
 
   &__column {
-    grid-row: 1/4;
     display: flex;
     flex-direction: column;
     gap: 1em;
@@ -72,8 +72,8 @@
       }
     }
 
-    @include media(md, max) {
-      grid-row: unset;
+    @include media(md) {
+      grid-row: 1/4;
     }
   }
 
