@@ -65,7 +65,7 @@
   --header-block-size: 4.875em;
 }
 
-@include media(lg) {
+@include media(md) {
   :root {
     --indent-main: clamp(3rem, -10.2857rem + 20.7589vw, 14.625rem); // 48-234 для секций
     --indent-main-wide: clamp(3rem, -12rem + 23.4375vw, 16.125rem); // 48-258 для секций
