@@ -1,20 +1,17 @@
 .splide {
-  &__track {
-  }
+  // &__track {}
 
-  &__list {
-  }
+  // &__list {}
 
-  &__slide {
-  }
+  // &__slide {}
 
   &__pagination {
     position: static;
-    padding-block: var(--indent-sm);
+    padding-block: var(--indent-xs);
 
     .splide__pagination__page {
-      block-size: 1.25em;
-      inline-size: 1.25em;
+      block-size: .625em;
+      inline-size: .625em;
       margin: 0 4px;
       border-radius: 24px;
       opacity: 1;
@@ -27,6 +24,11 @@
         transform: none;
         inline-size: 6em;
         background-color: var(--bg-accent-color);
+      }
+
+      @include media(md) {
+        block-size: 1.25em;
+        inline-size: 1.25em;
       }
     }
   }

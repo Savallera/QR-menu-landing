@@ -4,9 +4,10 @@
   text-decoration: none;
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 1rem;
-  min-block-size: 2.8em;
-  padding: .8em 1.9em;
+  min-block-size: 3.5rem;
+  padding: 1rem 2.375rem;
   text-align: center;
   border: 1px solid currentColor;
   outline: 4px solid transparent;
@@ -17,7 +18,7 @@
     font-size: var(--text-md);
     line-height: 1.2;
     font-weight: 700;
-    flex: auto;
+    // flex: auto;
     color: inherit;
   }
 

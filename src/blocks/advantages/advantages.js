@@ -1,7 +1,7 @@
 window.addEventListener('DOMContentLoaded', () => {
   if (Splide) {
     if (document.querySelector('#advantages-slider')) {
-      let newsSlider = new Splide('#advantages-slider', {
+      let advantagesSlider = new Splide('#advantages-slider', {
         type: 'slide',
         perPage: 1,
         start: 1,
@@ -10,9 +10,9 @@ window.addEventListener('DOMContentLoaded', () => {
         rewind: true,
         autoplay: true,
         gap: 'var(--indent-sm)',
-        padding: 'var(--indent-main)',
+        padding: 'var(--indent-main-wide)',
       });
-      newsSlider.mount();
+      advantagesSlider.mount();
     }
   }
 });

@@ -7,20 +7,36 @@
     border-radius: var(--border-radius-xl);
     display: flex;
     align-items: center;
+
+    @include media(md, max) {
+      flex-direction: column;
+    }
   }
 
   &__card-image {
-    flex: 0 0 50%;
-    min-block-size: 410px;
-    align-self: stretch;
+    inline-size: min(20em, 100%);
+    aspect-ratio: 707/607;
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
+
+    @include media(md) {
+      flex: 0 0 50%;
+    }
+
+    @include media(lg) {
+      flex: 0 0 50%;
+    }
   }
 
   &__card-content {
     flex: 0 0 50%;
-    padding: var(--indent-xxl) var(--indent-xxl) var(--indent-xxl) 0;
+    padding-block: var(--indent-card);
+    padding-inline-end: var(--indent-card);
+    @include media(md, max) {
+      padding-block-start: 0;
+      padding-inline-start: var(--indent-card);
+    }
   }
 
   &__card-label-text {
@@ -47,7 +63,6 @@
     color: var(--text-secondary-color);
     font-size: var(--text-md);
     font-weight: 500;
-    line-height: 150%;
   }
 
   &__card-progress {
@@ -63,6 +78,10 @@
 
     &_active {
       background-color: var(--accent-color);
+    }
+
+    @include media(md, max) {
+      block-size: 10px;
     }
   }
 }

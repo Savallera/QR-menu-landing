@@ -173,6 +173,8 @@
   }
 
   &__login-button {
+    flex: none;
+
     @include media(lg, max) {
       grid-area: 1/3/2/4;
     }

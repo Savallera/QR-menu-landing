@@ -1,21 +1,28 @@
 .statistics {
   margin-block-start: calc(
-    clamp(4rem, -4.8571rem + 13.8393vw, 11.75rem) * -1
-  ); // 188
+    clamp(4rem, 2.5714rem + 2.2321vw, 5.25rem) * -1
+  ); // 84
   position: relative;
+
+  &__card {
+    padding-block: var(--indent-card);
+
+    @include media(md, max) {
+      padding-inline: var(--indent-card);
+    }
+  }
 
   &__list {
     @extend %reset-list;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
     gap: var(--indent-md) var(--indent-lg);
     flex-wrap: wrap;
 
     @include media(md) {
       flex-direction: row;
       align-items: stretch;
+      justify-content: space-around;
     }
 
     @include media(lg) {
@@ -24,7 +31,14 @@
   }
 
   &__item {
-    flex-basis: min(17em, 100%);
+    @include media(md, max) {
+      border-block-end: 1px solid var(--text-secondary-color);
+      padding-block-end: var(--indent-lg);
+    }
+
+    @include media(md) {
+      flex-basis: min(17em, 100%);
+    }
 
     @include media(lg) {
       flex-basis: min(25em, 100%); // 400
@@ -34,15 +48,15 @@
   &__title {
     font-size: var(--text-md);
     font-weight: 500;
-    line-height: 1.5;
   }
 
   &__title-span {
     display: block;
-    text-align: center;
 
-    @include media(md) {
-      text-align: left;
+    @include media(lg) {
+      &:first-child {
+        margin-block-end: 0.5em;
+      }
     }
   }
 
