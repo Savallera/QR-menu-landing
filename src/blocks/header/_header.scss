@@ -19,7 +19,7 @@
     user-select: none;
     -webkit-tap-highlight-color: transparent;
 
-    @include media(lg) {
+    @include media(xl) {
       display: none;
     }
   }
@@ -49,7 +49,7 @@
     display: block;
     inline-size: min(167px, 30vw);
 
-    @include media(lg, max) {
+    @include media(xl, max) {
       margin-inline-end: auto;
     }
   }
@@ -67,7 +67,7 @@
     align-items: center;
     justify-content: space-between;
 
-    @include media(lg, max) {
+    @include media(xl, max) {
       grid-column: 1/-1;
       flex-direction: column;
       place-self: start;
@@ -79,7 +79,7 @@
     display: flex;
     gap: var(--indent-lg);
 
-    @include media(lg, max) {
+    @include media(xl, max) {
       flex-direction: column;
       padding-block-end: var(--indent-lg);
       border-block-end: 1px solid var(--text-secondary-color);
@@ -87,7 +87,7 @@
   }
 
   &__list-item {
-    @include media(lg, max) {
+    @include media(xl, max) {
       transform: scale(1.15) translateY(-30px);
       opacity: 0;
       pointer-events: none;
@@ -132,7 +132,7 @@
   }
 
   &__social-list-item {
-    @include media(lg, max) {
+    @include media(xl, max) {
       transform: scale(1.15) translateY(-15px);
       opacity: 0;
       transition:
@@ -175,12 +175,12 @@
   &__login-button {
     flex: none;
 
-    @include media(lg, max) {
+    @include media(xl, max) {
       grid-area: 1/3/2/4;
     }
   }
 
-  @include media(lg, max) {
+  @include media(xl, max) {
     display: grid;
     grid-template-columns: auto 1fr auto;
     grid-template-rows: auto 1fr;

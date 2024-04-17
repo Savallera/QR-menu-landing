@@ -16,7 +16,7 @@
     gap: var(--indent-lg) var(--indent-xl);
 
     @include media(lg) {
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1.1fr;
     }
   }
 
@@ -79,13 +79,12 @@
 
     display: grid;
     gap: var(--indent-xl);
-    padding-block-end: var(--indent-xl);
 
     @include media(lg) {
       grid-area: 1/1/3/2;
       background-color: transparent;
       border-radius: unset;
-      padding: 0;
+      padding: 0 0 var(--indent-xl);
     }
   }
 

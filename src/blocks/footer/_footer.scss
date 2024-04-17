@@ -2,10 +2,11 @@
   padding: var(--indent-xxl) var(--indent-main-wide);
   border-radius: var(--border-radius-xl) var(--border-radius-xl) 0 0;
   background-color: var(--bg-secondary-color);
+  line-height: normal;
 
   &__columns {
     display: grid;
-    gap: var(--indent-xxs);
+    gap: var(--indent-xxs) var(--indent-md);
 
     text-align: center;
     justify-items: center;
@@ -15,6 +16,10 @@
       justify-items: start;
       grid-template-columns: 1fr auto auto;
       grid-template-rows: auto auto 1fr;
+    }
+
+    @include media(lg) {
+      grid-template-columns: .87fr 0.24fr 0.24fr;
     }
   }
 
@@ -101,10 +106,12 @@
   &__nav {
     &_content_policy {
       margin-block-start: auto;
+      padding-block-start: 1.25em;
       grid-area: 3/1/4/2;
 
       @include media(md, max) {
         grid-area: 4/1/5/2;
+        padding: 0;
         margin-block: var(--indent-xs);
 
         .footer__nav-list {

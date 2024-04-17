@@ -22,7 +22,7 @@
 
     @include media(md) {
       position: sticky;
-      top: 10vh;
+      top: 5vh;
 
       display: grid;
       overflow: hidden;
@@ -31,7 +31,8 @@
   }
 
   &__image-wrap {
-    inline-size: min(22em, 100%);
+    // inline-size: clamp(13.75rem, 9.3486rem + 18.7793vw, 26.25rem);
+    block-size: clamp(28.75rem, 20.1232rem + 36.8075vw, 53.25rem);
 
     @include media(md) {
       grid-area: 1/2/1/2;

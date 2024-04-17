@@ -8,7 +8,7 @@ window.addEventListener('DOMContentLoaded', () => {
         arrows: true,
         pagination: true,
         rewind: true,
-        autoplay: true,
+        // autoplay: true,
         gap: 'var(--indent-sm)',
         padding: 'var(--indent-main-wide)',
       });

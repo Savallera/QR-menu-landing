@@ -70,7 +70,7 @@
     flex: 1 1 min(250px, 100%);
     min-block-size: clamp(200px, 40vh, 400px);
 
-    @include media(lg) {
+    @include media(xl) {
       flex-basis: min(630px, 100%);
     }
   }
@@ -82,7 +82,7 @@
     &_content_light {
       inset: 0 auto auto 0;
 
-      @include media(lg) {
+      @include media(xl) {
         inset: -23% auto auto 15%;
       }
     }
@@ -90,7 +90,7 @@
     &_content_dark {
       inset: 15% auto auto 45%;
 
-      @include media(lg) {
+      @include media(xl) {
         inset: 32% auto auto 85%;
       }
     }

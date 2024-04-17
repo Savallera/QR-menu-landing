@@ -10,14 +10,14 @@
     @extend %reset-list;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(min(7em, 100%), 1fr));
-    gap: var(--indent-xl) var(--indent-xxl);
+    gap: var(--indent-lg) var(--indent-xxl);
 
     @include media(md) {
       grid-template-columns: repeat(auto-fit, minmax(min(15em, 100%), 1fr));
     }
 
     @include media(lg) {
-      grid-template-columns: repeat(auto-fit, minmax(min(25em, 100%), 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(min(20em, 100%), 1fr));
     }
   }
 

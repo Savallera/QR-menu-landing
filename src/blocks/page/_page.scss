@@ -9,24 +9,49 @@
   }
 
   &_with_lead-image {
-    background-image: url('../images/bg-image.png');
-    background-image: url('../images/bg-image.webp');
-    background-repeat: no-repeat;
-    background-position-x: 210%;
-    background-position-y: top;
-    background-size: 75%;
+    position: relative;
 
-    @include media(md, max) {
-      background-image: none;
+    &::before {
+      content: '';
+      position: absolute;
+      inset: 0 0 auto 0;
+      z-index: -2;
+      display: block;
+      block-size: 100vh;
+      block-size: 100dvb;
+      background-image: url('../images/bg-image.png');
+      background-image: url('../images/bg-image.webp');
+      background-repeat: no-repeat;
+      background-position-x: -110%;
+      background-position-y: top;
+      background-size: 120%;
+
+      @include media(lg, max) {
+        background-image: none;
+      }
+
+      @include media(xl, max) {
+        background-position-x: -165%;
+      }
     }
 
-    @include media(lg, max) {
-      background-position-x: -65%;
-      background-size: 150%;
+    &::after {
+      content: '';
+      position: absolute;
+      inset: 0 0 auto 0;
+      z-index: -1;
+      display: block;
+      block-size: 100vh;
+      block-size: 100dvb;
+      background-image: linear-gradient(
+        to bottom,
+        rgba(255, 255, 255, 0) 0% 60%,
+        white 90%
+      );
     }
   }
 
-  @include media(lg, max) {
+  @include media(xl, max) {
     padding-block-start: var(--header-block-size);
   }
 }
