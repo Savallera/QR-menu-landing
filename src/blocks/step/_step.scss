@@ -1,4 +1,9 @@
 .step {
+
+  &__title {
+    margin-block-end: var(--indent-md);
+  }
+
   &__card {
     inline-size: 100%;
     block-size: 100%;

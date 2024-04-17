@@ -14,6 +14,7 @@
     background-size: cover;
 
     display: flex;
+    flex-direction: row;
     gap: clamp(2.5rem, -5.3571rem + 12.2768vw, 9.375rem); // 150
     color: var(--text-accent-color);
     padding-block: var(--indent-card);
@@ -62,9 +63,7 @@
 
   &__title {
     margin-block-end: var(--indent-xxs);
-    @include media(md) {
-      text-align: left;
-    }
+    text-align: left;
   }
 
   &__description {

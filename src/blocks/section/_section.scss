@@ -3,6 +3,10 @@
 
   &__indent {
     padding: var(--indent-section) var(--indent-main);
+
+    display: flex;
+    flex-direction: column;
+    gap: var(--indent-md);
   }
 
   &__card {
@@ -17,10 +21,6 @@
       background-color: var(--main-color);
       color: var(--text-accent-color);
     }
-
-    @include media(md, max) {
-      padding-inline: 0;
-    }
   }
 
   &__title {
@@ -28,7 +28,6 @@
     line-height: 1;
     font-size: var(--heading-md);
     text-align: center;
-    margin-block-end: var(--indent-md);
 
     &_section-indent {
       padding-inline: var(--indent-main);
