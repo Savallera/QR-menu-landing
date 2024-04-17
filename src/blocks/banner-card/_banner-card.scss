@@ -7,19 +7,11 @@
   border-radius: var(--border-radius-xl);
   display: grid;
   grid-template-columns: 1fr;
-  gap: clamp(1.875rem, -2.4107rem + 6.6964vw, 5.625rem); // 90
+  gap: clamp(1.875rem, 0.5546rem + 5.6338vw, 5.625rem); // 90
 
   &__image-wrap {
     inline-size: 100%;
     block-size: 100%;
-
-    @include media(md) {
-      block-size: 70%;
-    }
-
-    @include media(lg) {
-      block-size: 100%;
-    }
   }
 
   &__image {
@@ -50,11 +42,7 @@
     font-weight: 500;
   }
 
-  @include media(md) {
-    grid-template-columns: 0.75fr 1fr;
-  }
-
   @include media(lg) {
-    grid-template-columns: 0.975fr 1fr;
+    grid-template-columns: 0.55fr 0.564fr;
   }
 }

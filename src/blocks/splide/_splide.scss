@@ -7,7 +7,7 @@
 
   &__pagination {
     position: static;
-    padding-block: var(--indent-xs);
+    padding-block: var(--indent-xs) 0;
 
     .splide__pagination__page {
       block-size: .625em;

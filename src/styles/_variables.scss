@@ -30,18 +30,20 @@
 
   // indent
   --indent-xxs: 1rem; // 16
-  --indent-xs: 1.25rem; // 20
-  --indent-sm: 1.5rem; // 24
-  --indent-md: clamp(1rem, 0.6919rem + 1.3146vw, 1.875rem); // 30
-  --indent-lg: clamp(1.25rem, 0.8099rem + 1.8779vw, 2.5rem); // 40
+  --indent-xs: clamp(0.75rem, 0.5739rem + 0.7512vw, 1.25rem); // 20
+  --indent-sm: clamp(1rem, 0.8239rem + 0.7512vw, 1.5rem); // 24
+  --indent-md: clamp(1.25rem, 1.0299rem + 0.939vw, 1.875rem); // 30
+  --indent-lg: clamp(1.5rem, 1.1479rem + 1.5023vw, 2.5rem); // 40
   --indent-xl: clamp(1.875rem, 1.2148rem + 2.8169vw, 3.75rem); // 60
   --indent-xxl: clamp(1.875rem, 0.3345rem + 6.5728vw, 6.25rem); // 48-100
+  --indent-xxxl: clamp(8rem, 5.7993rem + 9.3897vw, 14.25rem); // 228
 
   // 375 - 1440
   --indent-main: 1em;
   --indent-main-wide: 1em;
   --indent-section: clamp(1.875rem, 1.2148rem + 2.8169vw, 3.75rem); // 60
   --indent-card: clamp(1.875rem, 0.3345rem + 6.5728vw, 6.25rem); // 100
+  --indent-card-sm: 2rem; // 32
 
   // typography
   --display-sm: clamp(2rem, 0.9437rem + 4.507vw, 5rem); // 80
@@ -56,9 +58,9 @@
   --text-md: 0.875rem;
   --text-lg: 1rem;
 
-  --border-radius-sm: 24px;
-  --border-radius-md: 36px;
-  --border-radius-lg: clamp(3rem, 2.6479rem + 1.5023vw, 4rem); // 48-64
+  --border-radius-sm: 1.5rem; // 24px
+  --border-radius-md: 2.25rem; // 36px
+  --border-radius-lg: clamp(3.5rem, 3.3239rem + 0.7512vw, 4rem); // 48-64
   --border-radius-xl: clamp(6rem, 4.1514rem + 7.8873vw, 11.25rem); // 96-180
 
   --box-shadow-md: 0 8px 16px rgb(100 112 103 / 0.05);

@@ -1,5 +1,5 @@
 .section {
-  padding: 0.75em clamp(1em, 2.5vw, 1.5em);
+  padding: clamp(0.5rem, 0.368rem + 0.5634vw, 0.875rem) var(--indent-sm);
 
   &__indent {
     padding: var(--indent-section) var(--indent-main);
@@ -10,6 +10,7 @@
   }
 
   &__card {
+    padding-block: var(--indent-card);
     border-radius: var(--border-radius-xl);
 
     &_bg_accent {
@@ -20,6 +21,10 @@
     &_bg_main-color {
       background-color: var(--main-color);
       color: var(--text-accent-color);
+    }
+
+    @include media(md, max) {
+      padding-inline: var(--indent-card);
     }
   }
 
@@ -48,7 +53,7 @@
   &__two-columns {
     display: grid;
     gap: var(--indent-xxs);
-    grid-template-columns: repeat(auto-fit, minmax(min(17em, 100%), 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(15em, 100%), 1fr));
 
     @include media(lg) {
       grid-template-columns: repeat(2, 1fr);
@@ -58,7 +63,7 @@
   &__three-columns {
     display: grid;
     gap: var(--indent-xl) var(--indent-xxl);
-    grid-template-columns: repeat(auto-fit, minmax(min(17em, 100%), 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(12em, 100%), 1fr));
 
     @include media(lg) {
       grid-template-columns: repeat(3, 1fr);

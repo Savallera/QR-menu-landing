@@ -1,52 +1,30 @@
 .statistics {
-  margin-block-start: calc(
-    clamp(4rem, 2.5714rem + 2.2321vw, 5.25rem) * -1
-  ); // 84
   position: relative;
+  margin-block-start: calc(
+    clamp(4rem, 3.5599rem + 1.8779vw, 5.25rem) * -1
+  ); // 84
 
-  &__card {
-    padding-block: var(--indent-card);
-
-    @include media(md, max) {
-      padding-inline: var(--indent-card);
-    }
-  }
+  // &__card {}
 
   &__list {
     @extend %reset-list;
-    display: flex;
-    flex-direction: column;
-    gap: var(--indent-md) var(--indent-lg);
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(7em, 100%), 1fr));
+    gap: var(--indent-xl) var(--indent-xxl);
 
     @include media(md) {
-      flex-direction: row;
-      align-items: stretch;
-      justify-content: space-around;
+      grid-template-columns: repeat(auto-fit, minmax(min(15em, 100%), 1fr));
     }
 
     @include media(lg) {
-      justify-content: space-between;
+      grid-template-columns: repeat(auto-fit, minmax(min(25em, 100%), 1fr));
     }
   }
 
-  &__item {
-    @include media(md, max) {
-      border-block-end: 1px solid var(--text-secondary-color);
-      padding-block-end: var(--indent-lg);
-    }
-
-    @include media(md) {
-      flex-basis: min(17em, 100%);
-    }
-
-    @include media(lg) {
-      flex-basis: min(25em, 100%); // 400
-    }
-  }
+  // &__item {}
 
   &__title {
-    font-size: var(--text-md);
+    font-size: var(--heading-xxs);
     font-weight: 500;
   }
 
@@ -61,6 +39,6 @@
   }
 
   &__title-strong {
-    font-size: clamp(2.5rem, 0.7857rem + 2.6786vw, 4rem); // 64
+    font-size: clamp(1.875rem, 1.1268rem + 3.1925vw, 4rem); // 64
   }
 }

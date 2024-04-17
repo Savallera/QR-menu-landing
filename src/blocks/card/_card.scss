@@ -3,14 +3,14 @@
 
   &_theme {
     &_bg-secondary {
-      padding: 2rem;
+      padding: var(--indent-card-sm);
       border-radius: var(--border-radius-lg);
       background-color: var(--bg-secondary-color);
 
       .card__icon {
-        inline-size: 5rem;
-        block-size: 5rem;
-        margin-block-end: var(--indent-xl);
+        inline-size: clamp(4rem, 3.6479rem + 1.5023vw, 5rem);
+        block-size: clamp(4rem, 3.6479rem + 1.5023vw, 5rem);
+        margin-block-end: var(--indent-lg);
 
         display: flex;
         align-items: center;
@@ -23,14 +23,10 @@
           block-size: 60%;
         }
       }
-
-      @include media(md, max) {
-        padding: var(--indent-card);
-      }
     }
 
     &_outline {
-      padding-block-end: var(--indent-xl);
+      padding-block-end: var(--indent-lg);
     }
   }
 
@@ -40,9 +36,9 @@
       &::after {
         content: '';
         position: absolute;
-        inset: 1.875rem 1.875rem auto auto;
-        block-size: 32px;
-        inline-size: 32px;
+        inset: var(--indent-card-sm) var(--indent-card-sm) auto auto;
+        block-size: 1.875em;
+        inline-size: 1.875em;
         background-color: var(--secondary-color);
 
         display: block;
@@ -50,10 +46,6 @@
         mask-position: center;
         mask-size: contain;
         mask-image: url('../images/icons.svg#check');
-
-        @include media(md, max) {
-          inset: var(--indent-card) var(--indent-card) auto auto;
-        }
       }
     }
 
@@ -64,8 +56,8 @@
 
   &__icon {
     display: block;
-    inline-size: clamp(4rem, 1.2857rem + 4.2411vw, 6.375rem);
-    block-size: clamp(4rem, 1.2857rem + 4.2411vw, 6.375rem);
+    inline-size: clamp(4rem, 3.1637rem + 3.5681vw, 6.375rem);
+    block-size: clamp(4rem, 3.1637rem + 3.5681vw, 6.375rem);
     margin-block-end: var(--indent-xs);
 
     & svg {
