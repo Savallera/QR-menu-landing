@@ -5,7 +5,7 @@
 
   &__columns {
     display: grid;
-    gap: 1em;
+    gap: var(--indent-xxs);
 
     text-align: center;
     justify-items: center;
@@ -13,7 +13,7 @@
     @include media(md) {
       text-align: left;
       justify-items: start;
-      grid-template-columns: 1fr 0.5fr 0.5fr;
+      grid-template-columns: 1fr auto auto;
       grid-template-rows: auto auto 1fr;
     }
   }
@@ -21,18 +21,18 @@
   &__column {
     display: flex;
     flex-direction: column;
-    gap: 1em;
+    gap: var(--indent-xxs);
 
     &_content_menu {
       @include media(md, max) {
-        margin-block: 2em;
+        margin-block: var(--indent-xs);
 
         .footer__title {
           display: none;
         }
 
         .footer__link {
-          font-size: 2em;
+          font-size: 1.875em;
           color: var(--text-tetriary-color);
 
           &:hover {
@@ -94,22 +94,25 @@
 
     @include media(md, max) {
       grid-area: 5/1/6/2;
-      font-size: 0.75em;
       color: var(--text-tetriary-color);
     }
   }
 
   &__nav {
     &_content_policy {
-      margin-block-start: 0.875em;
+      margin-block-start: auto;
       grid-area: 3/1/4/2;
 
       @include media(md, max) {
         grid-area: 4/1/5/2;
-        margin-block: 2em;
+        margin-block: var(--indent-xs);
+
+        .footer__nav-list {
+          gap: 0;
+        }
 
         .footer__link {
-          font-size: 0.75em;
+          font-size: var(--text-sm);
           text-transform: uppercase;
         }
       }

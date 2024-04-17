@@ -6,20 +6,19 @@
   align-items: center;
   justify-content: center;
   gap: 0.8em;
-  min-block-size: 3.5em;
+  min-block-size: 2.8em;
   padding: 0.8rem 1.9em;
+  color: inherit;
+  font-weight: 700;
+  font-size: var(--text-md);
+  line-height: 1.2;
   text-align: center;
   border: 1px solid currentColor;
   outline: 4px solid transparent;
   border-radius: var(--border-radius-sm);
   transition: all 0.3s;
 
-  &__text {
-    font-size: var(--text-md);
-    line-height: 1.2;
-    font-weight: 700;
-    color: inherit;
-  }
+  // &__text {}
 
   &__icon {
     flex: none;

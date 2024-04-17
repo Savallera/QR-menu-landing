@@ -1,5 +1,4 @@
 .step {
-
   &__title {
     margin-block-end: var(--indent-md);
   }
@@ -19,6 +18,7 @@
   }
 
   &__card-image {
+    flex: auto;
     inline-size: min(20em, 100%);
     aspect-ratio: 707/607;
     background-size: contain;
@@ -26,10 +26,6 @@
     background-repeat: no-repeat;
 
     @include media(md) {
-      flex: 0 0 50%;
-    }
-
-    @include media(lg) {
       flex: 0 0 50%;
     }
   }
@@ -46,8 +42,8 @@
 
   &__card-label-text {
     inline-size: max-content;
-    min-block-size: 3.375rem;
-    padding: 1rem 2.375rem;
+    min-block-size: 2.8em;
+    padding: 0.8rem 1.9em;
     text-align: center;
     border: 1px solid currentColor;
     background-color: var(--white);
@@ -77,16 +73,12 @@
 
   &__card-progress-item {
     flex: auto;
-    block-size: 15px;
-    border-radius: 24px;
+    block-size: clamp(0.5rem, 0.346rem + 0.6573vw, 0.9375rem);
+    border-radius: var(--border-radius-sm);
     background-color: var(--grey-200);
 
     &_active {
       background-color: var(--secondary-color);
-    }
-
-    @include media(md, max) {
-      block-size: 10px;
     }
   }
 }

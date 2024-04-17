@@ -19,8 +19,8 @@
       &::before {
         content: '';
         inset: 0 0 auto auto;
-        inline-size: calc(var(--indent-main-wide) + 50%);
-        block-size: 12em;
+        inline-size: calc(var(--indent-main-wide) + 75%);
+        block-size: 14em;
         border-radius: var(--border-radius-xl) 0 0 var(--border-radius-xl);
         background-color: var(--bg-secondary-color);
       }
@@ -47,8 +47,8 @@
       &::before {
         content: '';
         inset: 0 auto auto 0;
-        inline-size: calc(var(--indent-main-wide) + 50%);
-        block-size: 12em;
+        inline-size: calc(var(--indent-main-wide) + 75%);
+        block-size: 14em;
         border-radius: 0 var(--border-radius-xl) var(--border-radius-xl) 0;
         background-color: var(--bg-accent-color);
       }

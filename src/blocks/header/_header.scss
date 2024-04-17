@@ -71,7 +71,7 @@
       grid-column: 1/-1;
       flex-direction: column;
       place-self: start;
-      padding: var(--indent-xs) var(--indent-main-wide);
+      padding-block: var(--indent-xs);
     }
   }
 
@@ -81,7 +81,7 @@
 
     @include media(lg, max) {
       flex-direction: column;
-      padding-block-end: var(--indent-main-wide);
+      padding-block-end: var(--indent-lg);
       border-block-end: 1px solid var(--text-secondary-color);
     }
   }
@@ -189,12 +189,12 @@
     inset: 0 0 auto 0;
 
     background-color: var(--bg-main-color);
-    background-image: linear-gradient(
-      to bottom,
-      var(--bg-main-color) 0% 4.875em,
-      var(--bg-secondary-color) 4.875em 100%
-    );
-    background-size: 0;
+    // background-image: linear-gradient(
+    //   to bottom,
+    //   var(--bg-main-color) 0% 4.875em,
+    //   var(--bg-secondary-color) 4.875em 100%
+    // );
+    // background-size: 0;
 
     overflow: hidden;
     block-size: var(--header-block-size);
@@ -205,7 +205,6 @@
     &_menu-opened {
       position: fixed;
       block-size: 100%;
-      // background-color: var(--bg-main-color);
       background-size: 100%;
 
       transition-delay: 0.25s;
