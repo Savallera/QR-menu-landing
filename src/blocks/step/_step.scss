@@ -77,7 +77,7 @@
     background-color: var(--grey-200);
 
     &_active {
-      background-color: var(--accent-color);
+      background-color: var(--secondary-color);
     }
 
     @include media(md, max) {

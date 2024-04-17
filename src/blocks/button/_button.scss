@@ -51,6 +51,12 @@
       color: var(--white);
     }
 
+    &_accent {
+      background-color: var(--bg-accent-color);
+      border-color: var(--bg-accent-color);
+      color: var(--white);
+    }
+
     &_outline-grey {
       background-color: var(--white);
       color: var(--text-secondary-color);

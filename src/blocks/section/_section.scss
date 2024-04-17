@@ -28,7 +28,7 @@
     line-height: 1;
     font-size: var(--heading-md);
     text-align: center;
-    margin-block-end: var(--indent-xl);
+    margin-block-end: var(--indent-md);
 
     &_section-indent {
       padding-inline: var(--indent-main);
@@ -37,6 +37,9 @@
   }
 
   &__description {
+    text-align: center;
+    font-size: var(--text-md);
+    font-weight: 500;
   }
 
   &__list {
