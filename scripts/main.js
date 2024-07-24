@@ -30,6 +30,16 @@ eval("__webpack_require__.r(__webpack_exports__);\n// Меню в шапке\r\n
 
 /***/ }),
 
+/***/ "./src/blocks/preloader/preloader.js":
+/*!*******************************************!*\
+  !*** ./src/blocks/preloader/preloader.js ***!
+  \*******************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* Прелодер на страницы */\r\nconst preloaderTmp = document.querySelector('.preloader-template');\r\nconst page = document.querySelector('.page');\r\nfunction showPreloader(tmp, parent) {\r\n  const node = tmp.content.cloneNode(true);\r\n  parent.append(node);\r\n}\r\nfunction removePreloader(parent, preloaderSelector) {\r\n  const preloader = parent.querySelector(preloaderSelector);\r\n  if (preloader) {\r\n    preloader.remove();\r\n  }\r\n}\r\n\r\nshowPreloader(preloaderTmp, page);\r\nsetTimeout(() => {\r\n  removePreloader(page, '.preloader');\r\n}, 1200);\r\n\n\n//# sourceURL=webpack://gulp-template/./src/blocks/preloader/preloader.js?");
+
+/***/ }),
+
 /***/ "./src/blocks/step/step.js":
 /*!*********************************!*\
   !*** ./src/blocks/step/step.js ***!
@@ -40,13 +50,23 @@ eval("__webpack_require__.r(__webpack_exports__);\nwindow.addEventListener('DOMC
 
 /***/ }),
 
+/***/ "./src/blocks/why/why.js":
+/*!*******************************!*\
+  !*** ./src/blocks/why/why.js ***!
+  \*******************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\nwindow.addEventListener('DOMContentLoaded', () => {\r\n  if (Splide) {\r\n    if (document.querySelector('#why-slider')) {\r\n      let whySlider = new Splide('#why-slider', {\r\n        type: 'slide',\r\n        perPage: 1,\r\n        start: 1,\r\n        arrows: true,\r\n        pagination: true,\r\n        rewind: true,\r\n        // autoplay: true,\r\n        gap: 'var(--indent-sm)',\r\n        padding: 'var(--indent-main-wide)',\r\n        mediaQuery: 'min',\r\n        breakpoints: {\r\n          576: {\r\n            perPage: 2,\r\n          },\r\n          768: {\r\n            destroy: 'completely',\r\n          },\r\n        },\r\n      });\r\n      whySlider.mount();\r\n    }\r\n  }\r\n});\r\n\n\n//# sourceURL=webpack://gulp-template/./src/blocks/why/why.js?");
+
+/***/ }),
+
 /***/ "./src/scripts/index.js":
 /*!******************************!*\
   !*** ./src/scripts/index.js ***!
   \******************************/
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _blocks_header_header_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../blocks/header/header.js */ \"./src/blocks/header/header.js\");\n/* harmony import */ var _blocks_advantages_advantages_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../blocks/advantages/advantages.js */ \"./src/blocks/advantages/advantages.js\");\n/* harmony import */ var _blocks_step_step_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../blocks/step/step.js */ \"./src/blocks/step/step.js\");\n\r\n\r\n\n\n//# sourceURL=webpack://gulp-template/./src/scripts/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _blocks_preloader_preloader_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../blocks/preloader/preloader.js */ \"./src/blocks/preloader/preloader.js\");\n/* harmony import */ var _blocks_header_header_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../blocks/header/header.js */ \"./src/blocks/header/header.js\");\n/* harmony import */ var _blocks_advantages_advantages_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../blocks/advantages/advantages.js */ \"./src/blocks/advantages/advantages.js\");\n/* harmony import */ var _blocks_why_why_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../blocks/why/why.js */ \"./src/blocks/why/why.js\");\n/* harmony import */ var _blocks_step_step_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../blocks/step/step.js */ \"./src/blocks/step/step.js\");\n\r\n\r\n\r\n\r\n\n\n//# sourceURL=webpack://gulp-template/./src/scripts/index.js?");
 
 /***/ })
 
