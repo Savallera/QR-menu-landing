@@ -1,11 +1,5 @@
 <!-- Шапка -->
 <header class="header">
-  <button class="header__burger" type="button" aria-label="Открыть меню">
-    <span class="header__burger-item">
-      <span class="header__burger-item-bar"></span>
-      <span class="header__burger-item-bar"></span>
-    </span>
-  </button>
   <a class="header__logo">
     <img
       class="header__logo-image"
@@ -14,6 +8,13 @@
     />
   </a>
   <menu class="header__menu">
+    <a class="header__logo header__logo_place_menu">
+      <img
+        class="header__logo-image"
+        src="./images/logo.svg"
+        alt="Логотип Qr-меню"
+      />
+    </a>
     <ul class="header__list">
       <li class="header__list-item">
         <a class="header__link" href="#0">Преимущества</a>
@@ -54,11 +55,23 @@
         </a>
       </li>
     </ul>
+    <button
+      class="header__login-button header__login-button_place_menu button button_theme_outline-grey"
+      type="button"
+    >
+      <span class="button__text">Войти</span>
+    </button>
   </menu>
   <button
     class="header__login-button button button_theme_outline-grey"
     type="button"
   >
     <span class="button__text">Войти</span>
+  </button>
+  <button class="header__burger" type="button" aria-label="Открыть меню">
+    <span class="header__burger-item">
+      <span class="header__burger-item-bar"></span>
+      <span class="header__burger-item-bar"></span>
+    </span>
   </button>
 </header>

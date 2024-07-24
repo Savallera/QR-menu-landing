@@ -14,12 +14,12 @@
     background-size: cover;
 
     display: flex;
-    flex-direction: row;
-    gap: var(--indent-md) clamp(2rem, -0.5968rem + 11.0798vw, 9.375rem); // 150
+    flex-direction: column;
+    gap: var(--indent-md) clamp(2rem, -16.1538rem + 28.3654vw, 9.375rem); // 48-150
     color: var(--text-accent-color);
 
-    @include media(lg, max) {
-      flex-direction: column;
+    @include media(md) {
+      flex-direction: row;
     }
   }
 
@@ -35,6 +35,14 @@
       0px 14px 16px 0px rgba(0, 0, 0, 0.26),
       0px 4px 0px 0px rgba(255, 255, 255, 0.6);
     backdrop-filter: blur(9px);
+
+    @include media(md) {
+      align-self: flex-start;
+    }
+
+    @include media(lg) {
+      align-self: center;
+    }
   }
 
   &__image {
@@ -52,7 +60,7 @@
     flex-direction: column;
     align-items: center;
 
-    @include media(lg) {
+    @include media(md) {
       align-items: flex-start;
     }
   }

@@ -1,0 +1,18 @@
+.why {
+  &__slider {
+    @include media(md) {
+      padding: var(--indent-section) var(--indent-main);
+      &.splide.is-initialized:not(.is-active) .splide__list {
+        display: grid;
+      }
+    }
+  }
+
+  &__slider-list {
+    @include media(md) {
+      display: grid;
+      gap: var(--indent-xxs);
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+}

@@ -46,17 +46,17 @@
   --indent-card-sm: 2rem; // 32
 
   // typography
-  --display-sm: clamp(2rem, 0.9437rem + 4.507vw, 5rem); // 80
-  --display-md: clamp(3rem, 1.2394rem + 7.5117vw, 8rem); // 128
+  --display-sm: clamp(2rem, 1.4222rem + 2.4653vw, 3rem); // 32-48
+  --display-md: clamp(3rem, 2.4222rem + 2.4653vw, 4rem); // 48-64
 
   --heading-xxs: clamp(0.875rem, 0.743rem + 0.5634vw, 1.25rem); // 20
   --heading-xs: clamp(1rem, 0.8239rem + 0.7512vw, 1.5rem); // 24
   --heading-sm: clamp(1.25rem, 0.8099rem + 1.8779vw, 2.5rem); // 40
   --heading-md: clamp(1.5rem, 0.7077rem + 3.3803vw, 3.75rem); // 60
 
-  --text-sm: 0.75rem;
-  --text-md: 0.875rem;
-  --text-lg: 1rem;
+  --text-sm: 0.875rem;
+  --text-md: 1rem;
+  --text-lg: 1.25rem;
 
   --border-radius-sm: 1.5rem; // 24px
   --border-radius-md: 2.25rem; // 36px
@@ -68,11 +68,14 @@
   --header-block-size: 4.875em;
 }
 
-@include media(md) {
+@include media(lg) {
   // 1024 - 1920
   :root {
     --indent-main: clamp(3rem, -10.2857rem + 20.7589vw, 14.625rem); // 48-234 для секций
     --indent-main-wide: clamp(3rem, -12rem + 23.4375vw, 16.125rem); // 48-258 для секций
+
+    --display-sm: clamp(2rem, 0.9437rem + 4.507vw, 5rem); // 80
+    --display-md: clamp(3rem, 1.2394rem + 7.5117vw, 8rem); // 128
 
     --text-sm: 1rem; // 16
     --text-md: 1.25rem; // 20

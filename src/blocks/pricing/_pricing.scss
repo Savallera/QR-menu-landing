@@ -40,6 +40,11 @@
     flex: auto;
     border-color: transparent;
     color: var(--grey-300);
+
+    &:not(&_actived):hover {
+      color: var(--text-main-color);
+    }
+
     &_actived {
       background-color: var(--bg-accent-color);
       border-color: var(--bg-accent-color);

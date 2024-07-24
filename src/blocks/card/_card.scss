@@ -10,7 +10,7 @@
       .card__icon {
         inline-size: clamp(4rem, 3.6479rem + 1.5023vw, 5rem);
         block-size: clamp(4rem, 3.6479rem + 1.5023vw, 5rem);
-        margin-block-end: var(--indent-xl);
+        margin-block-end: var(--indent-sm);
 
         display: flex;
         align-items: center;
@@ -21,6 +21,10 @@
         & svg {
           inline-size: 60%;
           block-size: 60%;
+        }
+
+        @include media(md) {
+          margin-block-end: var(--indent-xl);
         }
       }
     }

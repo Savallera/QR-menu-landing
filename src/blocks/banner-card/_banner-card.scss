@@ -6,8 +6,8 @@
   background-color: var(--bg-secondary-color);
   border-radius: var(--border-radius-xl);
   display: grid;
+  gap: 1.5em;
   grid-template-columns: 1fr;
-  gap: clamp(1.875rem, 0.5546rem + 5.6338vw, 5.625rem); // 90
 
   &__image-wrap {
     inline-size: 100%;
@@ -42,7 +42,8 @@
     font-weight: 500;
   }
 
-  @include media(lg) {
+  @include media(md) {
     grid-template-columns: 1fr 1.1fr;
+    gap: clamp(1.5rem, -8.6538rem + 15.8654vw, 5.625rem); // 24-90
   }
 }

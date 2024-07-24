@@ -51,7 +51,7 @@
     }
   }
 
-  @include media(xl, max) {
+  @include media(md, max) {
     padding-block-start: var(--header-block-size);
   }
 }
