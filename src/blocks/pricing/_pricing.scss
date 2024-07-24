@@ -41,11 +41,12 @@
     border-color: transparent;
     color: var(--grey-300);
 
-    &:not(&_actived):hover {
+    &:hover {
       color: var(--text-main-color);
     }
 
     &_actived {
+      pointer-events: none;
       background-color: var(--bg-accent-color);
       border-color: var(--bg-accent-color);
       color: var(--white);

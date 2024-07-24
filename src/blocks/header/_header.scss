@@ -161,6 +161,20 @@
     text-decoration: none;
     transition: color 0.3s;
 
+    @media (hover: hover) {
+      &:after {
+        border-bottom: 2px solid;
+        content: '';
+        display: block;
+        margin: 0.25em auto 0;
+        transition: width 0.3s ease-in-out 0s;
+        width: 0;
+      }
+      &:hover:after {
+        width: 100%;
+      }
+    }
+
     &:hover {
       color: var(--main-color);
     }

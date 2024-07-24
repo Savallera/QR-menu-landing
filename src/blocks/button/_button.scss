@@ -47,12 +47,21 @@
       background-color: var(--main-color);
       border-color: var(--main-color);
       color: var(--white);
+
+      &:hover {
+        background-color: var(--main-color-darken);
+      }
     }
 
     &_accent {
       background-color: var(--bg-accent-color);
       border-color: var(--bg-accent-color);
       color: var(--white);
+
+      &:hover {
+        background-color: var(--main-color);
+        border-color: var(--main-color);
+      }
     }
 
     &_outline-grey {
