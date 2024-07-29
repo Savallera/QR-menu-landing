@@ -3,3 +3,6 @@ import '../blocks/header/header.js';
 import '../blocks/advantages/advantages.js';
 import '../blocks/why/why.js';
 import '../blocks/step/step.js';
+import '../blocks/pricing/pricing.js';
+import '../blocks/hiw/hiw.js';
+import '../blocks/footer/footer.js';

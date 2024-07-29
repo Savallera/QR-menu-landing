@@ -1,10 +1,10 @@
 <!-- Регистрируйтесь -->
-<section class="section pricing">
+<section class="section pricing" id="pricing">
   <div
     class="section__indent section__card section__card_bg_main-color pricing__indent"
   >
     <h2 class="section__title">
-      Регистрируйтесь сейчас и пробуйте две недели бесплатно
+      Регистрируйтесь сейчас и пробуйте две недели бесплатно
     </h2>
     <div class="section__description">
       <p>
@@ -17,18 +17,23 @@
         <button
           class="button pricing__card-tab pricing__card-tab_actived"
           type="button"
+          id="month_pay_button"
         >
-          <span class="button__text">Оплата за месяц</span>
+          <span class="button__text" >Оплата за месяц</span>
         </button>
-        <button class="button pricing__card-tab" type="button">
+        <button
+          class="button pricing__card-tab"
+          type="button"
+          id="year_pay_button"
+        >
           <span class="button__text">Оплата за год</span>
         </button>
       </div>
       <div class="pricing__card-total-price">
-        <h4 class="pricing__card-price pricing__card-price_actived">
+        <h4 class="pricing__card-price pricing__card-price_actived" id="month_pay_content">
           2 190 ₽<span class="pricing__card-price-info">в месяц</span>
         </h4>
-        <h4 class="pricing__card-price">
+        <h4 class="pricing__card-price" id="year_pay_content">
           <span class="pricing__card-price-low">2 190 ₽</span>1 590 ₽<span
             class="pricing__card-price-info"
             >в год</span
