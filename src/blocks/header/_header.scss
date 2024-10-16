@@ -82,7 +82,7 @@
     display: flex;
     gap: 0 var(--indent-lg);
     align-items: center;
-    justify-content: space-between;
+    // justify-content: space-between;
 
     @include media(xs, max) {
       inset: 0;
@@ -90,10 +90,11 @@
       border-radius: 0;
       inline-size: 100%;
       padding-block-start: var(--header-block-size);
-      row-gap: var(--indent-lg);
+      // row-gap: var(--indent-lg);
       min-block-size: 100vh;
       min-block-size: 100dvb;
       justify-content: flex-start;
+      align-items: center;
     }
 
     @include media(md, max) {
@@ -107,6 +108,8 @@
       display: flex;
       grid-column: 1/-1;
       flex-direction: column;
+      align-items: flex-start;
+      row-gap: var(--indent-lg);
       place-self: start;
 
       visibility: hidden;
@@ -133,6 +136,8 @@
   }
 
   &__list {
+    flex: auto;
+
     display: flex;
     flex-wrap: wrap;
     gap: 0 var(--indent-lg);
@@ -187,6 +192,69 @@
     @include media(xs, max) {
       font-size: 1.5em;
     }
+  }
+
+  // Язык
+  &__language-label {
+    position: relative;
+    z-index: 1;
+
+    display: flex;
+    border-radius: 17px;
+    padding: 0.25em;
+    background-color: var(--bg-secondary-color, #f5f5f5);
+    cursor: pointer;
+
+    @include media(md, max) {
+    }
+
+    @include media(xl, max) {
+      grid-area: 1/2/2/3;
+      justify-self: end;
+    }
+  }
+
+  &__language-checkbox {
+    position: absolute;
+    inline-size: 1px;
+    block-size: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    white-space: nowrap;
+
+    &:not(:checked) ~ .header__language-label-text_content_ru {
+      color: var(--text-accent-color, #fff);
+    }
+
+    &:checked ~ .header__language-label-text_content_en {
+      color: var(--text-accent-color, #fff);
+    }
+
+    &:checked ~ .header__language-pseudo-checkbox {
+      transform: translate(3.4375em, 0);
+    }
+  }
+
+  &__language-pseudo-checkbox {
+    position: absolute;
+    z-index: -1;
+    inset: 0.25em auto 0.25em 0.25em;
+    display: block;
+    inline-size: 3.4375em;
+    border-radius: 15px;
+    background-color: var(--bg-accent-color, #2f3c33);
+    transition: 0.25s;
+  }
+
+  &__language-label-text {
+    padding: 0.5em 1em;
+    inline-size: 3.4375em;
+    line-height: 1.15;
+    text-align: center;
+    font-variation-settings: 'wght' 700;
+    color: var(--text-tetriary-color, #a2a9a4);
+    transition: 0.25s;
   }
 
   &__social-list {
