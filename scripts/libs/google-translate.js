@@ -67,7 +67,9 @@ function TranslateInit() {
     }
 
     SetImage('light_theme', imageFolder, 'base-view-theme-light');
+    SetImage('theme_light_theme', imageFolder, 'base-view-theme-light');
     SetImage('dark_theme', imageFolder, 'base-view-theme-dark');
+    SetImage('theme_dark_theme', imageFolder, 'base-view-theme-dark');
     SetImage('hiw1_image', imageFolder, 'hiw__image-01');
     SetImage('hiw2_image', imageFolder, 'hiw__image-02');
     SetImage('hiw3_image', imageFolder, 'hiw__image-03');
