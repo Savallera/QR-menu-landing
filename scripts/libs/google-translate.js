@@ -16,6 +16,16 @@ const googleTranslateConfig = {
     /* domain: "Get-Web.Site" */
 };
 
+function SetImage(elementID, folder, image){
+    const element = document.getElementById(elementID);
+    element.childNodes[1].src = folder + image + '.png';
+    element.childNodes[0].srcset = folder + image + '.webp';
+}
+function SetStyleImage(elementID, folder, image){
+    const element = document.getElementById(elementID);
+    element.style = 'background-image: url("' + folder + image + '.png"); background-image: url("' + folder + image + '.webp");';
+}
+
 function TranslateInit() {
 
     if (googleTranslateConfig.langFirstVisit && !Cookies.get('googtrans')) {
@@ -48,15 +58,29 @@ function TranslateInit() {
         window.location.reload();
     });
 
+    let imageFolder = './images/translate/ru/';
+
+    switch (code) {
+        case "en":
+            imageFolder = './images/translate/en/';
+            break;
+    }
+
+    SetImage('light_theme', imageFolder, 'base-view-theme-light');
+    SetImage('dark_theme', imageFolder, 'base-view-theme-dark');
+    SetImage('hiw1_image', imageFolder, 'hiw__image-01');
+    SetImage('hiw2_image', imageFolder, 'hiw__image-02');
+    SetImage('hiw3_image', imageFolder, 'hiw__image-03');
+    SetImage('hiw5_image', imageFolder, 'hiw__image-05');
+    SetImage('hiw6_image', imageFolder, 'hiw__image-06');
+    SetStyleImage('step1_image', imageFolder, 'step__image-01');
+    SetStyleImage('step2_image', imageFolder, 'step__image-02');
+    SetStyleImage('step3_image', imageFolder, 'step__image-03');
+
     if(code === "en"){
         const languageCheckbox = document.querySelector('#language_checkbox');
 
         languageCheckbox.checked = true;
-
-        setTimeout(() => {
-            const languageCheckboxRU = document.querySelector('#language_checkbox_ru').children[0].children[0];
-            languageCheckboxRU.textContent = "RU";
-        }, 500)
     }
 }
 
