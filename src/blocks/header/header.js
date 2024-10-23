@@ -2,6 +2,7 @@
 const header = document.querySelector('.header');
 const headerMenu = document.querySelector('.header__menu');
 const headerBurger = document.querySelector('.header__burger');
+const languageCheckbox = document.querySelector('#language_checkbox');
 
 headerBurger.addEventListener('click', () => {
   header.classList.toggle('header_menu-opened');
