@@ -20,6 +20,16 @@ eval("__webpack_require__.r(__webpack_exports__);\nwindow.addEventListener('DOMC
 
 /***/ }),
 
+/***/ "./src/blocks/features/features.js":
+/*!*****************************************!*\
+  !*** ./src/blocks/features/features.js ***!
+  \*****************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\nwindow.addEventListener('DOMContentLoaded', () => {\r\n  if (Splide) {\r\n    if (document.querySelector('#features-slider')) {\r\n      let whySlider = new Splide('#features-slider', {\r\n        type: 'slide',\r\n        perPage: 1,\r\n        start: 1,\r\n        arrows: true,\r\n        pagination: true,\r\n        rewind: true,\r\n        // autoplay: true,\r\n        gap: 'var(--indent-sm)',\r\n        padding: 'var(--indent-main-wide)',\r\n        mediaQuery: 'min',\r\n        breakpoints: {\r\n          576: {\r\n            perPage: 2,\r\n          },\r\n          768: {\r\n            destroy: 'completely',\r\n          },\r\n        },\r\n      });\r\n      whySlider.mount();\r\n    }\r\n  }\r\n});\r\n\n\n//# sourceURL=webpack://gulp-template/./src/blocks/features/features.js?");
+
+/***/ }),
+
 /***/ "./src/blocks/footer/footer.js":
 /*!*************************************!*\
   !*** ./src/blocks/footer/footer.js ***!
@@ -96,7 +106,7 @@ eval("__webpack_require__.r(__webpack_exports__);\nwindow.addEventListener('DOMC
   \******************************/
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _blocks_preloader_preloader_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../blocks/preloader/preloader.js */ \"./src/blocks/preloader/preloader.js\");\n/* harmony import */ var _blocks_header_header_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../blocks/header/header.js */ \"./src/blocks/header/header.js\");\n/* harmony import */ var _blocks_advantages_advantages_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../blocks/advantages/advantages.js */ \"./src/blocks/advantages/advantages.js\");\n/* harmony import */ var _blocks_why_why_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../blocks/why/why.js */ \"./src/blocks/why/why.js\");\n/* harmony import */ var _blocks_step_step_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../blocks/step/step.js */ \"./src/blocks/step/step.js\");\n/* harmony import */ var _blocks_pricing_pricing_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../blocks/pricing/pricing.js */ \"./src/blocks/pricing/pricing.js\");\n/* harmony import */ var _blocks_hiw_hiw_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../blocks/hiw/hiw.js */ \"./src/blocks/hiw/hiw.js\");\n/* harmony import */ var _blocks_footer_footer_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../blocks/footer/footer.js */ \"./src/blocks/footer/footer.js\");\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\n\n//# sourceURL=webpack://gulp-template/./src/scripts/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _blocks_preloader_preloader_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../blocks/preloader/preloader.js */ \"./src/blocks/preloader/preloader.js\");\n/* harmony import */ var _blocks_header_header_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../blocks/header/header.js */ \"./src/blocks/header/header.js\");\n/* harmony import */ var _blocks_advantages_advantages_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../blocks/advantages/advantages.js */ \"./src/blocks/advantages/advantages.js\");\n/* harmony import */ var _blocks_features_features_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../blocks/features/features.js */ \"./src/blocks/features/features.js\");\n/* harmony import */ var _blocks_why_why_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../blocks/why/why.js */ \"./src/blocks/why/why.js\");\n/* harmony import */ var _blocks_step_step_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../blocks/step/step.js */ \"./src/blocks/step/step.js\");\n/* harmony import */ var _blocks_pricing_pricing_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../blocks/pricing/pricing.js */ \"./src/blocks/pricing/pricing.js\");\n/* harmony import */ var _blocks_hiw_hiw_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../blocks/hiw/hiw.js */ \"./src/blocks/hiw/hiw.js\");\n/* harmony import */ var _blocks_footer_footer_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../blocks/footer/footer.js */ \"./src/blocks/footer/footer.js\");\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\n\n//# sourceURL=webpack://gulp-template/./src/scripts/index.js?");
 
 /***/ })
 
