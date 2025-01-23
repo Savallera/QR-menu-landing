@@ -1,5 +1,5 @@
 import gulp from 'gulp';
-import path from '../../../HOC/gulp/config/path.js';
+import path from '../../gulp/config/path.js';
 import browserSync from 'browser-sync';
 
 // Плагины
