@@ -60,16 +60,6 @@
     }
   }
 
-  &__three-columns {
-    display: grid;
-    gap: var(--indent-xl) var(--indent-xxl);
-    grid-template-columns: repeat(auto-fit, minmax(min(12em, 100%), 1fr));
-
-    @include media(lg) {
-      grid-template-columns: repeat(3, 1fr);
-    }
-  }
-
   &_no-indent {
     padding-inline: 0;
 

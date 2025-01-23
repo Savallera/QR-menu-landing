@@ -1,0 +1,22 @@
+.features {
+  &__slider {
+    @include media(md) {
+      padding: var(--indent-section) var(--indent-main);
+      &.splide.is-initialized:not(.is-active) .splide__list {
+        display: grid;
+      }
+    }
+  }
+
+  &__slider-list {
+    @media only screen and (min-width: 48em) {
+      display: grid;
+      gap: var(--indent-xl) var(--indent-xxl);
+      grid-template-columns: repeat(auto-fit, minmax(min(12em, 100%), 1fr));
+    }
+
+    @media only screen and (min-width: 64em) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+}
