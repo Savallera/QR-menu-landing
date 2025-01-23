@@ -46,11 +46,13 @@ export default {
     src: [
       pathSrc + '/images/*.{jpg,jpeg,png,gif}',
       pathSrc + '/images/**/*.{jpg,jpeg,png,gif}',
+      pathSrc + '/images/**/**/*.{jpg,jpeg,png,gif}',
       '!' + pathSrc + '/images/favicon/*.*',
     ],
     watch: [
       pathSrc + '/images/*.{jpg,jpeg,png,gif}',
       pathSrc + '/images/**/*.{jpg,jpeg,png,gif}',
+      pathSrc + '/images/**/**/*.{jpg,jpeg,png,gif}',
       '!' + pathSrc + '/images/favicon/*.*',
     ],
     dest: pathDest + '/images',
