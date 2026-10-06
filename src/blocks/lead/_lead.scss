@@ -8,6 +8,8 @@
     position: absolute;
     inset: auto 0 0 0;
     block-size: clamp(6rem, 5.4718rem + 2.2535vw, 7.5rem); // 220
+    // полоса только для вида: без этого она перехватывала клики по кнопкам
+    pointer-events: none;
     background-image: linear-gradient(
       to bottom,
       transparent 0%,
@@ -25,7 +27,9 @@
       flex-direction: row;
     }
 
-    @include media(lg) {
+    // с md кнопки стоят в строку с картинками и оказываются у нижнего края:
+    // без запаса на них наезжал блок статистики с отрицательным отступом
+    @include media(md) {
       padding-block-end: clamp(4rem, 1.2711rem + 11.6432vw, 11.75rem); // 188
     }
 
