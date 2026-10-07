@@ -33,28 +33,58 @@
     block-size: 1.5em;
   }
 
-  &__list {
-    @extend %reset-list;
-
+  // выпадающая панель: поиск сверху, под ним прокручиваемый список
+  &__panel {
     position: absolute;
     inset: calc(100% + 6px) 0 auto auto;
     z-index: 30;
-    padding: 4px;
-    inline-size: 230px;
-    max-block-size: min(280px, 60vh);
-    overflow: auto;
-    overscroll-behavior: contain;
+    padding: 6px;
+    inline-size: 270px;
     background: #ffffff;
     border: 1px solid var(--grey-200, #e3e4e3);
     border-radius: 12px;
     box-shadow: 0 8px 24px rgb(0 0 0 / 12%);
 
     // в мобильном меню переключатель стоит внизу по центру:
-    // список раскрывается вверх, иначе уходит за нижний и правый край экрана
+    // панель раскрывается вверх, иначе уходит за нижний и правый край экрана
     @include media(md, max) {
       inset: auto auto calc(100% + 6px) 50%;
       transform: translateX(-50%);
-      max-block-size: min(280px, 50vh);
+      inline-size: min(270px, calc(100vw - 32px));
+    }
+
+    &[hidden] {
+      display: none;
+    }
+  }
+
+  &__search {
+    inline-size: 100%;
+    margin-block-end: 4px;
+    padding: 8px 10px;
+    font: inherit;
+    font-size: 13px;
+    color: var(--text-main-color, #2f3c33);
+    background: #fafbf9;
+    border: 1px solid #dfe3dc;
+    border-radius: 8px;
+    outline: none;
+
+    &:focus {
+      border-color: var(--main-color);
+      background: #ffffff;
+    }
+  }
+
+  &__list {
+    @extend %reset-list;
+
+    max-block-size: min(320px, 60vh);
+    overflow: auto;
+    overscroll-behavior: contain;
+
+    @include media(md, max) {
+      max-block-size: min(280px, 45vh);
     }
   }
 
@@ -62,11 +92,10 @@
     @extend %reset-btn;
 
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    gap: 1em;
+    gap: 8px;
     inline-size: 100%;
-    padding: 8px 10px;
+    padding: 7px 10px;
     border-radius: 8px;
     font-size: 13px;
     text-align: start;
@@ -83,8 +112,30 @@
     }
   }
 
-  &__option-code {
-    color: var(--text-secondary-color, #647067);
+  &__check {
+    flex: none;
+    inline-size: 14px;
+    color: #65a30d;
+  }
+
+  &__option-local {
+    margin-inline-start: auto;
+    padding-inline-start: 8px;
     font-size: 12px;
+    color: var(--text-secondary-color, #647067);
+  }
+
+  &__section {
+    padding: 10px 10px 4px;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--text-secondary-color, #8b948d);
+  }
+
+  &__empty {
+    padding: 10px;
+    font-size: 13px;
+    color: var(--text-secondary-color, #8b948d);
   }
 }
