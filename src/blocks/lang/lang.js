@@ -91,9 +91,9 @@ function languageRows(current, query) {
   ];
 }
 
-function initLanguageSwitch() {
-  const root = document.querySelector('[data-lang]');
-  if (!root || typeof LANDING_LANGUAGES === 'undefined') return;
+// переключателей два: в меню (компьютер) и в строке шапки (телефон)
+function initLanguageSwitch(root) {
+  if (typeof LANDING_LANGUAGES === 'undefined') return;
 
   const button = root.querySelector('[data-lang-button]');
   const codeLabel = root.querySelector('[data-lang-code]');
@@ -186,6 +186,6 @@ function passLanguageToService() {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-  initLanguageSwitch();
+  document.querySelectorAll('[data-lang]').forEach(initLanguageSwitch);
   passLanguageToService();
 });

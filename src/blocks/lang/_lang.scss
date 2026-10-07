@@ -58,6 +58,44 @@
     }
   }
 
+  // в строке шапки на телефоне панель привязана к самой шапке, как меню
+  // под бургером: правее кнопки языка ещё «Войти» и бургер, и панель,
+  // выровненная по кнопке, уходила за левый край экрана
+  // экземпляров два: в меню шапки (компьютер) и в строке шапки (телефон),
+  // где его видно сразу, а не в меню под бургером (тикет #4717).
+  // Правила здесь, а не в шапке: блок подключается позже и перебил бы их
+  &_place_bar {
+    display: none;
+
+    @include media(md, max) {
+      display: flex;
+      position: static;
+    }
+  }
+
+  // в узкой шапке телефона кнопка компактнее: код языка остаётся, по нему
+  // видно, какой язык выбран, но места на 320px впритык
+  &_place_bar &__button {
+    @include media(md, max) {
+      gap: 0.25em;
+      padding: 0.25em;
+    }
+  }
+
+  &_place_bar &__icon {
+    @include media(xs, max) {
+      inline-size: 1.25em;
+      block-size: 1.25em;
+    }
+  }
+
+  &_place_bar &__panel {
+    @include media(md, max) {
+      inset: 100% var(--indent-main-wide) auto auto;
+      transform: none;
+    }
+  }
+
   &__search {
     inline-size: 100%;
     margin-block-end: 4px;
@@ -137,5 +175,11 @@
     padding: 10px;
     font-size: 13px;
     color: var(--text-secondary-color, #8b948d);
+  }
+}
+
+.header__menu .lang {
+  @include media(md, max) {
+    display: none;
   }
 }

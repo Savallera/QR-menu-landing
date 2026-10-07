@@ -194,7 +194,7 @@
     }
   }
 
-  // Язык (сам переключатель в blocks/lang)
+  // Язык (сам переключатель и его видимость в blocks/lang)
   &__language {
     @include media(xl, max) {
       grid-area: 1/2/2/3;
@@ -236,6 +236,24 @@
     position: relative;
     z-index: 100;
     gap: var(--indent-sm);
+
+    // на узком телефоне в строке шапки логотип, язык, «Войти» и бургер
+    @include media(xs, max) {
+      gap: var(--indent-xs);
+
+      .header__login-button {
+        padding-inline: 0.75em;
+      }
+    }
+
+    // самые узкие экраны: логотип чуть меньше, чтобы в строке поместился
+    // переключатель языка с кодом
+    @include media(22.5em, max) {
+      .header__logo {
+        inline-size: 26vw;
+      }
+    }
+
     background-color: rgb(255 255 255 / 70%);
     backdrop-filter: blur(10px);
     position: fixed;
