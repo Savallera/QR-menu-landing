@@ -5,114 +5,219 @@
  *****************************************************/
 
 const googleTranslateConfig = {
-    /* Original language */
-    lang: "ru",
-    /* The language we translate into on the first visit*/
-    /* Язык, на который переводим при первом посещении */
-    //langFirstVisit: 'en',
-    /* Если скрипт не работает на поддомене, 
+  /* Original language */
+  lang: 'ru',
+  /* Если скрипт не работает на поддомене,
     раскомментируйте и
     укажите основной домен в свойстве domain */
-    /* domain: "Get-Web.Site" */
+  /* domain: "Get-Web.Site" */
 };
 
-function SetImage(elementID, folder, image){
-    const element = document.getElementById(elementID);
-    element.childNodes[1].src = folder + image + '.png';
-    element.childNodes[0].srcset = folder + image + '.webp';
+/*
+ * Языки лендинга: тот же список и порядок, что в админке и клиентском меню
+ * (showme/front/src/i18n/languages.ts). Название каждого языка написано на нём
+ * самом, чтобы человек нашёл свой язык, даже если не читает кириллицу.
+ * Сама страница переводится виджетом Google Translate.
+ */
+const LANDING_LANGUAGES = [
+  { code: 'ru', name: 'Русский' },
+  { code: 'en', name: 'English' },
+  { code: 'zh', name: '中文' },
+  { code: 'es', name: 'Español' },
+  { code: 'hi', name: 'हिन्दी' },
+  { code: 'ar', name: 'العربية' },
+  { code: 'pt', name: 'Português' },
+  { code: 'id', name: 'Bahasa Indonesia' },
+  { code: 'fr', name: 'Français' },
+  { code: 'ja', name: '日本語' },
+  { code: 'de', name: 'Deutsch' },
+  { code: 'ko', name: '한국어' },
+  { code: 'tr', name: 'Türkçe' },
+  { code: 'it', name: 'Italiano' },
+  { code: 'vi', name: 'Tiếng Việt' },
+  { code: 'pl', name: 'Polski' },
+  { code: 'uk', name: 'Українська' },
+  { code: 'nl', name: 'Nederlands' },
+  { code: 'th', name: 'ไทย' },
+  { code: 'sr', name: 'Srpski' },
+  { code: 'ka', name: 'ქართული' },
+  { code: 'sv', name: 'Svenska' },
+  { code: 'fa', name: 'فارسی' },
+  { code: 'he', name: 'עברית' },
+  { code: 'ro', name: 'Română' },
+  { code: 'el', name: 'Ελληνικά' },
+  { code: 'hu', name: 'Magyar' },
+  { code: 'cs', name: 'Čeština' },
+  { code: 'da', name: 'Dansk' },
+  { code: 'fi', name: 'Suomi' },
+  { code: 'nb', name: 'Norsk' },
+];
+
+/* Google Translate называет часть языков по-своему */
+const GOOGLE_LANGUAGE_CODE = { zh: 'zh-CN', he: 'iw', nb: 'no' };
+
+/* Старые и соседние коды, которые присылают браузеры */
+const LANGUAGE_ALIASES = { no: 'nb', nn: 'nb', iw: 'he', in: 'id' };
+
+/*
+ * Картинки с экранами меню есть не для всех языков (тикет #4717):
+ * русский показывает русские, остальные английские. Сербские подключаются
+ * добавлением "sr" сюда, когда появится папка images/translate/sr.
+ */
+const IMAGE_LANGUAGES = ['ru', 'en'];
+
+const LANGUAGE_STORAGE_KEY = 'landingLanguage';
+
+function toGoogleLanguage(code) {
+  return GOOGLE_LANGUAGE_CODE[code] || code;
 }
-function SetStyleImage(elementID, folder, image){
-    const element = document.getElementById(elementID);
-    element.style = 'background-image: url("' + folder + image + '.png"); background-image: url("' + folder + image + '.webp");';
+
+/* Язык из списка по тегам браузера (ru-RU, pt-BR, zh_CN); без совпадения английский */
+function matchLandingLanguage(tags) {
+  for (const tag of tags || []) {
+    const base = String(tag || '')
+      .toLowerCase()
+      .split(/[-_]/)[0];
+    const code = LANGUAGE_ALIASES[base] || base;
+    if (LANDING_LANGUAGES.some((language) => language.code === code)) {
+      return code;
+    }
+  }
+
+  return 'en';
+}
+
+/* Текущий язык страницы: по куки виджета Google, иначе русский оригинал */
+function currentLandingLanguage() {
+  const google = TranslateGetCode();
+  const own = LANDING_LANGUAGES.find(
+    (language) =>
+      toGoogleLanguage(language.code).toLowerCase() ===
+      String(google).toLowerCase()
+  );
+
+  return own ? own.code : matchLandingLanguage([google]);
+}
+
+function imageFolderFor(code) {
+  return (
+    './images/translate/' + (IMAGE_LANGUAGES.includes(code) ? code : 'en') + '/'
+  );
+}
+
+function rememberLandingLanguage(code) {
+  try {
+    localStorage.setItem(LANGUAGE_STORAGE_KEY, code);
+  } catch (e) {
+    /* приватный режим: выбор просто не запомнится */
+  }
+}
+
+function savedLandingLanguage() {
+  try {
+    return localStorage.getItem(LANGUAGE_STORAGE_KEY);
+  } catch (e) {
+    return null;
+  }
+}
+
+/* Перевод страницы на выбранный язык: виджет Google читает куки при загрузке */
+function applyLandingLanguage(code) {
+  if (code === googleTranslateConfig.lang) {
+    TranslateCookieHandler(null, googleTranslateConfig.domain);
+  } else {
+    TranslateCookieHandler(
+      '/' + googleTranslateConfig.lang + '/' + toGoogleLanguage(code),
+      googleTranslateConfig.domain
+    );
+  }
+}
+
+function setLandingLanguage(code) {
+  rememberLandingLanguage(code);
+  applyLandingLanguage(code);
+  window.location.reload();
+}
+
+function SetImage(elementID, folder, image) {
+  const element = document.getElementById(elementID);
+  element.childNodes[1].src = folder + image + '.png';
+  element.childNodes[0].srcset = folder + image + '.webp';
+}
+function SetStyleImage(elementID, folder, image) {
+  const element = document.getElementById(elementID);
+  element.style =
+    'background-image: url("' +
+    folder +
+    image +
+    '.png"); background-image: url("' +
+    folder +
+    image +
+    '.webp");';
 }
 
 function TranslateInit() {
+  // Первый визит: язык браузера, если человек ещё ничего не выбирал
+  if (!savedLandingLanguage() && !Cookies.get('googtrans')) {
+    const firstVisit = matchLandingLanguage(
+      navigator.languages || [navigator.language]
+    );
+    rememberLandingLanguage(firstVisit);
+    applyLandingLanguage(firstVisit);
+  }
 
-    if (googleTranslateConfig.langFirstVisit && !Cookies.get('googtrans')) {
-        // Если установлен язык перевода для первого посещения и куки не назначены
-        TranslateCookieHandler("/auto/" + googleTranslateConfig.langFirstVisit);
-    }
+  let code = currentLandingLanguage();
 
-    let code = TranslateGetCode();
+  if (code == googleTranslateConfig.lang) {
+    // Если язык по умолчанию, совпадает с языком на который переводим
+    // То очищаем куки
+    TranslateCookieHandler(null, googleTranslateConfig.domain);
+  }
 
-    // Находим флаг с выбранным языком для перевода и добавляем к нему активный класс
-    if (document.querySelector('[data-google-lang="' + code + '"]') !== null) {
-        document.querySelector('[data-google-lang="' + code + '"]').classList.add('language__img_active');
-    }
+  // Инициализируем виджет с языком по умолчанию
+  new google.translate.TranslateElement({
+    pageLanguage: googleTranslateConfig.lang,
+  });
 
-    if (code == googleTranslateConfig.lang) {
-        // Если язык по умолчанию, совпадает с языком на который переводим
-        // То очищаем куки
-        TranslateCookieHandler(null, googleTranslateConfig.domain);
-    }
+  const imageFolder = imageFolderFor(code);
 
-    // Инициализируем виджет с языком по умолчанию
-    new google.translate.TranslateElement({
-        pageLanguage: googleTranslateConfig.lang,
-    });
-
-    // Вешаем событие  клик на флаги
-    TranslateEventHandler('click', '[data-google-lang]', function (e) {
-        TranslateCookieHandler("/" + googleTranslateConfig.lang + "/" + e.getAttribute("data-google-lang"), googleTranslateConfig.domain);
-        // Перезагружаем страницу
-        window.location.reload();
-    });
-
-    let imageFolder = './images/translate/ru/';
-
-    switch (code) {
-        case "en":
-            imageFolder = './images/translate/en/';
-            break;
-    }
-
-    SetImage('light_theme', imageFolder, 'base-view-theme-light');
-    SetImage('theme_light_theme', imageFolder, 'base-view-theme-light');
-    SetImage('dark_theme', imageFolder, 'base-view-theme-dark');
-    SetImage('theme_dark_theme', imageFolder, 'base-view-theme-dark');
-    SetImage('hiw1_image', imageFolder, 'hiw__image-01');
-    SetImage('hiw2_image', imageFolder, 'hiw__image-02');
-    SetImage('hiw3_image', imageFolder, 'hiw__image-03');
-    SetImage('hiw5_image', imageFolder, 'hiw__image-05');
-    SetImage('hiw6_image', imageFolder, 'hiw__image-06');
-    SetStyleImage('step1_image', imageFolder, 'step__image-01');
-    SetStyleImage('step2_image', imageFolder, 'step__image-02');
-    SetStyleImage('step3_image', imageFolder, 'step__image-03');
-
-    if(code === "en"){
-        const languageCheckbox = document.querySelector('#language_checkbox');
-
-        languageCheckbox.checked = true;
-    }
+  SetImage('light_theme', imageFolder, 'base-view-theme-light');
+  SetImage('theme_light_theme', imageFolder, 'base-view-theme-light');
+  SetImage('dark_theme', imageFolder, 'base-view-theme-dark');
+  SetImage('theme_dark_theme', imageFolder, 'base-view-theme-dark');
+  SetImage('hiw1_image', imageFolder, 'hiw__image-01');
+  SetImage('hiw2_image', imageFolder, 'hiw__image-02');
+  SetImage('hiw3_image', imageFolder, 'hiw__image-03');
+  SetImage('hiw5_image', imageFolder, 'hiw__image-05');
+  SetImage('hiw6_image', imageFolder, 'hiw__image-06');
+  SetStyleImage('step1_image', imageFolder, 'step__image-01');
+  SetStyleImage('step2_image', imageFolder, 'step__image-02');
+  SetStyleImage('step3_image', imageFolder, 'step__image-03');
 }
 
 function TranslateGetCode() {
-    // Если куки нет, то передаем дефолтный язык
-    let lang = (Cookies.get('googtrans') != undefined && Cookies.get('googtrans') != "null") ? Cookies.get('googtrans') : googleTranslateConfig.lang;
-    return lang.match(/(?!^\/)[^\/]*$/gm)[0];
+  // Если куки нет, то передаем дефолтный язык
+  let lang =
+    Cookies.get('googtrans') != undefined && Cookies.get('googtrans') != 'null'
+      ? Cookies.get('googtrans')
+      : googleTranslateConfig.lang;
+  return lang.match(/(?!^\/)[^\/]*$/gm)[0];
 }
 
 function TranslateCookieHandler(val, domain) {
-    // Записываем куки /язык_который_переводим/язык_на_который_переводим
-    Cookies.set('googtrans', val);
-    Cookies.set("googtrans", val, {
-        domain: "." + document.domain,
-    });
+  // Записываем куки /язык_который_переводим/язык_на_который_переводим
+  Cookies.set('googtrans', val);
+  Cookies.set('googtrans', val, {
+    domain: '.' + document.domain,
+  });
 
-    if (domain == "undefined") return;
-    // записываем куки для домена, если он назначен в конфиге
-    Cookies.set("googtrans", val, {
-        domain: domain,
-    });
+  if (domain == 'undefined') return;
+  // записываем куки для домена, если он назначен в конфиге
+  Cookies.set('googtrans', val, {
+    domain: domain,
+  });
 
-    Cookies.set("googtrans", val, {
-        domain: "." + domain,
-    });
-}
-
-function TranslateEventHandler(event, selector, handler) {
-    document.addEventListener(event, function (e) {
-        let el = e.target.closest(selector);
-        if (el) handler(el);
-    });
+  Cookies.set('googtrans', val, {
+    domain: '.' + domain,
+  });
 }

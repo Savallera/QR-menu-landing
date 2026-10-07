@@ -29,56 +29,47 @@
         <a class="header__link" data-link="pricing">Тарифы</a>
       </li>
     </ul>
-    <label class="header__language-label">
-      <input
-        id="language_checkbox"
-        type="checkbox"
-        name="language"
-        class="header__language-checkbox"
-      />
-      <span class="header__language-pseudo-checkbox"></span>
-      <span class="header__language-label-text header__language-label-text_content_ru notranslate" id="language_checkbox_ru" data-google-lang="ru">RU</span>
-      <span class="header__language-label-text header__language-label-text_content_en notranslate" data-google-lang="en">EN</span>
-    </label>
-    <ul class="header__social-list">
-      <li class="header__social-list-item">
-        <a class="header__social-link" href="#0">
-          <svg
-            class="header__social-icon"
-            aria-hidden="true"
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 32 32"
-          >
-            <use href="./images/icons.svg#whatsapp"></use>
-          </svg>
-        </a>
-      </li>
-      <li class="header__social-list-item">
-        <a class="header__social-link" href="#0">
-          <svg
-            class="header__social-icon"
-            aria-hidden="true"
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 32 32"
-          >
-            <use href="./images/icons.svg#telegram"></use>
-          </svg>
-        </a>
-      </li>
-    </ul>
-    <button
+    <!-- Язык: как на формах входа в админку, список строит blocks/lang/lang.js -->
+    <div class="header__language lang notranslate" data-lang>
+      <button
+        class="lang__button"
+        type="button"
+        aria-haspopup="listbox"
+        aria-expanded="false"
+        data-lang-button
+      >
+        <svg
+          class="lang__icon"
+          aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 25"
+        >
+          <path
+            fill="currentColor"
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M11.9971 22.5C17.4935 22.5 21.9971 17.9474 21.9971 12.5C21.9971 7.05528 17.4756 2.5 11.9971 2.5C6.59815 2.5 1.99707 7.07221 1.99707 12.5C1.99707 18.0228 6.47422 22.5 11.9971 22.5ZM9.2404 11.8H14.8293C14.7927 10.8855 14.6845 9.98941 14.5103 9.11716C12.8898 9.32333 11.1798 9.3084 9.56788 9.07515C9.3887 9.96063 9.27764 10.8708 9.2404 11.8ZM7.83934 11.8H3.42515C3.54621 10.2971 4.05369 8.90324 4.84813 7.71794C5.91253 8.18878 7.0306 8.56043 8.19064 8.82117C7.99619 9.78903 7.87697 10.7841 7.83934 11.8ZM9.78576 4.18696C8.22321 4.60153 6.83526 5.44495 5.75558 6.58358C6.64073 6.95176 7.56421 7.24631 8.51837 7.45958C8.83872 6.32061 9.26495 5.22597 9.78576 4.18696ZM14.1773 7.74735C12.7738 7.91271 11.2993 7.89893 9.90364 7.70842C10.2921 6.36848 10.8394 5.09603 11.5238 3.9128C11.8633 3.89439 12.21 3.89596 12.5487 3.9174C13.2384 5.11079 13.7887 6.39486 14.1773 7.74735ZM15.5693 7.52365C16.5272 7.32795 17.4554 7.05061 18.3462 6.69921C17.2716 5.52371 15.875 4.64762 14.2959 4.21067C14.821 5.2621 15.2494 6.37032 15.5693 7.52365ZM20.569 11.8H16.2304C16.1936 10.8071 16.0789 9.83402 15.8922 8.88684C17.0498 8.64753 18.1672 8.29812 19.2328 7.85005C19.9774 9.0063 20.4524 10.3526 20.569 11.8ZM15.8293 16.4185C16.9491 16.6458 18.0315 16.9761 19.0662 17.399C19.9064 16.1889 20.4439 14.7527 20.569 13.2H16.2433H16.2304C16.1897 14.2999 16.0533 15.3755 15.8293 16.4185ZM9.63333 16.2337C9.41561 15.2514 9.28198 14.2376 9.24039 13.2H14.8293C14.7883 14.2232 14.6578 15.2234 14.4454 16.1929C12.8667 15.9978 11.2037 16.0123 9.63333 16.2337ZM5.01791 17.5262C6.0508 17.0819 7.13313 16.7306 8.25435 16.4828C8.02212 15.4197 7.88092 14.3226 7.83933 13.2H3.42515C3.55463 14.8074 4.1261 16.29 5.01791 17.5262ZM5.97902 18.6435C6.82281 18.3068 7.70036 18.0366 8.60518 17.8394C8.91428 18.8712 9.31066 19.8653 9.78573 20.813C8.32895 20.4265 7.02395 19.6673 5.97902 18.6435ZM9.99542 17.5975C10.3765 18.8254 10.8916 19.9944 11.5237 21.0872C11.8632 21.1056 12.21 21.104 12.5487 21.0826C13.1859 19.98 13.7041 18.8001 14.0858 17.5603C12.7413 17.4094 11.3325 17.4225 9.99542 17.5975ZM18.1253 18.5336C17.0831 19.592 15.7689 20.3817 14.2958 20.7893C14.7752 19.8296 15.1739 18.8226 15.4831 17.7771C16.3925 17.958 17.2754 18.2123 18.1253 18.5336Z"
+          />
+        </svg>
+        <span class="lang__code" data-lang-code>RU</span>
+      </button>
+      <ul class="lang__list" role="listbox" hidden data-lang-list></ul>
+    </div>
+    <a
       class="header__login-button header__login-button_place_menu button button_theme_outline-grey"
-      type="button"
+      href="https://admin.showme.menu/auth/signin"
+      data-service-link
     >
       <span class="button__text">Войти</span>
-    </button>
+    </a>
   </menu>
-  <button
+  <a
     class="header__login-button button button_theme_outline-grey"
-    type="button"
+    href="https://admin.showme.menu/auth/signin"
+    data-service-link
   >
     <span class="button__text">Войти</span>
-  </button>
+  </a>
   <button class="header__burger" type="button" aria-label="Открыть меню">
     <span class="header__burger-item">
       <span class="header__burger-item-bar"></span>

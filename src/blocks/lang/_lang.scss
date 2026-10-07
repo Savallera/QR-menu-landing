@@ -1,0 +1,90 @@
+// Переключатель языка: как BtnLang на формах входа в админку
+.lang {
+  position: relative;
+  display: flex;
+  align-items: center;
+
+  &__button {
+    @extend %reset-btn;
+
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+    padding: 0.5em;
+    color: var(--text-secondary-color);
+    font-weight: 700;
+    cursor: pointer;
+    border-radius: var(--border-radius-sm);
+    transition: color 0.3s;
+
+    &:hover,
+    &[aria-expanded='true'] {
+      color: var(--main-color);
+    }
+
+    &:focus-visible {
+      outline: 2px solid;
+    }
+  }
+
+  &__icon {
+    flex: none;
+    inline-size: 1.5em;
+    block-size: 1.5em;
+  }
+
+  &__list {
+    @extend %reset-list;
+
+    position: absolute;
+    inset: calc(100% + 6px) 0 auto auto;
+    z-index: 30;
+    padding: 4px;
+    inline-size: 230px;
+    max-block-size: min(280px, 60vh);
+    overflow: auto;
+    overscroll-behavior: contain;
+    background: #ffffff;
+    border: 1px solid var(--grey-200, #e3e4e3);
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgb(0 0 0 / 12%);
+
+    // в мобильном меню переключатель стоит внизу по центру:
+    // список раскрывается вверх, иначе уходит за нижний и правый край экрана
+    @include media(md, max) {
+      inset: auto auto calc(100% + 6px) 50%;
+      transform: translateX(-50%);
+      max-block-size: min(280px, 50vh);
+    }
+  }
+
+  &__option {
+    @extend %reset-btn;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1em;
+    inline-size: 100%;
+    padding: 8px 10px;
+    border-radius: 8px;
+    font-size: 13px;
+    text-align: start;
+    color: var(--text-main-color, #2f3c33);
+    cursor: pointer;
+
+    &:hover {
+      background: #f7faf1;
+    }
+
+    &_active {
+      background: #f2f7e8;
+      font-weight: 600;
+    }
+  }
+
+  &__option-code {
+    color: var(--text-secondary-color, #647067);
+    font-size: 12px;
+  }
+}
