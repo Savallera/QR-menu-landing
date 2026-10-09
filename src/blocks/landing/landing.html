@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="ru">
+  @@include("../head/head.html", {"title": "@@title", "description": "@@description", "ogTitle": "@@ogTitle", "ogUrl": "@@ogUrl", "ogImage": "@@ogImage", "ogLocale": "@@ogLocale", "robots": "@@robots", "pageLanguage": "@@pageLanguage"})
+  <body>
+    <div class="page page_with_lead-image">
+      @@include("../header/header.html")
+      <main class="page__content">
+        <!-- картинки с экранами меню на языке адреса: на /en/ и /sr/ свои и без виджета Google -->
+        @@include("../lead/lead.html", {"imageLanguage": "@@imageLanguage"})
+        @@include("../statistics/statistics.html")
+        @@include("../advantages/advantages.html")
+        @@include("../why/why.html")
+        @@include("../how/how.html")
+        @@include("../features/features.html")
+        @@include("../hiw/hiw.html", {"imageLanguage": "@@imageLanguage"})
+        @@include("../step/step.html", {"imageLanguage": "@@imageLanguage"})
+        @@include("../theme/theme.html", {"imageLanguage": "@@imageLanguage"})
+        @@include("../pricing/pricing.html")
+      </main>
+      @@include("../footer/footer.html")
+
+    </div>
+    <script src="/scripts/libs/splide.min.js?v=@@buildVersion"></script>
+    <script src="/scripts/libs/google-translate.js?v=@@buildVersion"></script>
+    <script src="/scripts/libs/js.cookie.min.js?v=@@buildVersion"></script>
+    <script src="/scripts/libs/element.js?v=@@buildVersion"></script>
+    <script src="/scripts/main.js?v=@@buildVersion"></script>
+  </body>
+</html>

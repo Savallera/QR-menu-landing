@@ -61,10 +61,10 @@ const LANGUAGE_ALIASES = { no: 'nb', nn: 'nb', iw: 'he', in: 'id' };
 
 /*
  * Картинки с экранами меню есть не для всех языков (тикет #4717):
- * русский показывает русские, остальные английские. Сербские подключаются
- * добавлением "sr" сюда, когда появится папка images/translate/sr.
+ * русский, английский и сербский показывают свои, остальные английские.
+ * Новый язык подключается добавлением кода сюда и папки images/translate/<код>.
  */
-const IMAGE_LANGUAGES = ['ru', 'en'];
+const IMAGE_LANGUAGES = ['ru', 'en', 'sr'];
 
 const LANGUAGE_STORAGE_KEY = 'landingLanguage';
 
@@ -101,7 +101,7 @@ function currentLandingLanguage() {
 
 function imageFolderFor(code) {
   return (
-    './images/translate/' + (IMAGE_LANGUAGES.includes(code) ? code : 'en') + '/'
+    '/images/translate/' + (IMAGE_LANGUAGES.includes(code) ? code : 'en') + '/'
   );
 }
 
@@ -133,10 +133,30 @@ function applyLandingLanguage(code) {
   }
 }
 
+/*
+ * Отдельные адреса для языков с картинкой превью в соцсетях (тикет #4717):
+ * соцсети не выполняют скрипты и берут превью из мета-тегов адреса. Выбор
+ * этих языков ведёт на их адрес, чтобы ссылку можно было просто скопировать;
+ * остальные языки живут на корне.
+ */
+const LANGUAGE_PAGES = { en: '/en/', sr: '/sr/' };
+
+function landingLanguagePage(code) {
+  return LANGUAGE_PAGES[code] || '/';
+}
+
 function setLandingLanguage(code) {
   rememberLandingLanguage(code);
   applyLandingLanguage(code);
-  window.location.reload();
+
+  const target = landingLanguagePage(code);
+
+  if (window.location.pathname === target) {
+    window.location.reload();
+  } else {
+    // метки рекламы (utm), прочие параметры и якорь остаются в адресе
+    window.location.href = target + window.location.search + window.location.hash;
+  }
 }
 
 function SetImage(elementID, folder, image) {
@@ -156,15 +176,30 @@ function SetStyleImage(elementID, folder, image) {
     '.webp");';
 }
 
-function TranslateInit() {
-  // Первый визит: язык браузера, если человек ещё ничего не выбирал
-  if (!savedLandingLanguage() && !Cookies.get('googtrans')) {
+/*
+ * Язык страницы при загрузке. Вызывается и переключателем (по готовности
+ * документа), и виджетом Google: переключатель рисуется раньше, чем грузится
+ * виджет, и без этого показывал прежний язык, а ссылки в админку уходили с ним.
+ */
+function resolveLandingLanguage() {
+  // Адрес /en/ или /sr/ задаёт язык сам: по нему пришли из ссылки в соцсетях
+  const pageLanguage = window.LANDING_PAGE_LANGUAGE;
+
+  if (pageLanguage) {
+    rememberLandingLanguage(pageLanguage);
+    applyLandingLanguage(pageLanguage);
+  } else if (!savedLandingLanguage() && !Cookies.get('googtrans')) {
+    // Первый визит: язык браузера, если человек ещё ничего не выбирал
     const firstVisit = matchLandingLanguage(
       navigator.languages || [navigator.language]
     );
     rememberLandingLanguage(firstVisit);
     applyLandingLanguage(firstVisit);
   }
+}
+
+function TranslateInit() {
+  resolveLandingLanguage();
 
   let code = currentLandingLanguage();
 

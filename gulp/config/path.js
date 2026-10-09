@@ -5,8 +5,10 @@ export default {
   root: pathDest,
 
   html: {
-    src: pathSrc + '/pages/*.html',
-    watch: [pathSrc + '/pages/*.html', pathSrc + '/blocks/**/*.html'],
+    // страницы языков лежат в pages/en, pages/sr и выходят в dist/en, dist/sr
+    src: pathSrc + '/pages/**/*.html',
+    base: pathSrc + '/pages',
+    watch: [pathSrc + '/pages/**/*.html', pathSrc + '/blocks/**/*.html'],
     dest: pathDest,
   },
 

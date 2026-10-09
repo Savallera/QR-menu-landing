@@ -158,7 +158,9 @@ function initLanguageSwitch(root) {
     const option = event.target.closest('[data-lang-option]');
     if (!option) return;
     setOpen(false);
-    if (option.dataset.langOption !== current) setLandingLanguage(option.dataset.langOption);
+    const code = option.dataset.langOption;
+    // английский и сербский на корне ведут на свой адрес, чтобы ссылку можно было скопировать
+    if (code !== current || landingLanguagePage(code) !== window.location.pathname) setLandingLanguage(code);
   });
 
   // клик мимо списка и Escape закрывают его: список длинный и перекрывает страницу
@@ -186,6 +188,8 @@ function passLanguageToService() {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
+  // язык адреса или первого визита до отрисовки: виджет Google грузится позже
+  if (typeof resolveLandingLanguage !== 'undefined') resolveLandingLanguage();
   document.querySelectorAll('[data-lang]').forEach(initLanguageSwitch);
   passLanguageToService();
 });

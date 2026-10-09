@@ -22,8 +22,10 @@ export default () => {
   };
   return (
     gulp
-      .src(path.html.src)
-      .pipe(fileInclude())
+      .src(path.html.src, { base: path.html.base })
+      // версия сборки в адресах скриптов, стилей и картинок превью: браузеры
+      // и соцсети не держат в кэше старые файлы после выкладки
+      .pipe(fileInclude({ context: { buildVersion: Date.now().toString(36) } }))
       // .pipe(webpHtml())
       .pipe(
         plumber({
