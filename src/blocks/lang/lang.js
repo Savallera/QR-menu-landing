@@ -159,7 +159,7 @@ function initLanguageSwitch(root) {
     if (!option) return;
     setOpen(false);
     const code = option.dataset.langOption;
-    // английский и сербский на корне ведут на свой адрес, чтобы ссылку можно было скопировать
+    // языки со своим адресом (LANGUAGE_PAGES) ведут с корня на него, чтобы ссылку можно было скопировать
     if (code !== current || landingLanguagePage(code) !== window.location.pathname) setLandingLanguage(code);
   });
 

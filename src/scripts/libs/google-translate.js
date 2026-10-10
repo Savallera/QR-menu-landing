@@ -61,10 +61,11 @@ const LANGUAGE_ALIASES = { no: 'nb', nn: 'nb', iw: 'he', in: 'id' };
 
 /*
  * Картинки с экранами меню есть не для всех языков (тикет #4717):
- * русский, английский и сербский показывают свои, остальные английские.
+ * русский, английский, сербский, арабский и китайский показывают свои,
+ * остальные английские.
  * Новый язык подключается добавлением кода сюда и папки images/translate/<код>.
  */
-const IMAGE_LANGUAGES = ['ru', 'en', 'sr'];
+const IMAGE_LANGUAGES = ['ru', 'en', 'sr', 'ar', 'zh'];
 
 const LANGUAGE_STORAGE_KEY = 'landingLanguage';
 
@@ -139,7 +140,7 @@ function applyLandingLanguage(code) {
  * этих языков ведёт на их адрес, чтобы ссылку можно было просто скопировать;
  * остальные языки живут на корне.
  */
-const LANGUAGE_PAGES = { en: '/en/', sr: '/sr/' };
+const LANGUAGE_PAGES = { en: '/en/', sr: '/sr/', ar: '/ar/', zh: '/zh/' };
 
 function landingLanguagePage(code) {
   return LANGUAGE_PAGES[code] || '/';
@@ -182,7 +183,7 @@ function SetStyleImage(elementID, folder, image) {
  * виджет, и без этого показывал прежний язык, а ссылки в админку уходили с ним.
  */
 function resolveLandingLanguage() {
-  // Адрес /en/ или /sr/ задаёт язык сам: по нему пришли из ссылки в соцсетях
+  // Языковой адрес (/en/, /sr/, /ar/, /zh/) задаёт язык сам: по нему пришли из ссылки в соцсетях
   const pageLanguage = window.LANDING_PAGE_LANGUAGE;
 
   if (pageLanguage) {
