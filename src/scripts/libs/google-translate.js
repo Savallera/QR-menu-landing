@@ -156,7 +156,8 @@ function setLandingLanguage(code) {
     window.location.reload();
   } else {
     // метки рекламы (utm), прочие параметры и якорь остаются в адресе
-    window.location.href = target + window.location.search + window.location.hash;
+    window.location.href =
+      target + window.location.search + window.location.hash;
   }
 }
 
@@ -198,6 +199,24 @@ function resolveLandingLanguage() {
     applyLandingLanguage(firstVisit);
   }
 }
+
+/*
+ * «Назад» и «Вперёд» могут достать страницу из кэша «Назад/Вперёд» (bfcache)
+ * без запуска скриптов. После возврата из админки такая страница показывалась
+ * русской, хотя выбран другой язык (тикет #4717), а перевод появлялся только
+ * после обновления. Такую страницу загружаем заново; русский оригинал на
+ * корне не трогаем.
+ */
+window.addEventListener('pageshow', (event) => {
+  if (!event.persisted) return;
+
+  if (
+    window.LANDING_PAGE_LANGUAGE ||
+    currentLandingLanguage() !== googleTranslateConfig.lang
+  ) {
+    window.location.reload();
+  }
+});
 
 function TranslateInit() {
   resolveLandingLanguage();
