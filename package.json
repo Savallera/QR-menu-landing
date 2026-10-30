@@ -8,6 +8,8 @@
   "license": "MIT",
   "private": false,
   "scripts": {
+    "legal:build": "node scripts/build-legal-documents.mjs",
+    "test": "node --test",
     "check": "prettier --check './dist/**/*.{html,js,css}'",
     "format": "prettier --write './dist/**/*.{html,js,css}'",
     "lint": "stylelint './dist/**/*.css'",

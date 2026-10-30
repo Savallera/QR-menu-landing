@@ -1,0 +1,194 @@
+{
+  "sourceUrl": "https://docs.google.com/document/d/1gvRmT_LPSCKp5T6li2_IYL__Qxy_lQEmty_BrNib6iA",
+  "revisionId": "AHj4eMRaA681vI6fT2UOe4rdwQkVoCneerrQusHcP5ItOAg9ufyAc8mgeTCKMi48AHSbIyorYqibKrTIrHmM0VOZwElT0r3chiOv9uUSsdc",
+  "blocks": [
+    {
+      "kind": "paragraph",
+      "style": "NORMAL_TEXT",
+      "runs": [
+        {
+          "text": "РЕКВИЗИТЫ И КОНТАКТЫ",
+          "bold": true
+        },
+        {
+          "text": "\n"
+        }
+      ]
+    },
+    {
+      "kind": "paragraph",
+      "style": "NORMAL_TEXT",
+      "runs": [
+        {
+          "text": "Сервис электронного меню Showme.menu — "
+        },
+        {
+          "text": "https://showme.menu/",
+          "link": "https://showme.menu/"
+        },
+        {
+          "text": ".\n"
+        }
+      ]
+    },
+    {
+      "kind": "paragraph",
+      "style": "NORMAL_TEXT",
+      "runs": [
+        {
+          "text": "Наименование: ",
+          "bold": true
+        },
+        {
+          "text": "Индивидуальный предприниматель Яковлев Семен Игоревич\n"
+        }
+      ]
+    },
+    {
+      "kind": "paragraph",
+      "style": "NORMAL_TEXT",
+      "runs": [
+        {
+          "text": "ИНН: ",
+          "bold": true
+        },
+        {
+          "text": "772405786742\n"
+        }
+      ]
+    },
+    {
+      "kind": "paragraph",
+      "style": "NORMAL_TEXT",
+      "runs": [
+        {
+          "text": "ОГРНИП: ",
+          "bold": true
+        },
+        {
+          "text": "320774600197231\n"
+        }
+      ]
+    },
+    {
+      "kind": "paragraph",
+      "style": "NORMAL_TEXT",
+      "runs": [
+        {
+          "text": "Адрес регистрации и почтовый адрес: ",
+          "bold": true
+        },
+        {
+          "text": "Российская Федерация, 115477, г. Москва, ул. Кантемировская, д. 39, кв. 297\n"
+        }
+      ]
+    },
+    {
+      "kind": "paragraph",
+      "style": "NORMAL_TEXT",
+      "runs": [
+        {
+          "text": "Телефон: ",
+          "bold": true
+        },
+        {
+          "text": "+7 926 414-89-14\n"
+        }
+      ]
+    },
+    {
+      "kind": "paragraph",
+      "style": "NORMAL_TEXT",
+      "runs": [
+        {
+          "text": "Электронная почта для клиентов и обращений по персональным данным: ",
+          "bold": true
+        },
+        {
+          "text": "support@showme.menu",
+          "link": "mailto:support@showme.menu"
+        },
+        {
+          "text": "\n"
+        }
+      ]
+    },
+    {
+      "kind": "paragraph",
+      "style": "NORMAL_TEXT",
+      "runs": [
+        {
+          "text": "Расчётный счёт: ",
+          "bold": true
+        },
+        {
+          "text": "40802810501500103711\n"
+        }
+      ]
+    },
+    {
+      "kind": "paragraph",
+      "style": "NORMAL_TEXT",
+      "runs": [
+        {
+          "text": "Банк: ",
+          "bold": true
+        },
+        {
+          "text": "ООО «Банк Точка»\n"
+        }
+      ]
+    },
+    {
+      "kind": "paragraph",
+      "style": "NORMAL_TEXT",
+      "runs": [
+        {
+          "text": "БИК: ",
+          "bold": true
+        },
+        {
+          "text": "044525104\n"
+        }
+      ]
+    },
+    {
+      "kind": "paragraph",
+      "style": "NORMAL_TEXT",
+      "runs": [
+        {
+          "text": "Корреспондентский счёт: ",
+          "bold": true
+        },
+        {
+          "text": "30101810745374525104\n"
+        }
+      ]
+    },
+    {
+      "kind": "paragraph",
+      "style": "HEADING_1",
+      "runs": [
+        {
+          "text": "Поддержка\n"
+        }
+      ]
+    },
+    {
+      "kind": "paragraph",
+      "style": "NORMAL_TEXT",
+      "runs": [
+        {
+          "text": "Обращения принимаются по электронной почте "
+        },
+        {
+          "text": "support@showme.menu",
+          "link": "mailto:support@showme.menu"
+        },
+        {
+          "text": ". График: понедельник–пятница, 10:00–18:00 по московскому времени, за исключением официальных нерабочих праздничных дней Российской Федерации. Первичный ответ предоставляется, как правило, в течение 2 рабочих дней. Срок устранения неисправности зависит от её характера и сложности.\n"
+        }
+      ]
+    }
+  ]
+}

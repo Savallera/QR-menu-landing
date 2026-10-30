@@ -163,11 +163,13 @@ function setLandingLanguage(code) {
 
 function SetImage(elementID, folder, image) {
   const element = document.getElementById(elementID);
+  if (!element) return;
   element.childNodes[1].src = folder + image + '.png';
   element.childNodes[0].srcset = folder + image + '.webp';
 }
 function SetStyleImage(elementID, folder, image) {
   const element = document.getElementById(elementID);
+  if (!element) return;
   element.style =
     'background-image: url("' +
     folder +
@@ -183,21 +185,27 @@ function SetStyleImage(elementID, folder, image) {
  * документа), и виджетом Google: переключатель рисуется раньше, чем грузится
  * виджет, и без этого показывал прежний язык, а ссылки в админку уходили с ним.
  */
-function resolveLandingLanguage() {
-  // Языковой адрес (/en/, /sr/, /ar/, /zh/) задаёт язык сам: по нему пришли из ссылки в соцсетях
-  const pageLanguage = window.LANDING_PAGE_LANGUAGE;
+let resolvedLandingLanguage;
 
-  if (pageLanguage) {
-    rememberLandingLanguage(pageLanguage);
-    applyLandingLanguage(pageLanguage);
-  } else if (!savedLandingLanguage() && !Cookies.get('googtrans')) {
-    // Первый визит: язык браузера, если человек ещё ничего не выбирал
-    const firstVisit = matchLandingLanguage(
-      navigator.languages || [navigator.language]
-    );
-    rememberLandingLanguage(firstVisit);
-    applyLandingLanguage(firstVisit);
-  }
+function resolveLandingLanguage() {
+  const supported = (code) =>
+    LANDING_LANGUAGES.some((language) => language.code === code);
+  const pageLanguage = window.LANDING_PAGE_LANGUAGE;
+  const savedLanguage = savedLandingLanguage();
+  const cookie = Cookies.get('googtrans');
+  const code = supported(pageLanguage)
+    ? pageLanguage
+    : supported(savedLanguage)
+      ? savedLanguage
+      : cookie && cookie !== 'null'
+        ? currentLandingLanguage()
+        : matchLandingLanguage(navigator.languages || [navigator.language]);
+
+  // Сессионная cookie может исчезнуть после закрытия браузера, сохранённый выбор остаётся.
+  rememberLandingLanguage(code);
+  applyLandingLanguage(code);
+  resolvedLandingLanguage = code;
+  return code;
 }
 
 /*
@@ -210,9 +218,11 @@ function resolveLandingLanguage() {
 window.addEventListener('pageshow', (event) => {
   if (!event.persisted) return;
 
+  const currentLanguage = currentLandingLanguage();
   if (
     window.LANDING_PAGE_LANGUAGE ||
-    currentLandingLanguage() !== googleTranslateConfig.lang
+    currentLanguage !== googleTranslateConfig.lang ||
+    (resolvedLandingLanguage && resolvedLandingLanguage !== currentLanguage)
   ) {
     window.location.reload();
   }
@@ -266,7 +276,7 @@ function TranslateCookieHandler(val, domain) {
     domain: '.' + document.domain,
   });
 
-  if (domain == 'undefined') return;
+  if (!domain) return;
   // записываем куки для домена, если он назначен в конфиге
   Cookies.set('googtrans', val, {
     domain: domain,

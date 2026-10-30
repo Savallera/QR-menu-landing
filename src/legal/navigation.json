@@ -1,0 +1,239 @@
+{
+  "documents": [
+    {
+      "key": "offer",
+      "path": "/offer/"
+    },
+    {
+      "key": "privacy",
+      "path": "/privacy/"
+    },
+    {
+      "key": "contacts",
+      "path": "/contacts/"
+    },
+    {
+      "key": "consent",
+      "path": "/personal-data-consent/"
+    }
+  ],
+  "labels": {
+    "ru": [
+      "Оферта",
+      "Политика обработки персональных данных",
+      "Реквизиты и контакты",
+      "Согласие на обработку персональных данных",
+      "Документы Showme.menu"
+    ],
+    "en": [
+      "Public offer",
+      "Privacy policy",
+      "Company details and contacts",
+      "Personal data consent",
+      "Showme.menu documents"
+    ],
+    "zh": [
+      "公开要约",
+      "隐私政策",
+      "公司信息与联系方式",
+      "个人数据处理同意书",
+      "Showme.menu 文件"
+    ],
+    "es": [
+      "Oferta pública",
+      "Política de privacidad",
+      "Datos y contacto",
+      "Consentimiento para el tratamiento de datos",
+      "Documentos de Showme.menu"
+    ],
+    "hi": [
+      "सार्वजनिक प्रस्ताव",
+      "गोपनीयता नीति",
+      "व्यवसाय विवरण और संपर्क",
+      "व्यक्तिगत डेटा प्रसंस्करण की सहमति",
+      "Showme.menu दस्तावेज़"
+    ],
+    "ar": [
+      "العرض التعاقدي",
+      "سياسة الخصوصية",
+      "البيانات وجهات الاتصال",
+      "الموافقة على معالجة البيانات الشخصية",
+      "مستندات Showme.menu"
+    ],
+    "pt": [
+      "Oferta pública",
+      "Política de privacidade",
+      "Dados e contatos",
+      "Consentimento para tratamento de dados",
+      "Documentos do Showme.menu"
+    ],
+    "id": [
+      "Penawaran publik",
+      "Kebijakan privasi",
+      "Detail usaha dan kontak",
+      "Persetujuan pemrosesan data pribadi",
+      "Dokumen Showme.menu"
+    ],
+    "fr": [
+      "Offre publique",
+      "Politique de confidentialité",
+      "Informations et contacts",
+      "Consentement au traitement des données",
+      "Documents Showme.menu"
+    ],
+    "ja": [
+      "公開オファー",
+      "プライバシーポリシー",
+      "事業者情報と連絡先",
+      "個人データ処理への同意",
+      "Showme.menu の文書"
+    ],
+    "de": [
+      "Öffentliches Angebot",
+      "Datenschutzerklärung",
+      "Angaben und Kontakt",
+      "Einwilligung zur Datenverarbeitung",
+      "Showme.menu Dokumente"
+    ],
+    "ko": [
+      "공개 약관",
+      "개인정보 처리방침",
+      "사업자 정보 및 연락처",
+      "개인정보 처리 동의",
+      "Showme.menu 문서"
+    ],
+    "tr": [
+      "Halka açık teklif",
+      "Gizlilik politikası",
+      "İşletme bilgileri ve iletişim",
+      "Kişisel veri işleme onayı",
+      "Showme.menu belgeleri"
+    ],
+    "it": [
+      "Offerta pubblica",
+      "Informativa sulla privacy",
+      "Dati e contatti",
+      "Consenso al trattamento dei dati",
+      "Documenti Showme.menu"
+    ],
+    "vi": [
+      "Đề nghị công khai",
+      "Chính sách bảo mật",
+      "Thông tin và liên hệ",
+      "Đồng ý xử lý dữ liệu cá nhân",
+      "Tài liệu Showme.menu"
+    ],
+    "pl": [
+      "Oferta publiczna",
+      "Polityka prywatności",
+      "Dane i kontakt",
+      "Zgoda na przetwarzanie danych",
+      "Dokumenty Showme.menu"
+    ],
+    "uk": [
+      "Оферта",
+      "Політика обробки персональних даних",
+      "Реквізити та контакти",
+      "Згода на обробку персональних даних",
+      "Документи Showme.menu"
+    ],
+    "nl": [
+      "Openbaar aanbod",
+      "Privacybeleid",
+      "Bedrijfsgegevens en contact",
+      "Toestemming voor gegevensverwerking",
+      "Showme.menu documenten"
+    ],
+    "th": [
+      "ข้อเสนอทั่วไป",
+      "นโยบายความเป็นส่วนตัว",
+      "ข้อมูลธุรกิจและข้อมูลติดต่อ",
+      "ความยินยอมในการประมวลผลข้อมูลส่วนบุคคล",
+      "เอกสาร Showme.menu"
+    ],
+    "sr": [
+      "Javna ponuda",
+      "Politika privatnosti",
+      "Podaci i kontakt",
+      "Saglasnost za obradu ličnih podataka",
+      "Dokumenti Showme.menu"
+    ],
+    "ka": [
+      "საჯარო შეთავაზება",
+      "კონფიდენციალურობის პოლიტიკა",
+      "რეკვიზიტები და კონტაქტები",
+      "თანხმობა პერსონალური მონაცემების დამუშავებაზე",
+      "Showme.menu დოკუმენტები"
+    ],
+    "sv": [
+      "Offentligt erbjudande",
+      "Integritetspolicy",
+      "Företagsuppgifter och kontakt",
+      "Samtycke till personuppgiftsbehandling",
+      "Showme.menu dokument"
+    ],
+    "fa": [
+      "پیشنهاد عمومی",
+      "سیاست حفظ حریم خصوصی",
+      "اطلاعات و تماس",
+      "رضایت به پردازش داده‌های شخصی",
+      "اسناد Showme.menu"
+    ],
+    "he": [
+      "הצעה פומבית",
+      "מדיניות פרטיות",
+      "פרטי העסק ויצירת קשר",
+      "הסכמה לעיבוד מידע אישי",
+      "מסמכי Showme.menu"
+    ],
+    "ro": [
+      "Ofertă publică",
+      "Politica de confidențialitate",
+      "Date și contact",
+      "Consimțământ pentru prelucrarea datelor",
+      "Documente Showme.menu"
+    ],
+    "el": [
+      "Δημόσια προσφορά",
+      "Πολιτική απορρήτου",
+      "Στοιχεία και επικοινωνία",
+      "Συγκατάθεση επεξεργασίας δεδομένων",
+      "Έγγραφα Showme.menu"
+    ],
+    "hu": [
+      "Nyilvános ajánlat",
+      "Adatkezelési tájékoztató",
+      "Cégadatok és kapcsolat",
+      "Hozzájárulás az adatkezeléshez",
+      "Showme.menu dokumentumok"
+    ],
+    "cs": [
+      "Veřejná nabídka",
+      "Zásady ochrany osobních údajů",
+      "Údaje a kontakt",
+      "Souhlas se zpracováním osobních údajů",
+      "Dokumenty Showme.menu"
+    ],
+    "da": [
+      "Offentligt tilbud",
+      "Privatlivspolitik",
+      "Virksomhedsoplysninger og kontakt",
+      "Samtykke til databehandling",
+      "Showme.menu dokumenter"
+    ],
+    "fi": [
+      "Julkinen tarjous",
+      "Tietosuojakäytäntö",
+      "Yritystiedot ja yhteystiedot",
+      "Suostumus henkilötietojen käsittelyyn",
+      "Showme.menu asiakirjat"
+    ],
+    "nb": [
+      "Offentlig tilbud",
+      "Personvernerklæring",
+      "Firmainformasjon og kontakt",
+      "Samtykke til databehandling",
+      "Showme.menu dokumenter"
+    ]
+  }
+}

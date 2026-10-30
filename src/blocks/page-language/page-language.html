@@ -1,0 +1,35 @@
+<script src="/scripts/libs/js.cookie.min.js?v=@@buildVersion"></script>
+<script src="/scripts/libs/google-translate.js?v=@@buildVersion"></script>
+<script>
+  (() => {
+    const url = new URL(window.location.href);
+    const linkedLanguage = url.searchParams.get('lang');
+    if (
+      LANDING_LANGUAGES.some((language) => language.code === linkedLanguage)
+    ) {
+      rememberLandingLanguage(linkedLanguage);
+      applyLandingLanguage(linkedLanguage);
+    }
+    if (linkedLanguage !== null) {
+      url.searchParams.delete('lang');
+      window.history.replaceState(window.history.state, '', url.toString());
+    }
+    const code = resolveLandingLanguage();
+    document.documentElement.lang = code;
+    document.documentElement.dir = ['ar', 'fa', 'he'].includes(code)
+      ? 'rtl'
+      : 'ltr';
+    document.querySelectorAll('[data-landing-home]').forEach((link) => {
+      link.href = landingLanguagePage(code);
+    });
+    document.querySelectorAll('.legal-links a').forEach((link) => {
+      if (
+        new URL(link.href).pathname.replace(/\/$/, '') ===
+        window.location.pathname.replace(/\/$/, '')
+      ) {
+        link.setAttribute('aria-current', 'page');
+      }
+    });
+  })();
+</script>
+<script src="/scripts/libs/element.js?v=@@buildVersion"></script>
