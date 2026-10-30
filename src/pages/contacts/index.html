@@ -1,64 +1,54 @@
-<!doctype html>
-<html lang="ru" dir="ltr">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="color-scheme" content="light" />
-    <meta name="theme-color" content="#ffffff" />
-    <meta
-      name="description"
-      content="Реквизиты, контакты и поддержка сервиса электронного меню Showme.menu."
-    />
-    <meta property="og:title" content="Реквизиты и контакты | Showme.menu" />
-    <meta
-      property="og:description"
-      content="Реквизиты, контакты и поддержка сервиса электронного меню Showme.menu."
-    />
-    <meta property="og:url" content="https://showme.menu/contacts/" />
-    <meta property="og:locale" content="ru_RU" />
-    <link rel="canonical" href="https://showme.menu/contacts/" />
-    <link rel="icon" href="/images/favicon/favicon.svg" type="image/svg+xml" />
-    <link rel="stylesheet" href="/fonts/fonts.css?v=@@buildVersion" />
-    <link rel="stylesheet" href="/files/styles/contacts.css?v=@@buildVersion" />
-    <link
-      rel="stylesheet"
-      href="/files/styles/legal-documents.css?v=@@buildVersion"
-    />
-    <title>Реквизиты и контакты | Showme.menu</title>
-  </head>
-  <!-- Источник: https://docs.google.com/document/d/1gvRmT_LPSCKp5T6li2_IYL__Qxy_lQEmty_BrNib6iA -->
-  <body>
-    <a class="skip" href="#page-title">К содержимому</a>
-    <header class="site-header">
-      <div class="header-inner">
-        <a
-          class="brand notranslate"
-          href="/"
-          aria-label="Showme.menu"
-          data-landing-home
-          ><img
-            src="/images/logo-footer.svg"
-            alt=""
-            width="220"
-            height="38" /></a
-        ><a class="home-link" href="/" data-landing-home
-          >На главную
-          <svg
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="1.6"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            aria-hidden="true"
-          >
-            <path d="M5 12h14m-5-5 5 5-5 5" /></svg
-        ></a>
-      </div>
-    </header>
-    <main class="compact-main">
-      <a class="back-link notranslate" href="/" data-landing-home
+<!-- prettier-ignore -->
+@@include("../../blocks/legal-document/page-start.html", {"title":"Реквизиты и контакты | Showme.menu","description":"Реквизиты, контакты и поддержка сервиса электронного меню Showme.menu.","canonical":"https://showme.menu/contacts/","robots":"index, follow","skipText":"К содержимому","contentClass":"contact-details","legalDocumentRevision":"","breadcrumbsTitle":"Реквизиты и контакты"})
+<!-- Источник: https://docs.google.com/document/d/1gvRmT_LPSCKp5T6li2_IYL__Qxy_lQEmty_BrNib6iA -->
+<a
+  class="contact-details__back-link notranslate legal-document__link"
+  href="/"
+  data-landing-home
+  ><svg
+    class="contact-details__svg"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="1.6"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    aria-hidden="true"
+  >
+    <path d="M19 12H5m5-5-5 5 5 5" /></svg
+  >Showme.menu</a
+>
+<div class="contact-details__intro">
+  <h1
+    class="section__title legal-document__title"
+    id="page-title"
+    tabindex="-1"
+  >
+    Реквизиты и контакты
+  </h1>
+  <p class="legal-document__paragraph">
+    Сервис электронного меню<span class="notranslate" translate="no"
+      >&nbsp;Showme.menu&nbsp;—&nbsp;<a
+        class="notranslate legal-document__link"
+        href="/"
+        data-landing-home
+        >https://showme.menu/</a
+      >.</span
+    >
+  </p>
+</div>
+<section
+  class="legal-document__panel contact-details__section"
+  aria-labelledby="contact-title"
+>
+  <h2 class="legal-document__heading" id="contact-title">Связаться с нами</h2>
+  <div class="contact-details__items">
+    <a
+      class="contact-details__item legal-document__link"
+      href="mailto:support@showme.menu"
+      ><span class="contact-details__icon"
         ><svg
+          class="contact-details__svg"
           viewBox="0 0 24 24"
           fill="none"
           stroke="currentColor"
@@ -67,221 +57,208 @@
           stroke-linejoin="round"
           aria-hidden="true"
         >
-          <path d="M19 12H5m5-5-5 5 5 5" /></svg
-        >Showme.menu</a
+          <rect x="3" y="5" width="18" height="14" rx="3" />
+          <path d="m4 7 8 6 8-6" /></svg></span
+      ><span
+        ><span class="contact-details__label"
+          >Электронная почта для клиентов&nbsp;<br
+            class="contact-details__break"
+          />
+          и обращений по персональным данным</span
+        ><span
+          class="contact-details__value notranslate"
+          dir="ltr"
+          translate="no"
+          >support@showme.menu</span
+        ></span
+      ></a
+    ><a
+      class="contact-details__item legal-document__link"
+      href="tel:+79264148914"
+      ><span class="contact-details__icon"
+        ><svg
+          class="contact-details__svg"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.6"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          aria-hidden="true"
+        >
+          <path
+            d="M7 3H4a1 1 0 0 0-1 1c0 9.4 7.6 17 17 17a1 1 0 0 0 1-1v-3l-5-2-2 2a14 14 0 0 1-7-7l2-2Z"
+          /></svg></span
+      ><span
+        ><span class="contact-details__label">Телефон</span
+        ><span
+          class="contact-details__value notranslate"
+          dir="ltr"
+          translate="no"
+          >+7 926 414-89-14</span
+        ></span
+      ></a
+    >
+  </div>
+</section>
+<div class="contact-details__sheet">
+  <section
+    class="legal-document__panel contact-details__section"
+    aria-labelledby="owner-title"
+  >
+    <div class="contact-details__heading">
+      <h2 class="legal-document__heading" id="owner-title">
+        Реквизиты предпринимателя
+      </h2>
+      <span class="contact-details__number" aria-hidden="true">01</span>
+    </div>
+    <dl class="contact-details__list">
+      <div class="contact-details__row">
+        <dt class="contact-details__term">Наименование</dt>
+        <dd class="contact-details__definition">
+          Индивидуальный предприниматель Яковлев Семен Игоревич
+        </dd>
+      </div>
+      <div class="contact-details__row">
+        <dt class="contact-details__term">ИНН</dt>
+        <dd
+          class="contact-details__numeric notranslate contact-details__definition"
+          dir="ltr"
+          translate="no"
+        >
+          772405786742
+        </dd>
+      </div>
+      <div class="contact-details__row">
+        <dt class="contact-details__term">ОГРНИП</dt>
+        <dd
+          class="contact-details__numeric notranslate contact-details__definition"
+          dir="ltr"
+          translate="no"
+        >
+          320774600197231
+        </dd>
+      </div>
+      <div class="contact-details__row">
+        <dt class="contact-details__term">
+          Адрес регистрации и почтовый адрес
+        </dt>
+        <dd class="contact-details__definition">
+          Российская Федерация, 115477, г. Москва, ул. Кантемировская, д. 39,
+          кв. 297
+        </dd>
+      </div>
+    </dl>
+  </section>
+  <section
+    class="legal-document__panel contact-details__section"
+    aria-labelledby="bank-title"
+  >
+    <div class="contact-details__heading">
+      <h2 class="legal-document__heading" id="bank-title">
+        Банковские реквизиты
+      </h2>
+      <span class="contact-details__number" aria-hidden="true">02</span>
+    </div>
+    <dl class="contact-details__list">
+      <div class="contact-details__row">
+        <dt class="contact-details__term">Расчётный счёт</dt>
+        <dd
+          class="contact-details__numeric notranslate contact-details__definition"
+          dir="ltr"
+          translate="no"
+        >
+          40802810501500103711
+        </dd>
+      </div>
+      <div class="contact-details__row">
+        <dt class="contact-details__term">Банк</dt>
+        <dd class="contact-details__definition">ООО «Банк Точка»</dd>
+      </div>
+      <div class="contact-details__row">
+        <dt class="contact-details__term">БИК</dt>
+        <dd
+          class="contact-details__numeric notranslate contact-details__definition"
+          dir="ltr"
+          translate="no"
+        >
+          044525104
+        </dd>
+      </div>
+      <div class="contact-details__row">
+        <dt class="contact-details__term">Корреспондентский счёт</dt>
+        <dd
+          class="contact-details__numeric notranslate contact-details__definition"
+          dir="ltr"
+          translate="no"
+        >
+          30101810745374525104
+        </dd>
+      </div>
+    </dl>
+    <div class="contact-details__copy-area">
+      <button
+        type="button"
+        class="button button_theme_outline-grey contact-details__copy-button"
       >
-      <div class="page-intro">
-        <h1 id="page-title">Реквизиты и контакты</h1>
-        <p class="service-line">
-          Сервис электронного меню<span class="notranslate" translate="no"
-            >&nbsp;Showme.menu&nbsp;—&nbsp;<a
-              class="notranslate"
-              href="/"
-              data-landing-home
-              >https://showme.menu/</a
-            >.</span
-          >
-        </p>
-      </div>
-      <section class="compact-contact" aria-labelledby="contact-title">
-        <h2 id="contact-title">Связаться с нами</h2>
-        <div class="contact-items">
-          <a class="contact-item" href="mailto:support@showme.menu"
-            ><span class="contact-icon"
-              ><svg
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="1.6"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                aria-hidden="true"
-              >
-                <rect x="3" y="5" width="18" height="14" rx="3" />
-                <path d="m4 7 8 6 8-6" /></svg></span
-            ><span
-              ><span class="contact-label"
-                >Электронная почта для клиентов&nbsp;<br
-                  class="desktop-break"
-                />
-                и обращений по персональным данным</span
-              ><span class="contact-value notranslate" dir="ltr" translate="no"
-                >support@showme.menu</span
-              ></span
-            ></a
-          ><a class="contact-item" href="tel:+79264148914"
-            ><span class="contact-icon"
-              ><svg
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="1.6"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                aria-hidden="true"
-              >
-                <path
-                  d="M7 3H4a1 1 0 0 0-1 1c0 9.4 7.6 17 17 17a1 1 0 0 0 1-1v-3l-5-2-2 2a14 14 0 0 1-7-7l2-2Z"
-                /></svg></span
-            ><span
-              ><span class="contact-label">Телефон</span
-              ><span class="contact-value notranslate" dir="ltr" translate="no"
-                >+7 926 414-89-14</span
-              ></span
-            ></a
-          >
-        </div>
-      </section>
-      <div class="compact-sheet">
-        <section aria-labelledby="owner-title">
-          <div class="section-heading">
-            <h2 id="owner-title">Реквизиты предпринимателя</h2>
-            <span class="section-number" aria-hidden="true">01</span>
-          </div>
-          <dl class="details">
-            <div class="detail-row">
-              <dt>Наименование</dt>
-              <dd>Индивидуальный предприниматель Яковлев Семен Игоревич</dd>
-            </div>
-            <div class="detail-row">
-              <dt>ИНН</dt>
-              <dd class="numeric notranslate" dir="ltr" translate="no">
-                772405786742
-              </dd>
-            </div>
-            <div class="detail-row">
-              <dt>ОГРНИП</dt>
-              <dd class="numeric notranslate" dir="ltr" translate="no">
-                320774600197231
-              </dd>
-            </div>
-            <div class="detail-row">
-              <dt>Адрес регистрации и почтовый адрес</dt>
-              <dd>
-                Российская Федерация, 115477, г. Москва, ул. Кантемировская, д.
-                39, кв. 297
-              </dd>
-            </div>
-          </dl>
-        </section>
-        <section aria-labelledby="bank-title">
-          <div class="section-heading">
-            <h2 id="bank-title">Банковские реквизиты</h2>
-            <span class="section-number" aria-hidden="true">02</span>
-          </div>
-          <dl class="details">
-            <div class="detail-row">
-              <dt>Расчётный счёт</dt>
-              <dd class="numeric notranslate" dir="ltr" translate="no">
-                40802810501500103711
-              </dd>
-            </div>
-            <div class="detail-row">
-              <dt>Банк</dt>
-              <dd>ООО «Банк Точка»</dd>
-            </div>
-            <div class="detail-row">
-              <dt>БИК</dt>
-              <dd class="numeric notranslate" dir="ltr" translate="no">
-                044525104
-              </dd>
-            </div>
-            <div class="detail-row">
-              <dt>Корреспондентский счёт</dt>
-              <dd class="numeric notranslate" dir="ltr" translate="no">
-                30101810745374525104
-              </dd>
-            </div>
-          </dl>
-          <div class="copy-area">
-            <button type="button" class="copy-button">
-              <svg
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="1.6"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                aria-hidden="true"
-              >
-                <rect x="8" y="8" width="12" height="13" rx="2" />
-                <path
-                  d="M16 8V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h3"
-                /></svg
-              ><span>Скопировать реквизиты</span></button
-            ><span class="copy-status" role="status" aria-live="polite"></span>
-          </div>
-        </section>
-      </div>
-      <section class="compact-support" aria-labelledby="support-title">
-        <div class="support-header">
-          <svg
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="1.6"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            aria-hidden="true"
-          >
-            <circle cx="12" cy="12" r="9" />
-            <path d="M12 7v5l3 2" />
-          </svg>
-          <h2 id="support-title">Поддержка</h2>
-        </div>
-        <p class="support-text">
-          Обращения принимаются по электронной почте<span
-            class="notranslate"
-            translate="no"
-            >&nbsp;<a
-              class="notranslate"
-              dir="ltr"
-              translate="no"
-              href="mailto:support@showme.menu"
-              >support@showme.menu</a
-            >.&nbsp;</span
-          >График: понедельник–пятница, 10:00–18:00 по московскому времени, за
-          исключением официальных нерабочих праздничных дней Российской
-          Федерации. Первичный ответ предоставляется, как правило, в течение 2
-          рабочих дней. Срок устранения неисправности зависит от её характера и
-          сложности.
-        </p>
-      </section>
-    </main>
-    @@include("../../blocks/legal/footer.html")
-    @@include("../../blocks/page-language/page-language.html")
-    <script>
-      document.querySelectorAll('a[href^="#"]').forEach((link) =>
-        link.addEventListener('click', (event) => {
-          const target = document.getElementById(
-            link.getAttribute('href').slice(1)
-          );
-          if (!target) return;
-          event.preventDefault();
-          target.setAttribute('tabindex', '-1');
-          target.scrollIntoView({
-            behavior: window.matchMedia('(prefers-reduced-motion: reduce)')
-              .matches
-              ? 'instant'
-              : 'smooth',
-          });
-          target.focus({ preventScroll: true });
-        })
-      );
-      document.querySelectorAll('.copy-button').forEach((button) =>
-        button.addEventListener('click', async () => {
-          const status = button.parentElement.querySelector('.copy-status');
-          try {
-            await navigator.clipboard.writeText(
-              'Наименование: Индивидуальный предприниматель Яковлев Семен Игоревич\nИНН: 772405786742\nОГРНИП: 320774600197231\nАдрес регистрации и почтовый адрес: Российская Федерация, 115477, г. Москва, ул. Кантемировская, д. 39, кв. 297\nТелефон: +7 926 414-89-14\nЭлектронная почта для клиентов и обращений по персональным данным: support@showme.menu\nРасчётный счёт: 40802810501500103711\nБанк: ООО «Банк Точка»\nБИК: 044525104\nКорреспондентский счёт: 30101810745374525104'
-            );
-            status.textContent = 'Реквизиты скопированы';
-          } catch {
-            status.textContent =
-              'Не удалось скопировать. Выделите нужные реквизиты на странице.';
-          }
-        })
-      );
-    </script>
-  </body>
-</html>
+        <svg
+          class="contact-details__svg"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.6"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          aria-hidden="true"
+        >
+          <rect x="8" y="8" width="12" height="13" rx="2" />
+          <path
+            d="M16 8V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h3"
+          /></svg
+        ><span>Скопировать реквизиты</span></button
+      ><span
+        class="contact-details__copy-status"
+        role="status"
+        aria-live="polite"
+      ></span>
+    </div>
+  </section>
+</div>
+<section
+  class="legal-document__panel contact-details__section"
+  aria-labelledby="support-title"
+>
+  <div class="contact-details__heading">
+    <svg
+      class="contact-details__svg"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="1.6"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      aria-hidden="true"
+    >
+      <circle cx="12" cy="12" r="9" />
+      <path d="M12 7v5l3 2" />
+    </svg>
+    <h2 class="legal-document__heading" id="support-title">Поддержка</h2>
+  </div>
+  <p class="legal-document__paragraph">
+    Обращения принимаются по электронной почте<span
+      class="notranslate"
+      translate="no"
+      >&nbsp;<a
+        class="notranslate legal-document__link"
+        dir="ltr"
+        translate="no"
+        href="mailto:support@showme.menu"
+        >support@showme.menu</a
+      >.&nbsp;</span
+    >График: понедельник–пятница, 10:00–18:00 по московскому времени, за
+    исключением официальных нерабочих праздничных дней Российской Федерации.
+    Первичный ответ предоставляется, как правило, в течение 2 рабочих дней. Срок
+    устранения неисправности зависит от её характера и сложности.
+  </p>
+</section>
+@@include("../../blocks/legal-document/page-end.html")

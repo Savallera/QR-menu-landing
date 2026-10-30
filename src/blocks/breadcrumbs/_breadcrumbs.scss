@@ -1,0 +1,36 @@
+.breadcrumbs {
+  font-size: var(--text-sm);
+  color: var(--text-secondary-color);
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: calc(var(--indent-xxs) / 2) var(--indent-xxs);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  &__item {
+    display: flex;
+    gap: var(--indent-xxs);
+    min-inline-size: 0;
+
+    & + &::before {
+      content: '/';
+    }
+  }
+
+  &__link {
+    text-underline-offset: 0.2em;
+
+    &:hover {
+      color: var(--text-main-color);
+    }
+
+    &:focus-visible {
+      outline: 2px solid currentColor;
+      outline-offset: 4px;
+    }
+  }
+}

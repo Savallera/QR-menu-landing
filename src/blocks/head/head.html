@@ -15,6 +15,9 @@
   <meta name="robots" content="@@robots" />
   <link rel="canonical" href="@@ogUrl" />
   <meta name="copyright" content="https://showme.menu/" />
+  @@if (context.legalDocumentRevision) {
+  <meta name="legal-document-revision" content="@@legalDocumentRevision" />
+  }
   <link rel="icon" href="/images/favicon/favicon.ico" sizes="any" />
   <link rel="icon" href="/images/favicon/favicon.svg" type="image/svg+xml" />
   <link rel="apple-touch-icon" href="/images/favicon/apple-touch-icon.png" />
@@ -26,8 +29,4 @@
   <link rel="stylesheet" href="/fonts/fonts.css?v=@@buildVersion" />
   <link rel="stylesheet" href="/styles/libs/splide.min.css?v=@@buildVersion" />
   <link rel="stylesheet" href="/styles/styles.min.css?v=@@buildVersion" />
-  <link
-    rel="stylesheet"
-    href="/files/styles/legal-documents.css?v=@@buildVersion"
-  />
 </head>

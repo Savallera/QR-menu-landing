@@ -22,14 +22,16 @@
     document.querySelectorAll('[data-landing-home]').forEach((link) => {
       link.href = landingLanguagePage(code);
     });
-    document.querySelectorAll('.legal-links a').forEach((link) => {
-      if (
-        new URL(link.href).pathname.replace(/\/$/, '') ===
-        window.location.pathname.replace(/\/$/, '')
-      ) {
-        link.setAttribute('aria-current', 'page');
-      }
-    });
+    document
+      .querySelectorAll('.footer__nav_content_policy .footer__link')
+      .forEach((link) => {
+        if (
+          new URL(link.href).pathname.replace(/\/$/, '') ===
+          window.location.pathname.replace(/\/$/, '')
+        ) {
+          link.setAttribute('aria-current', 'page');
+        }
+      });
   })();
 </script>
 <script src="/scripts/libs/element.js?v=@@buildVersion"></script>

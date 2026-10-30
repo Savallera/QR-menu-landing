@@ -7,6 +7,8 @@ node_modules
 # gulpfile.js
 
 # package.json
-package-lock.json
+# package-lock.json
 
 dist/
+.playwright-cli/
+/output/playwright/

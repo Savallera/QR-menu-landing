@@ -27,7 +27,7 @@ const textPart = (value) => {
 export function renderInline(run) {
   let content;
   if (run.link && safeLink(run.link)) {
-    content = `<a href="${escapeHtml(run.link)}">${textPart(run.text)}</a>`;
+    content = `<a class="legal-document__link" href="${escapeHtml(run.link)}">${textPart(run.text)}</a>`;
   } else {
     const tokens =
       /https?:\/\/[^\s<>]+|[\w.+-]+@[\w.-]+\.[A-Za-z]{2,}|\+7[\d ()\u00a0-]{10,18}\d|\b\d{9,20}\b/g;
@@ -46,14 +46,15 @@ export function renderInline(run) {
             ? 'tel:' + url.replace(/[^+\d]/g, '')
             : null;
       const value = href
-        ? `<a href="${escapeHtml(href)}">${escapeHtml(url)}</a>`
+        ? `<a class="legal-document__link" href="${escapeHtml(href)}">${escapeHtml(url)}</a>`
         : escapeHtml(url);
       content += `<span class="notranslate" dir="ltr" translate="no">${value}${escapeHtml(punctuation)}</span>`;
       position = match.index + token.length;
     }
     content += textPart(run.text.slice(position));
   }
-  if (run.bold) content = `<strong>${content}</strong>`;
+  if (run.bold)
+    content = `<strong class="legal-document__emphasis">${content}</strong>`;
   if (run.italic) content = `<em>${content}</em>`;
   return content;
 }
@@ -97,13 +98,16 @@ export function renderDocument(document, key) {
             const body = renderDocument({ blocks: cell }, key + '-cell');
             const mobileLabel = header
               ? ''
-              : `<span class="mobile-table-label" aria-hidden="true">${escapeHtml(headings[column])}</span>`;
-            return `<${tag} ${attrs} data-source-cell="${index}-${header ? 0 : block.rows.indexOf(row)}-${column}">${mobileLabel}${body}</${tag}>`;
+              : `<span class="legal-document__cell-label" aria-hidden="true">${escapeHtml(headings[column])}</span>`;
+            return `<${tag} class="legal-document__table-cell${header ? ' legal-document__table-cell_content_heading' : ''}" ${attrs} data-source-cell="${index}-${header ? 0 : block.rows.indexOf(row)}-${column}">${mobileLabel}${body}</${tag}>`;
           })
           .join('');
-      output += `<table class="legal-table" role="table"><thead role="rowgroup"><tr role="row">${cells(block.rows[0], true)}</tr></thead><tbody role="rowgroup">${block.rows
+      output += `<table class="legal-document__table" role="table"><thead class="legal-document__table-head" role="rowgroup"><tr class="legal-document__table-row" role="row">${cells(block.rows[0], true)}</tr></thead><tbody class="legal-document__table-body" role="rowgroup">${block.rows
         .slice(1)
-        .map((row) => `<tr role="row">${cells(row, false)}</tr>`)
+        .map(
+          (row) =>
+            `<tr class="legal-document__table-row" role="row">${cells(row, false)}</tr>`
+        )
         .join('')}</tbody></table>\n`;
       return;
     }
@@ -115,28 +119,31 @@ export function renderDocument(document, key) {
         closeList();
         const count = counters.get(id) ?? start;
         const tag = ordered ? 'ol' : 'ul';
-        output += `<${tag}${ordered ? ` start="${count}"` : ''}>\n`;
+        output += `<${tag} class="legal-document__list${ordered ? ' legal-document__list_ordered' : ''}"${ordered ? ` start="${count}"` : ''}>\n`;
         openList = { id, tag };
       }
-      output += `<li data-source-block="${index}">${content}</li>\n`;
+      output += `<li class="legal-document__list-item" data-source-block="${index}">${content}</li>\n`;
       counters.set(id, (counters.get(id) ?? start) + 1);
       return;
     }
     closeList();
     let tag = 'p';
-    let attrs = '';
+    let attrs = ' class="legal-document__paragraph"';
     if (
       (key === 'offer' && text === 'ОФЕРТА') ||
-      (['privacy', 'personal-data-consent'].includes(key) && block.style === 'HEADING_1')
+      (['privacy', 'personal-data-consent'].includes(key) &&
+        block.style === 'HEADING_1')
     ) {
       tag = 'h1';
-      attrs = ' id="page-title"';
+      attrs =
+        ' class="section__title legal-document__title" id="page-title" tabindex="-1"';
     } else if (block.style.startsWith('HEADING_')) {
       tag = 'h2';
       const number = text.match(/^(\d+)\./)?.[1];
-      attrs = ` id="${key === 'offer' && number === '3' ? 'tariffs' : key === 'offer' && number === '4' ? 'refunds' : 'section-' + index}"`;
+      attrs = ` class="legal-document__heading" id="${key === 'offer' && number === '3' ? 'tariffs' : key === 'offer' && number === '4' ? 'refunds' : 'section-' + index}"`;
     } else if (/^Редакция от /.test(text)) {
-      attrs = ' class="document-edition"';
+      attrs =
+        ' class="legal-document__paragraph legal-document__paragraph_content_edition"';
     }
     output += `<${tag}${attrs} data-source-block="${index}">${content}</${tag}>\n`;
   });
@@ -161,29 +168,20 @@ export function registrationDocument(source, key) {
 }
 
 function shell(key, title, body, pending = false, revisionId = '') {
-  return `<!doctype html>
-<html lang="ru" dir="ltr">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="color-scheme" content="light">
-${pending ? '<meta name="robots" content="noindex">' : ''}
-${revisionId ? `<meta name="legal-document-revision" content="${escapeHtml(revisionId)}">` : ''}
-<meta name="description" content="${escapeHtml(title)} сервиса Showme.menu.">
-<link rel="canonical" href="https://showme.menu/${key}/">
-<link rel="icon" href="/images/favicon/favicon.svg" type="image/svg+xml">
-<link rel="stylesheet" href="/fonts/fonts.css?v=@@buildVersion">
-<link rel="stylesheet" href="/files/styles/contacts.css?v=@@buildVersion">
-<link rel="stylesheet" href="/files/styles/legal-documents.css?v=@@buildVersion">
-<title>${escapeHtml(title)} | Showme.menu</title>
-</head>
-<body class="legal-page">
-<a class="skip" href="#page-title">К документу</a>
-@@include("../../blocks/legal/header.html")
-<main class="legal-main"><article class="legal-document" data-legal-document>${body}</article></main>
-@@include("../../blocks/legal/footer.html")
-@@include("../../blocks/page-language/page-language.html")
-</body></html>`;
+  const context = JSON.stringify({
+    title: title + ' | Showme.menu',
+    description: title + ' сервиса Showme.menu.',
+    canonical: `https://showme.menu/${key}/`,
+    robots: pending ? 'noindex' : 'index, follow',
+    skipText: 'К документу',
+    contentClass: '',
+    breadcrumbsTitle: title,
+    legalDocumentRevision: revisionId,
+  });
+  return `<!-- prettier-ignore -->
+@@include("../../blocks/legal-document/page-start.html", ${context})
+${body}
+@@include("../../blocks/legal-document/page-end.html")\n`;
 }
 
 export async function build() {
@@ -210,7 +208,12 @@ export async function build() {
   const consent = 'personal-data-consent';
   let consentRevision = null;
   try {
-    const source = JSON.parse(await readFile(resolve(root, 'src/legal/documents', consent + '.json'), 'utf8'));
+    const source = JSON.parse(
+      await readFile(
+        resolve(root, 'src/legal/documents', consent + '.json'),
+        'utf8'
+      )
+    );
     consentRevision = registrationDocument(source, consent);
   } catch (error) {
     if (error.code !== 'ENOENT') throw error;
@@ -222,16 +225,24 @@ export async function build() {
     shell(
       consent,
       'Согласие на обработку персональных данных',
-      consentRevision?.contentHtml ?? '<h1 id="page-title">Согласие на обработку персональных данных</h1><p class="document-notice" role="status">Текст согласия будет опубликован после подготовки и утверждения.</p><p>По вопросам обработки персональных данных: <a class="notranslate" dir="ltr" translate="no" href="mailto:support@showme.menu">support@showme.menu</a>.</p>',
+      consentRevision?.contentHtml ??
+        '<h1 class="section__title legal-document__title" id="page-title" tabindex="-1">Согласие на обработку персональных данных</h1><p class="legal-document__notice" role="status">Текст согласия будет опубликован после подготовки и утверждения.</p><p class="legal-document__paragraph">По вопросам обработки персональных данных: <a class="legal-document__link notranslate" dir="ltr" translate="no" href="mailto:support@showme.menu">support@showme.menu</a>.</p>',
       !consentRevision,
       consentRevision?.revisionId ?? ''
     )
   );
   await mkdir(resolve(root, 'src/files/legal'), { recursive: true });
-  await writeFile(resolve(root, 'src/files/legal/registration-documents.json'), JSON.stringify({
-    schemaVersion: 1,
-    documents: registrationDocuments,
-  }, null, 2) + '\n');
+  await writeFile(
+    resolve(root, 'src/files/legal/registration-documents.json'),
+    JSON.stringify(
+      {
+        schemaVersion: 1,
+        documents: registrationDocuments,
+      },
+      null,
+      2
+    ) + '\n'
+  );
   await mkdir(resolve(root, 'src/pages/prices'), { recursive: true });
   await writeFile(
     resolve(root, 'src/pages/prices/index.html'),

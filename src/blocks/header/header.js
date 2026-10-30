@@ -21,7 +21,7 @@ document.body.addEventListener('click', closeMenu);
 // Мягкий скролл
 function smoothScroll(id) {
   const element = document.getElementById(id);
-  element.scrollIntoView({ behavior: 'smooth' });
+  element?.scrollIntoView({ behavior: 'smooth' });
 }
 
 document.addEventListener('DOMContentLoaded', (event) => {

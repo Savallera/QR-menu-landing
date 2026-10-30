@@ -150,7 +150,9 @@ function setLandingLanguage(code) {
   rememberLandingLanguage(code);
   applyLandingLanguage(code);
 
-  const target = landingLanguagePage(code);
+  const target = document.querySelector('[data-legal-document]')
+    ? window.location.pathname
+    : landingLanguagePage(code);
 
   if (window.location.pathname === target) {
     window.location.reload();

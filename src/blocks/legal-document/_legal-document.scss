@@ -1,0 +1,182 @@
+.legal-document {
+  min-inline-size: 0;
+  gap: var(--indent-xxs);
+  font-size: var(--text-md);
+  font-weight: 500;
+  overflow-wrap: anywhere;
+
+  &__title {
+    text-align: start;
+    line-height: 1.2;
+    scroll-margin-block-start: var(--indent-md);
+  }
+
+  &__heading {
+    font-size: var(--heading-xs);
+    font-weight: 700;
+    line-height: inherit;
+    scroll-margin-block-start: var(--indent-md);
+
+    &:not(:first-child) {
+      margin-block-start: var(--indent-sm);
+    }
+  }
+
+  &__paragraph {
+    margin: 0;
+
+    &_content_edition {
+      font-size: var(--text-sm);
+      text-align: end;
+    }
+  }
+
+  &__emphasis {
+    font-weight: 700;
+  }
+
+  &__list {
+    margin: 0;
+    padding-inline-start: var(--indent-sm);
+    list-style: disc;
+
+    &_ordered {
+      list-style-type: decimal;
+
+      .legal-document__list-item::marker {
+        content: counter(list-item) ') ';
+      }
+    }
+  }
+
+  &__list-item + &__list-item {
+    margin-block-start: calc(var(--indent-xxs) / 2);
+  }
+
+  &__link {
+    color: var(--text-main-color);
+    text-decoration: underline;
+    text-underline-offset: 0.2em;
+    overflow-wrap: anywhere;
+
+    &:hover {
+      text-decoration-style: double;
+    }
+
+    &:focus-visible {
+      outline: 2px solid currentColor;
+      outline-offset: 4px;
+    }
+  }
+
+  &__skip-link {
+    position: fixed;
+    inset-block-start: var(--indent-xs);
+    inset-inline-start: var(--indent-xs);
+    z-index: 101;
+    padding: var(--indent-xs);
+    border-radius: var(--border-radius-sm);
+    color: var(--text-main-color);
+    background-color: var(--bg-main-color);
+    transform: translateY(calc(-100% - var(--indent-md)));
+
+    &:focus-visible {
+      transform: none;
+      outline: 2px solid currentColor;
+    }
+  }
+
+  &__panel,
+  &__notice {
+    padding: var(--indent-card-sm);
+    border: 1px solid var(--text-tetriary-color);
+    border-radius: var(--border-radius-sm);
+    background-color: var(--bg-secondary-color);
+
+    @include media(md, max) {
+      padding: var(--indent-xxs);
+    }
+  }
+
+  &__table {
+    inline-size: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+    font-size: var(--text-sm);
+  }
+
+  &__table-cell {
+    padding: var(--indent-xs);
+    border: 1px solid var(--text-tetriary-color);
+    text-align: start;
+    vertical-align: top;
+
+    &:first-child {
+      inline-size: var(--indent-xl);
+    }
+
+    &_content_heading {
+      font-weight: 700;
+      background-color: var(--bg-secondary-color);
+    }
+
+    .legal-document__paragraph + .legal-document__paragraph,
+    .legal-document__paragraph + .legal-document__list,
+    .legal-document__list + .legal-document__paragraph {
+      margin-block-start: var(--indent-xs);
+    }
+  }
+
+  &__cell-label {
+    display: none;
+  }
+
+  @include media(lg, max) {
+    &__table,
+    &__table-body,
+    &__table-row,
+    &__table-cell {
+      display: block;
+      inline-size: 100%;
+    }
+
+    &__table-head {
+      position: absolute;
+      inline-size: 1px;
+      block-size: 1px;
+      overflow: hidden;
+      clip-path: inset(50%);
+    }
+
+    &__table-body {
+      display: grid;
+      gap: var(--indent-md);
+    }
+
+    &__table-body &__table-row {
+      border: 1px solid var(--text-tetriary-color);
+      border-radius: var(--border-radius-sm);
+      background-color: var(--bg-secondary-color);
+    }
+
+    &__table-cell {
+      padding: var(--indent-xxs);
+      border: 0;
+      border-block-end: 1px solid var(--text-tetriary-color);
+
+      &:first-child {
+        inline-size: 100%;
+      }
+
+      &:last-child {
+        border-block-end: 0;
+      }
+    }
+
+    &__cell-label {
+      display: block;
+      margin-block-end: calc(var(--indent-xxs) / 2);
+      font-weight: 700;
+    }
+  }
+}

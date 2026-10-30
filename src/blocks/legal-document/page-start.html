@@ -1,0 +1,11 @@
+<!doctype html>
+<html lang="ru" dir="ltr">
+  <!-- prettier-ignore -->
+  @@include("../head/head.html", {"title": "@@title", "description": "@@description", "ogTitle": "@@title", "ogUrl": "@@canonical", "ogImage": "https://showme.menu/images/social-image.jpg", "ogLocale": "ru_RU", "robots": "@@robots", "pageLanguage": "", "legalDocumentRevision": "@@legalDocumentRevision"})
+  <body>
+    <div class="page">
+      <a class="legal-document__skip-link" href="#page-title">@@skipText</a>
+      @@include("../header/header.html")
+      <main class="page__content section">
+        <article class="section__indent legal-document @@contentClass" data-legal-document>
+          @@include("../breadcrumbs/breadcrumbs.html", {"title": "@@breadcrumbsTitle"})

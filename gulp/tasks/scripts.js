@@ -9,22 +9,29 @@ import babel from 'gulp-babel';
 import webpack from 'webpack-stream';
 
 export default () => {
-  return gulp
-    .src(path.scripts.src)
-    .pipe(
-      plumber({
-        errorHandler: notify.onError((error) => ({
-          title: 'JS',
-          message: error.message,
-        })),
-      })
-    )
-    // .pipe(concat('index.js'))
-    .pipe(babel())
-    .pipe(
-      webpack({
-        mode: 'development',
-      })
-    )
-    .pipe(gulp.dest(path.scripts.dest));
+  return (
+    gulp
+      .src(path.scripts.src)
+      .pipe(
+        plumber({
+          errorHandler: notify.onError((error) => ({
+            title: 'JS',
+            message: error.message,
+          })),
+        })
+      )
+      // .pipe(concat('index.js'))
+      .pipe(babel())
+      .pipe(
+        webpack({
+          mode: 'development',
+          entry: {
+            main: './src/scripts/index.js',
+            documents: './src/scripts/documents.js',
+          },
+          output: { filename: '[name].js' },
+        })
+      )
+      .pipe(gulp.dest(path.scripts.dest))
+  );
 };

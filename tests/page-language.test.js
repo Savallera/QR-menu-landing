@@ -48,6 +48,7 @@ function setup({
       domain: 'showme.menu',
       documentElement: { lang: 'ru', dir: 'ltr' },
       getElementById: () => null,
+      querySelector: () => null,
       querySelectorAll: (selector) =>
         selector === '[data-landing-home]' ? homes : [],
     },
@@ -167,6 +168,23 @@ test('не создаются cookies с несуществующим домен
     state.writes.every(
       ({ options }) => !String(options?.domain).includes('.undefined')
     )
+  );
+});
+
+test('переключение языка документа сохраняет его адрес и якорь', () => {
+  const state = setup({
+    saved: 'ru',
+    url: 'https://showme.menu/offer/?utm_source=menu#tariffs',
+  });
+  state.context.document.querySelector = (selector) =>
+    selector === '[data-legal-document]' ? {} : null;
+  state.context.setLandingLanguage('en');
+  assert.equal(state.storage.get('landingLanguage'), 'en');
+  assert.equal(state.cookies.get('googtrans'), '/ru/en');
+  assert.equal(state.reloadCount(), 1);
+  assert.equal(
+    state.context.window.location.href,
+    'https://showme.menu/offer/?utm_source=menu#tariffs'
   );
 });
 

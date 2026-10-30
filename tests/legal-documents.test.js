@@ -9,7 +9,7 @@ import {
 const plain = (html) =>
   html
     .replace(
-      /<span class="mobile-table-label" aria-hidden="true">[\s\S]*?<\/span>/g,
+      /<span class="legal-document__cell-label" aria-hidden="true">[\s\S]*?<\/span>/g,
       ''
     )
     .replace(/<[^>]*>/g, '')
@@ -48,7 +48,7 @@ const sourceText = (blocks) =>
     )
     .join('\n');
 
-for (const key of ['offer', 'privacy']) {
+for (const key of ['offer', 'privacy', 'personal-data-consent']) {
   test(
     key + ': весь утверждённый текст сохраняется при переносе в HTML',
     () => {
@@ -65,7 +65,7 @@ for (const key of ['offer', 'privacy']) {
       );
       assert.equal((html.match(/<h1\b/g) || []).length, 1);
       assert.equal(
-        (html.match(/<strong>/g) || []).length,
+        (html.match(/<strong\b/g) || []).length,
         boldCount(source.blocks)
       );
       assert.ok(!/href="javascript:/i.test(html));
@@ -75,10 +75,12 @@ for (const key of ['offer', 'privacy']) {
         assert.equal((html.match(/ data-label=/g) || []).length, 35);
         assert.equal((html.match(/<ol\b/g) || []).length, 3);
         assert.ok(!html.includes('Редакция от'));
-      } else {
+      } else if (key === 'offer') {
         assert.ok(plain(html).includes('Редакция от 30.10.2026'));
         assert.ok(html.includes('id="tariffs"'));
         assert.ok(html.includes('id="refunds"'));
+      } else {
+        assert.equal(source.approved, true);
       }
     }
   );
@@ -92,7 +94,7 @@ test('текст и атрибуты из документа не исполня
   });
   assert.ok(!html.includes('<script>'));
   assert.ok(!html.includes('href='));
-  assert.ok(html.includes('<strong>'));
+  assert.ok(/<strong\b/.test(html));
   assert.equal(plain(html), '<script>alert(1)</script>');
   const linked = renderInline({
     text: 'Ссылка',

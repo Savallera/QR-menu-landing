@@ -1,9 +1,7 @@
 @font-face {
   font-family: Raleway;
-  src:
-    local('Raleway'),
-    url(./Raleway-Variable.woff2) format('woff2 supports variations'),
-    url(./Raleway-Variable.woff2) format('woff2-variations');
-  font-weight: 600 700;
+  src: url(./Raleway-Variable.woff2) format('woff2');
+  font-style: normal;
+  font-weight: 100 900;
   font-display: swap;
 }
