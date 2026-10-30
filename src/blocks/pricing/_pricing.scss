@@ -20,39 +20,6 @@
     }
   }
 
-  &__card-tabs {
-    padding: 0.25em;
-    border: 1px solid var(--text-secondary-color);
-    border-radius: var(--border-radius-sm);
-
-    display: flex;
-    flex-wrap: wrap;
-
-    grid-area: 1/1/2/2;
-
-    @include media(lg) {
-      justify-self: start;
-      grid-area: unset;
-    }
-  }
-
-  &__card-tab {
-    flex: auto;
-    border-color: transparent;
-    color: var(--grey-300);
-
-    &:hover {
-      color: var(--text-main-color);
-    }
-
-    &_actived {
-      pointer-events: none;
-      background-color: var(--bg-accent-color);
-      border-color: var(--bg-accent-color);
-      color: var(--white);
-    }
-  }
-
   &__card-main-info {
     display: flex;
     flex-direction: column;
@@ -77,6 +44,28 @@
     padding-inline-start: 1.25em;
   }
 
+  &__card-terms {
+    border-top: 1px solid var(--grey-300);
+    padding-top: var(--indent-xxs);
+  }
+
+  &__card-terms-link {
+    font-size: var(--text-sm);
+    font-weight: 500;
+    color: var(--text-secondary-color);
+    text-decoration: underline;
+    text-underline-offset: 0.2em;
+
+    &:hover {
+      color: var(--main-color);
+    }
+
+    &:focus-visible {
+      outline: 2px solid;
+      outline-offset: 4px;
+    }
+  }
+
   &__card-total-price {
     place-self: center;
     background-color: var(--bg-main-color);
@@ -87,11 +76,25 @@
     gap: var(--indent-xl);
 
     @include media(lg) {
-      grid-area: 1/1/3/2;
+      grid-area: 1/1/2/2;
       background-color: transparent;
       border-radius: unset;
       padding: 0 0 var(--indent-xl);
     }
+  }
+
+  &__card-action {
+    display: grid;
+    gap: var(--indent-xs);
+  }
+
+  &__card-payment-note {
+    max-inline-size: 36ch;
+    justify-self: center;
+    font-size: var(--text-sm);
+    line-height: 1.5;
+    color: var(--text-secondary-color);
+    text-align: center;
   }
 
   &__card-price {
@@ -106,28 +109,10 @@
     justify-items: flex-end;
     align-items: center;
     text-align: center;
-
-    opacity: 0;
-    pointer-events: none;
-    user-select: none;
-
-    &_actived {
-      opacity: 1;
-      user-select: unset;
-      pointer-events: unset;
-      transition: opacity 0.35s .15s;
-    }
   }
 
   &__card-price-info {
     font-size: var(--text-md);
-    color: var(--text-secondary-color);
-    font-weight: 500;
-  }
-
-  &__card-price-low {
-    text-decoration: line-through;
-    font-size: var(--heading-sm);
     color: var(--text-secondary-color);
     font-weight: 500;
   }

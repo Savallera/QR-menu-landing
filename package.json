@@ -14,7 +14,7 @@
     "lintfix": "stylelint --fix './dist/**/*.css'",
     "checkAll": "npm run check && npm run lint",
     "fixAll": "npm run format && npm run lintfix",
-    "deploy": "gh-pages -d dist",
+    "deploy": "node gulp/prepare-pages.js && gh-pages -d dist",
     "start": "gulp"
   },
   "babel": {
@@ -35,6 +35,7 @@
     "gulp": "^4.0.2",
     "gulp-avif": "^1.1.1",
     "gulp-babel": "^8.0.0",
+    "gulp-cli": "^3.1.0",
     "gulp-concat": "^2.6.1",
     "gulp-cssimport": "^7.0.0",
     "gulp-file-include": "^2.3.0",

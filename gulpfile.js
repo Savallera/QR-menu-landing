@@ -11,7 +11,7 @@ import styles from './gulp/tasks/styles.js';
 import stylesLibs from './gulp/tasks/stylesLibs.js';
 import scripts from './gulp/tasks/scripts.js';
 import scriptsLibs from './gulp/tasks/scriptsLibs.js';
-import images from './gulp/tasks/images.js';
+import images, { imagesDev } from './gulp/tasks/images.js';
 import favicon from './gulp/tasks/favicon.js';
 import svgSprite from './gulp/tasks/svgSprite.js';
 import fonts from './gulp/tasks/fonts.js';
@@ -31,29 +31,31 @@ function watcher() {
   gulp.watch(path.stylesLibs.watch, stylesLibs);
   gulp.watch(path.scripts.watch, scripts).on('all', browserSync.reload);
   gulp.watch(path.scriptsLibs.watch, scriptsLibs).on('all', browserSync.reload);
-  gulp.watch(path.images.watch, images).on('all', browserSync.reload);
+  gulp.watch(path.images.watch, imagesDev).on('all', browserSync.reload);
   gulp.watch(path.favicon.watch, favicon).on('all', browserSync.reload);
   gulp.watch(path.svgSprite.watch, svgSprite).on('all', browserSync.reload);
   gulp.watch(path.fonts.watch, fonts).on('all', browserSync.reload);
   gulp.watch(path.files.watch, files).on('all', browserSync.reload);
 }
 
-const build = gulp.series(
-  clear,
-  gulp.parallel(
-    html,
-    styles,
-    stylesLibs,
-    scripts,
-    scriptsLibs,
-    images,
-    favicon,
-    svgSprite,
-    fonts,
-    files
-  )
-);
-const dev = gulp.series(build, gulp.parallel(server, watcher));
+const createBuild = (imageTask) =>
+  gulp.series(
+    clear,
+    gulp.parallel(
+      html,
+      styles,
+      stylesLibs,
+      scripts,
+      scriptsLibs,
+      imageTask,
+      favicon,
+      svgSprite,
+      fonts,
+      files
+    )
+  );
+const build = createBuild(images);
+const dev = gulp.series(createBuild(imagesDev), gulp.parallel(server, watcher));
 
 export { clear };
 export { html };

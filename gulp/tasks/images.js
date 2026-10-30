@@ -9,6 +9,22 @@ import newer from 'gulp-newer';
 import webp from 'gulp-webp';
 import avif from 'gulp-avif';
 
+export const imagesDev = gulp.parallel(
+  function copyImages() {
+    return gulp
+      .src([...path.images.src, ...path.svg.src])
+      .pipe(newer(path.images.dest))
+      .pipe(gulp.dest(path.images.dest));
+  },
+  function webpImages() {
+    return gulp
+      .src(path.images.src)
+      .pipe(newer({ dest: path.images.dest, ext: '.webp' }))
+      .pipe(webp())
+      .pipe(gulp.dest(path.images.dest));
+  }
+);
+
 export default () => {
   return gulp
     .src(path.images.src)

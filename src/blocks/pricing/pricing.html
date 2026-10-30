@@ -7,54 +7,37 @@
       Регистрируйтесь сейчас и пробуйте две недели бесплатно
     </h2>
     <div class="section__description">
-      <p>
-        Полный безлимит в удобном едином тарифе. При разовой оплате вы получаете
-        скидку 27%.
-      </p>
+      <p>Полный безлимит в удобном едином тарифе.</p>
     </div>
     <article class="pricing__card">
-      <div class="pricing__card-tabs">
-        <button
-          class="button pricing__card-tab pricing__card-tab_actived"
-          type="button"
-          id="month_pay_button"
-        >
-          <span class="button__text" >Оплата за месяц</span>
-        </button>
-        <button
-          class="button pricing__card-tab"
-          type="button"
-          id="year_pay_button"
-        >
-          <span class="button__text">Оплата за год</span>
-        </button>
-      </div>
       <div class="pricing__card-total-price">
-        <h4 class="pricing__card-price pricing__card-price_actived" id="month_pay_content">
-          2 190 ₽<span class="pricing__card-price-info">в месяц</span>
-        </h4>
-        <h4 class="pricing__card-price" id="year_pay_content">
-          <span class="pricing__card-price-low">2 190 ₽</span>1 590 ₽<span
-            class="pricing__card-price-info"
-            >в год</span
+        <h4 class="pricing__card-price">
+          0,4 USD<span class="pricing__card-price-info"
+            >в день за один ресторан</span
           >
         </h4>
-        <a
-          class="button button_theme_accent button_content_icon-arrow-next"
-          href="https://admin.showme.menu/auth/signup"
-          data-service-link
-        >
-          <span class="button__text">Попробовать бесплатно</span>
-          <span class="button__icon">
-            <svg
-              aria-hidden="true"
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-            >
-              <use href="/images/icons.svg#arrow-right"></use>
-            </svg>
-          </span>
-        </a>
+        <div class="pricing__card-action">
+          <a
+            class="button button_theme_accent button_content_icon-arrow-next"
+            href="https://admin.showme.menu/auth/signup"
+            data-service-link
+          >
+            <span class="button__text">Попробовать бесплатно</span>
+            <span class="button__icon">
+              <svg
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+              >
+                <use href="/images/icons.svg#arrow-right"></use>
+              </svg>
+            </span>
+          </a>
+          <p class="pricing__card-payment-note">
+            Оплата в рублях по курсу ЦБ РФ. Курс и итоговая сумма показываются
+            перед оплатой.
+          </p>
+        </div>
       </div>
       <div class="pricing__card-main-info">
         <h3 class="pricing__card-title">QR‑код меню</h3>
@@ -73,6 +56,11 @@
           <li>Приём заказов</li>
           <li>Аналитика</li>
         </ul>
+        <div class="pricing__card-terms">
+          <a class="pricing__card-terms-link" href="https://showme.menu/prices">
+            Тарифы и условия
+          </a>
+        </div>
       </div>
     </article>
   </div>
