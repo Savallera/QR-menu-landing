@@ -88,6 +88,7 @@ export default {
 
   fonts: {
     src: [pathSrc + '/fonts/**/*'],
+    ttf: pathSrc + '/fonts/**/*.ttf',
     watch: [pathSrc + '/fonts/**/*'],
     dest: pathDest + '/fonts',
   },
