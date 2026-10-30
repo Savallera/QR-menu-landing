@@ -1,6 +1,7 @@
 import { readFile, writeFile, mkdir } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
 import { resolve } from 'node:path';
+import { createHash } from 'node:crypto';
 
 const root = fileURLToPath(new URL('..', import.meta.url));
 export const escapeHtml = (value) =>
@@ -126,7 +127,7 @@ export function renderDocument(document, key) {
     let attrs = '';
     if (
       (key === 'offer' && text === 'ОФЕРТА') ||
-      (key === 'privacy' && block.style === 'HEADING_1')
+      (['privacy', 'personal-data-consent'].includes(key) && block.style === 'HEADING_1')
     ) {
       tag = 'h1';
       attrs = ' id="page-title"';
@@ -143,7 +144,23 @@ export function renderDocument(document, key) {
   return output;
 }
 
-function shell(key, title, body, pending = false) {
+export function registrationDocument(source, key) {
+  if (key === 'personal-data-consent' && source.approved !== true) return null;
+  const code = key === 'personal-data-consent' ? 'consent' : key;
+  const contentHtml = renderDocument(source, key);
+  const contentSha256 = createHash('sha256').update(contentHtml).digest('hex');
+  return {
+    code,
+    revisionId: `${code}:${contentSha256}`,
+    contentSha256,
+    contentHtml,
+    canonicalUrl: `https://showme.menu/${key}/`,
+    sourceRevisionId: source.revisionId,
+    approved: true,
+  };
+}
+
+function shell(key, title, body, pending = false, revisionId = '') {
   return `<!doctype html>
 <html lang="ru" dir="ltr">
 <head>
@@ -151,6 +168,7 @@ function shell(key, title, body, pending = false) {
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="color-scheme" content="light">
 ${pending ? '<meta name="robots" content="noindex">' : ''}
+${revisionId ? `<meta name="legal-document-revision" content="${escapeHtml(revisionId)}">` : ''}
 <meta name="description" content="${escapeHtml(title)} сервиса Showme.menu.">
 <link rel="canonical" href="https://showme.menu/${key}/">
 <link rel="icon" href="/images/favicon/favicon.svg" type="image/svg+xml">
@@ -169,6 +187,7 @@ ${pending ? '<meta name="robots" content="noindex">' : ''}
 }
 
 export async function build() {
+  const registrationDocuments = [];
   for (const [key, title] of [
     ['offer', 'Оферта'],
     ['privacy', 'Политика обработки персональных данных'],
@@ -180,23 +199,39 @@ export async function build() {
       )
     );
     const target = resolve(root, 'src/pages', key);
+    const revision = registrationDocument(source, key);
+    registrationDocuments.push(revision);
     await mkdir(target, { recursive: true });
     await writeFile(
       resolve(target, 'index.html'),
-      shell(key, title, renderDocument(source, key))
+      shell(key, title, revision.contentHtml, false, revision.revisionId)
     );
   }
   const consent = 'personal-data-consent';
+  let consentRevision = null;
+  try {
+    const source = JSON.parse(await readFile(resolve(root, 'src/legal/documents', consent + '.json'), 'utf8'));
+    consentRevision = registrationDocument(source, consent);
+  } catch (error) {
+    if (error.code !== 'ENOENT') throw error;
+  }
+  if (consentRevision) registrationDocuments.push(consentRevision);
   await mkdir(resolve(root, 'src/pages', consent), { recursive: true });
   await writeFile(
     resolve(root, 'src/pages', consent, 'index.html'),
     shell(
       consent,
       'Согласие на обработку персональных данных',
-      '<h1 id="page-title">Согласие на обработку персональных данных</h1><p class="document-notice" role="status">Текст согласия будет опубликован после подготовки и утверждения.</p><p>По вопросам обработки персональных данных: <a class="notranslate" dir="ltr" translate="no" href="mailto:support@showme.menu">support@showme.menu</a>.</p>',
-      true
+      consentRevision?.contentHtml ?? '<h1 id="page-title">Согласие на обработку персональных данных</h1><p class="document-notice" role="status">Текст согласия будет опубликован после подготовки и утверждения.</p><p>По вопросам обработки персональных данных: <a class="notranslate" dir="ltr" translate="no" href="mailto:support@showme.menu">support@showme.menu</a>.</p>',
+      !consentRevision,
+      consentRevision?.revisionId ?? ''
     )
   );
+  await mkdir(resolve(root, 'src/files/legal'), { recursive: true });
+  await writeFile(resolve(root, 'src/files/legal/registration-documents.json'), JSON.stringify({
+    schemaVersion: 1,
+    documents: registrationDocuments,
+  }, null, 2) + '\n');
   await mkdir(resolve(root, 'src/pages/prices'), { recursive: true });
   await writeFile(
     resolve(root, 'src/pages/prices/index.html'),
