@@ -102,8 +102,7 @@ function currentLandingLanguage() {
 
 function imageFolderFor(code) {
   return (
-    (window.LANDING_BASE_PATH || '/') +
-    'images/translate/' + (IMAGE_LANGUAGES.includes(code) ? code : 'en') + '/'
+    '/images/translate/' + (IMAGE_LANGUAGES.includes(code) ? code : 'en') + '/'
   );
 }
 
@@ -144,7 +143,7 @@ function applyLandingLanguage(code) {
 const LANGUAGE_PAGES = { en: '/en/', sr: '/sr/', ar: '/ar/', zh: '/zh/' };
 
 function landingLanguagePage(code) {
-  return (window.LANDING_BASE_PATH || '/') + (LANGUAGE_PAGES[code] || '/').slice(1);
+  return LANGUAGE_PAGES[code] || '/';
 }
 
 function setLandingLanguage(code) {
