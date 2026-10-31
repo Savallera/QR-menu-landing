@@ -1,0 +1,159 @@
+<section
+  class="section section_no-indent contact-details"
+  aria-labelledby="page-title"
+  data-legal-document
+>
+  <div class="section__indent contact-details__container">
+    @@include("../breadcrumbs/breadcrumbs.html", {"title":"Контакты"})
+    <h1
+      class="section__title contact-details__title"
+      id="page-title"
+      tabindex="-1"
+    >
+      Есть вопросы?
+      <span class="text-decor text-decor_secondary">Свяжитесь с нами</span>
+    </h1>
+    <div class="contact-details__cards">
+      <div class="section__indent contact-details__contact-card">
+        <div class="contact-details__items">
+          <div class="contact-details__item">
+            <p class="contact-details__label">Телефон</p>
+            <a class="contact-details__value" href="tel:+79264148914">
+              <svg
+                class="contact-details__contact-icon"
+                width="32"
+                height="32"
+                viewBox="0 0 32 32"
+                aria-hidden="true"
+              >
+                <use href="/images/icons.svg?v=@@buildVersion#phone"></use>
+              </svg>
+              <span class="notranslate notranslate_wrap_anywhere" dir="ltr" translate="no"
+                >+7 926 414-89-14</span
+              >
+            </a>
+          </div>
+          <div class="contact-details__item">
+            <p class="contact-details__label">Почта</p>
+            <a class="contact-details__value" href="mailto:support@showme.menu">
+              <svg
+                class="contact-details__contact-icon"
+                width="32"
+                height="32"
+                viewBox="0 0 32 32"
+                aria-hidden="true"
+              >
+                <use href="/images/icons.svg?v=@@buildVersion#email"></use>
+              </svg>
+              <span class="notranslate notranslate_wrap_anywhere" dir="ltr" translate="no"
+                >support@showme.menu</span
+              >
+            </a>
+          </div>
+        </div>
+        <section
+          class="contact-details__card contact-details__card_theme_light contact-details__support"
+          aria-labelledby="support-title"
+        >
+          <span class="contact-details__illustration">
+            <svg
+              class="contact-details__support-icon"
+              width="64"
+              height="64"
+              viewBox="0 0 32 32"
+              aria-hidden="true"
+            >
+              <use href="/images/icons.svg?v=@@buildVersion#support"></use>
+            </svg>
+          </span>
+          <div class="contact-details__support-content">
+            <h2 class="contact-details__card-title" id="support-title">
+              Бесплатная поддержка
+            </h2>
+            <p>
+              Пн–пт,
+              <span class="notranslate" dir="ltr" translate="no"
+                >10:00–18:00</span
+              >
+              МСК
+            </p>
+            <div class="contact-details__support-description">
+              <p>Поможем настроить сервис и разобраться в его работе.</p>
+              <p>Отвечаем в течение 2 рабочих дней.</p>
+            </div>
+          </div>
+        </section>
+      </div>
+      <section
+        class="section__indent contact-details__card contact-details__card_theme_dark contact-details__requisites"
+        aria-labelledby="requisites-title"
+      >
+        <h2
+          class="section__title contact-details__requisites-title"
+          id="requisites-title"
+        >
+          Реквизиты
+        </h2>
+        <dl class="contact-details__list">
+          <div class="contact-details__row">
+            <dt class="contact-details__term">Наименование</dt>
+            <dd class="contact-details__definition">
+              Индивидуальный предприниматель Яковлев Семен Игоревич
+            </dd>
+          </div>
+          <div class="contact-details__row">
+            <dt class="contact-details__term">ИНН / ОГРНИП</dt>
+            <dd class="contact-details__definition">
+              <span class="notranslate" dir="ltr" translate="no"
+                >772405786742 / 320774600197231</span
+              >
+            </dd>
+          </div>
+          <div class="contact-details__row">
+            <dt class="contact-details__term">
+              Адрес регистрации<br />и почтовый адрес
+            </dt>
+            <dd class="contact-details__definition">
+              115477, Российская Федерация, г. Москва,<br />ул. Кантемировская,
+              д. 39, кв. 297
+            </dd>
+          </div>
+          <div class="contact-details__row">
+            <dt class="contact-details__term">Банк</dt>
+            <dd class="contact-details__definition">ООО «Банк Точка»</dd>
+          </div>
+          <div class="contact-details__row">
+            <dt class="contact-details__term">Расчётный счёт</dt>
+            <dd class="contact-details__definition">
+              <span class="notranslate" dir="ltr" translate="no"
+                >40802810501500103711</span
+              >
+            </dd>
+          </div>
+          <div class="contact-details__row">
+            <dt class="contact-details__term">БИК / корр. счёт</dt>
+            <dd class="contact-details__definition">
+              <span class="notranslate" dir="ltr" translate="no"
+                >044525104 / 30101810745374525104</span
+              >
+            </dd>
+          </div>
+        </dl>
+        <div class="contact-details__copy-area">
+          <button
+            class="button button_theme_outline-grey contact-details__copy-button"
+            type="button"
+            aria-label="Скопировать реквизиты"
+          >
+            <span class="button__text">Скопировать</span>
+          </button>
+          <span
+            class="contact-details__copy-status"
+            role="status"
+            aria-live="polite"
+          ></span>
+        </div>
+      </section>
+    </div>
+  </div>
+</section>

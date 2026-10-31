@@ -47,17 +47,19 @@
       @include media(md, max) {
         .footer__nav-list {
           flex-direction: row;
+          flex-wrap: wrap;
+          justify-content: center;
         }
 
         .footer__title {
           display: none;
         }
 
-        .footer__link-text {
+        .footer__link:not(.footer__link_content_schedule) .footer__link-text {
           display: none;
         }
 
-        .footer__link-icon {
+        .footer__link:not(.footer__link_content_schedule) .footer__link-icon {
           margin-inline-end: 0;
           border: 2px solid;
           border-radius: var(--border-radius-sm);
@@ -80,6 +82,12 @@
   &__logo {
     display: block;
     inline-size: min(358px, 50vw);
+  }
+
+  &__schedule {
+    @include media(md, max) {
+      flex-basis: 100%;
+    }
   }
 
   &__logo-image {
@@ -155,6 +163,14 @@
     &_active {
       color: var(--main-color);
       pointer-events: default;
+    }
+
+    &_content_schedule {
+      cursor: default;
+
+      &:hover {
+        color: var(--text-secondary-color);
+      }
     }
   }
 

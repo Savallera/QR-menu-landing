@@ -1,8 +1,27 @@
 .header {
+  position: sticky;
+  inset-block-start: 0;
+  z-index: 100;
   display: flex;
   align-items: center;
   gap: var(--indent-lg);
   padding: var(--indent-xs) var(--indent-main-wide);
+  transform: translateY(var(--header-scroll-offset, 0px));
+
+  &_scrolled {
+    background-color: var(--bg-main-color);
+    box-shadow: var(--box-shadow-md);
+    transition: transform 0.25s ease;
+  }
+
+  &_hidden {
+    transform: translateY(-100%);
+    box-shadow: none;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    transition: none;
+  }
 
   &__burger {
     @extend %reset-btn;
@@ -233,8 +252,6 @@
   }
 
   @include media(md, max) {
-    position: relative;
-    z-index: 100;
     gap: var(--indent-sm);
 
     // на узком телефоне в строке шапки логотип, язык, «Войти» и бургер
@@ -253,11 +270,6 @@
         inline-size: 26vw;
       }
     }
-
-    background-color: rgb(255 255 255 / 70%);
-    backdrop-filter: blur(10px);
-    position: fixed;
-    inset: 0 0 auto 0;
 
     &_menu-opened {
       .header__menu {

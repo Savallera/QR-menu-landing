@@ -8,6 +8,23 @@
     flex: auto;
   }
 
+  &__skip-link {
+    position: fixed;
+    inset-block-start: var(--indent-xs);
+    inset-inline-start: var(--indent-xs);
+    z-index: 101;
+    padding: var(--indent-xs);
+    border-radius: var(--border-radius-sm);
+    color: var(--text-main-color);
+    background-color: var(--bg-main-color);
+    transform: translateY(calc(-100% - var(--indent-md)));
+
+    &:focus-visible {
+      transform: none;
+      outline: 2px solid currentColor;
+    }
+  }
+
   &_with_lead-image {
     position: relative;
 
@@ -49,9 +66,5 @@
         white 90%
       );
     }
-  }
-
-  @include media(md, max) {
-    padding-block-start: var(--header-block-size);
   }
 }

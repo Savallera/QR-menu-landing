@@ -1,0 +1,6 @@
+.notranslate {
+  &_wrap_anywhere {
+    min-inline-size: 0;
+    overflow-wrap: anywhere;
+  }
+}
