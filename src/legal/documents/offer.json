@@ -77,7 +77,7 @@
           "text": ". Оферта размещается по адресу "
         },
         {
-          "text": "https://showme.menu/offer",
+          "text": "showme.menu/offer",
           "link": "https://showme.menu/offer"
         },
         {
@@ -113,8 +113,8 @@
           "text": " — программа для ЭВМ «Showme.menu», доступная через сайт "
         },
         {
-          "text": "https://showme.menu/",
-          "link": "https://showme.menu/"
+          "text": "showme.menu",
+          "link": "https://showme.menu"
         },
         {
           "text": " и связанные с ним интерфейсы, предназначенная для создания, размещения и управления электронными меню ресторанов, кафе и других заведений общественного питания. Состав доступных функциональных возможностей Сервиса определяется его интерфейсом.\n"
@@ -160,8 +160,8 @@
           "text": " — интерфейс управления Организацией, меню и доступами сотрудников, доступный по адресу "
         },
         {
-          "text": "https://admin.showme.menu/",
-          "link": "https://admin.showme.menu/"
+          "text": "admin.showme.menu",
+          "link": "https://admin.showme.menu"
         },
         {
           "text": ". "
@@ -198,13 +198,6 @@
           "link": "https://showme.menu/privacy"
         },
         {
-          "text": " "
-        },
-        {
-          "text": "https://showme.menu/privacy",
-          "link": "https://showme.menu/privacy"
-        },
-        {
           "text": ". "
         },
         {
@@ -212,14 +205,7 @@
           "link": "https://showme.menu/personal-data-consent"
         },
         {
-          "text": ", размещённое по адресу "
-        },
-        {
-          "text": "https://showme.menu/personal-data-consent",
-          "link": "https://showme.menu/personal-data-consent"
-        },
-        {
-          "text": ", предоставляется отдельно, если оно необходимо для соответствующей обработки, и не включается в Акцепт Оферты.\n"
+          "text": " предоставляется отдельно, если оно необходимо для соответствующей обработки, и не включается в Акцепт Оферты.\n"
         }
       ]
     },
@@ -242,7 +228,7 @@
           "text": " — заполнение Лицензиатом сведений о себе на странице "
         },
         {
-          "text": "https://admin.showme.menu/auth/signup",
+          "text": "admin.showme.menu/auth/signup",
           "link": "https://admin.showme.menu/auth/signup"
         },
         {
@@ -269,7 +255,7 @@
           "text": " — вход Лицензиата в Личный кабинет на странице "
         },
         {
-          "text": "https://admin.showme.menu/auth/signin",
+          "text": "admin.showme.menu/auth/signin",
           "link": "https://admin.showme.menu/auth/signin"
         },
         {
@@ -373,7 +359,7 @@
           "text": " Размер вознаграждения за Лицензию составляет 0,40 (сорок центов) доллара США за каждые 24 часа доступа для одного активного ресторана. Общая сумма вознаграждения определяется исходя из количества активных ресторанов Организации. Тарифы публикуются по адресу "
         },
         {
-          "text": "https://showme.menu/prices",
+          "text": "showme.menu/prices",
           "link": "https://showme.menu/prices"
         },
         {
@@ -1070,7 +1056,7 @@
           "text": "Реквизиты и контактные данные Лицензиара публикуются также на странице "
         },
         {
-          "text": "https://showme.menu/contacts",
+          "text": "showme.menu/contacts",
           "link": "https://showme.menu/contacts"
         },
         {

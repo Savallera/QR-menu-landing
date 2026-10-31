@@ -97,13 +97,14 @@
     text-align: left;
 
     @include media(md, max) {
+      text-align: center;
       color: var(--text-tetriary-color);
     }
   }
 
   &__nav {
     &_content_policy {
-      margin-block-start: auto;
+      align-self: start;
       padding-block-start: 1.25em;
       grid-area: 2/1/3/2;
 

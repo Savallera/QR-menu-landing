@@ -54,13 +54,13 @@
   }
 
   &__link {
-    color: var(--text-main-color);
-    text-decoration: underline;
-    text-underline-offset: 0.2em;
-    overflow-wrap: anywhere;
+    text-decoration: none;
+    text-underline-offset: 0.3em;
+    font-weight: 700;
+    color: var(--main-color);
 
     &:hover {
-      text-decoration-style: double;
+      text-decoration: underline;
     }
 
     &:focus-visible {

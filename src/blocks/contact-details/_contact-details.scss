@@ -113,13 +113,6 @@
     display: none;
   }
 
-  &__back-link {
-    display: inline-flex;
-    align-items: center;
-    gap: calc(var(--indent-xxs) / 2);
-    justify-self: start;
-  }
-
   &__break {
     @include media(md, max) {
       display: none;

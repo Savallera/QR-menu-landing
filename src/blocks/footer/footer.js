@@ -4,6 +4,10 @@ function smoothScroll(id) {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.footer__year').forEach((element) => {
+    element.textContent = String(new Date().getFullYear());
+  });
+
   const links = document.getElementsByClassName('footer__link');
   for (let i = 0; i < links.length; i++) {
     if(links[i].dataset.link && links[i].dataset.link != '') {
