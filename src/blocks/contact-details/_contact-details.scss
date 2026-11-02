@@ -121,7 +121,7 @@
 
     &::before {
       inset: -1.25rem calc(-1 * var(--indent-main-wide))
-        -1.25rem 1.25rem;
+        -1.25rem 0.25rem;
       inline-size: auto;
       block-size: auto;
       border-radius: 0;
@@ -130,7 +130,6 @@
 
       @include media(lg) {
         inset-inline-start: -2.75rem;
-        inset-block-start: -2.75rem;
       }
     }
   }
