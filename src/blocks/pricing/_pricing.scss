@@ -5,24 +5,45 @@
     }
   }
 
+  &__title {
+    line-height: normal;
+  }
+
+  &__title-line {
+    @include media(lg) {
+      display: block;
+    }
+  }
+
+  &__description {
+    line-height: normal;
+  }
+
   &__card {
     color: var(--text-main-color);
     background-color: var(--bg-secondary-color);
     border-radius: var(--border-radius-xl);
     padding: var(--indent-card);
+    box-shadow: var(--box-shadow-md);
 
     display: grid;
     align-items: center;
     gap: var(--indent-lg) var(--indent-xl);
 
     @include media(lg) {
-      grid-template-columns: 1fr 1.1fr;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1.36fr);
     }
   }
 
   &__card-main-info {
+    min-inline-size: 0;
     display: flex;
     flex-direction: column;
+    gap: var(--indent-xs);
+  }
+
+  &__card-details {
+    display: grid;
     gap: var(--indent-xxs);
   }
 
@@ -33,6 +54,7 @@
   }
 
   &__card-description {
+    color: var(--main-color);
     font-size: var(--text-md);
     font-weight: 500;
   }
@@ -45,19 +67,21 @@
   }
 
   &__card-terms {
-    border-top: 1px solid var(--grey-300);
-    padding-top: var(--indent-xxs);
+    border-block-start: 1px solid var(--grey-300);
+    padding-block-start: var(--indent-xs);
+    font-size: var(--text-sm);
+    font-weight: 500;
+    line-height: normal;
+    color: var(--text-secondary-color);
   }
 
   &__card-terms-link {
-    font-size: var(--text-sm);
-    font-weight: 500;
-    color: var(--text-secondary-color);
-    text-decoration: underline;
+    color: var(--main-color);
+    text-decoration: none;
     text-underline-offset: 0.2em;
 
     &:hover {
-      color: var(--main-color);
+      text-decoration: underline;
     }
 
     &:focus-visible {
@@ -67,53 +91,53 @@
   }
 
   &__card-total-price {
-    place-self: center;
-    background-color: var(--bg-main-color);
-    border-radius: var(--border-radius-sm);
-    padding: var(--indent-xxs);
-
+    min-inline-size: 0;
     display: grid;
+    justify-items: center;
     gap: var(--indent-xl);
 
     @include media(lg) {
-      grid-area: 1/1/2/2;
-      background-color: transparent;
-      border-radius: unset;
-      padding: 0 0 var(--indent-xl);
+      padding-block-end: var(--indent-xl);
     }
   }
 
   &__card-action {
+    min-inline-size: 0;
     display: grid;
-    gap: var(--indent-xs);
+    justify-items: center;
+    gap: var(--indent-xxs);
+  }
+
+  &__card-button {
+    max-inline-size: 100%;
   }
 
   &__card-payment-note {
-    max-inline-size: 36ch;
-    justify-self: center;
+    max-inline-size: 23.375rem;
     font-size: var(--text-sm);
-    line-height: 1.5;
+    line-height: normal;
     color: var(--text-secondary-color);
     text-align: center;
   }
 
   &__card-price {
-    grid-area: 1/1/2/2;
-    align-self: end;
-
     font-size: clamp(2.5rem, 1.9718rem + 2.2535vw, 4rem); // 64
     font-weight: 700;
 
     display: flex;
     flex-direction: column;
-    justify-items: flex-end;
     align-items: center;
     text-align: center;
   }
 
   &__card-price-info {
-    font-size: var(--text-md);
+    font-size: var(--text-lg);
     color: var(--text-secondary-color);
     font-weight: 500;
+    line-height: normal;
+  }
+
+  &__card-currency {
+    color: var(--main-color);
   }
 }
