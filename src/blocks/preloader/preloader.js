@@ -12,7 +12,15 @@ function removePreloader(parent, preloaderSelector) {
   }
 }
 
-showPreloader(preloaderTmp, page);
-setTimeout(() => {
-  removePreloader(page, '.preloader');
-}, 1200);
+export const preloaderReady = new Promise((resolve) => {
+  if (!preloaderTmp || !page) {
+    resolve();
+    return;
+  }
+
+  showPreloader(preloaderTmp, page);
+  setTimeout(() => {
+    removePreloader(page, '.preloader');
+    resolve();
+  }, 1200);
+});

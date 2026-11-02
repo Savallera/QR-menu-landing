@@ -45,6 +45,7 @@ export default {
   },
 
   images: {
+    optimized: [pathSrc + '/images/**/*.{webp,avif}'],
     src: [
       pathSrc + '/images/*.{jpg,jpeg,png,gif}',
       pathSrc + '/images/**/*.{jpg,jpeg,png,gif}',
@@ -52,6 +53,7 @@ export default {
       '!' + pathSrc + '/images/favicon/*.*',
     ],
     watch: [
+      pathSrc + '/images/**/*.{webp,avif}',
       pathSrc + '/images/*.{jpg,jpeg,png,gif}',
       pathSrc + '/images/**/*.{jpg,jpeg,png,gif}',
       pathSrc + '/images/**/**/*.{jpg,jpeg,png,gif}',

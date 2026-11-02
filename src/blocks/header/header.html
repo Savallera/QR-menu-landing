@@ -26,7 +26,7 @@
         <a class="header__link" data-link="how">Как это работает</a>
       </li>
       <li class="header__list-item">
-        <a class="header__link" data-link="pricing">Тарифы</a>
+        <a class="header__link" href="/prices/">Тарифы</a>
       </li>
       <li class="header__list-item">
         <a class="header__link" href="/contacts/">Контакты</a>
@@ -57,7 +57,12 @@
         <span class="lang__code" data-lang-code>RU</span>
       </button>
       <div class="lang__panel" hidden data-lang-panel>
-        <input class="lang__search" type="search" data-lang-search />
+        <div class="lang__search-field">
+          <svg class="lang__search-icon" aria-hidden="true" viewBox="0 0 24 24">
+            <use href="/images/icons.svg#search"></use>
+          </svg>
+          <input class="lang__search" type="search" data-lang-search />
+        </div>
         <ul class="lang__list" role="listbox" data-lang-list></ul>
       </div>
     </div>
@@ -70,7 +75,10 @@
     </a>
   </menu>
   <!-- Язык на телефоне: прямо в шапке, а не в меню под бургером (тикет #4717) -->
-  <div class="header__language header__language_place_bar lang lang_place_bar notranslate" data-lang>
+  <div
+    class="header__language header__language_place_bar lang lang_place_bar notranslate"
+    data-lang
+  >
     <button
       class="lang__button"
       type="button"
@@ -94,7 +102,12 @@
       <span class="lang__code" data-lang-code>RU</span>
     </button>
     <div class="lang__panel" hidden data-lang-panel>
-      <input class="lang__search" type="search" data-lang-search />
+      <div class="lang__search-field">
+        <svg class="lang__search-icon" aria-hidden="true" viewBox="0 0 24 24">
+          <use href="/images/icons.svg#search"></use>
+        </svg>
+        <input class="lang__search" type="search" data-lang-search />
+      </div>
       <ul class="lang__list" role="listbox" data-lang-list></ul>
     </div>
   </div>

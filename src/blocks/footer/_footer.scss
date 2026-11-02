@@ -95,17 +95,43 @@
     inline-size: 100%;
   }
 
-  &__copyright {
+  &__bottom {
+    display: grid;
+    grid-template-areas:
+      'account'
+      'copyright';
+    justify-items: center;
+    gap: var(--indent-xxs);
     margin-block-start: var(--indent-md);
     padding-block-start: var(--indent-xs);
     border-block-start: 1px solid var(--grey-300);
     font-size: var(--text-sm);
     font-weight: 500;
+    text-align: center;
+
+    @include media(xs) {
+      grid-template-areas: 'copyright account';
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      align-items: baseline;
+      justify-items: start;
+      text-align: start;
+    }
+  }
+
+  &__account-link {
+    grid-area: account;
+
+    @include media(xs) {
+      justify-self: end;
+      text-align: end;
+    }
+  }
+
+  &__copyright {
+    grid-area: copyright;
     color: var(--text-secondary-color);
-    text-align: left;
 
     @include media(md, max) {
-      text-align: center;
       color: var(--text-tetriary-color);
     }
   }

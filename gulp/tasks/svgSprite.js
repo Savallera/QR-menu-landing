@@ -4,8 +4,6 @@ import path from '../config/path.js';
 // Плагины
 import plumber from 'gulp-plumber';
 import notify from 'gulp-notify';
-import imagemin from 'gulp-imagemin';
-import newer from 'gulp-newer';
 import svgSprite from 'gulp-svg-sprite';
 
 export default () => {
@@ -19,10 +17,45 @@ export default () => {
         })),
       })
     )
-    .pipe(newer(path.svgSprite.dest))
-    .pipe(imagemin())
     .pipe(
       svgSprite({
+        shape: {
+          transform: [
+            {
+              svgo: {
+                multipass: true,
+                plugins: [
+                  'inlineStyles',
+                  'convertStyleToAttrs',
+                  {
+                    name: 'removeAttrs',
+                    params: {
+                      attrs: ['svg:(style|display|visibility)', 'style'],
+                    },
+                  },
+                  'removeStyleElement',
+                  {
+                    name: 'preset-default',
+                    params: {
+                      overrides: {
+                        removeViewBox: false,
+                        moveElemsAttrsToGroup: false,
+                        convertPathData: {
+                          floatPrecision: 4,
+                          makeArcs: false,
+                        },
+                      },
+                    },
+                  },
+                ],
+              },
+            },
+          ],
+        },
+        svg: {
+          xmlDeclaration: false,
+          doctypeDeclaration: false,
+        },
         mode: {
           stack: {
             sprite: '../icons.svg',

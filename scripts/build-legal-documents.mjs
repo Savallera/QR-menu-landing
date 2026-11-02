@@ -184,7 +184,7 @@ ${body}
 @@include("../../blocks/legal-document/page-end.html")\n`;
 }
 
-export async function build() {
+export async function build(projectRoot = root) {
   const registrationDocuments = [];
   for (const [key, title] of [
     ['offer', 'Оферта'],
@@ -192,11 +192,11 @@ export async function build() {
   ]) {
     const source = JSON.parse(
       await readFile(
-        resolve(root, 'src/legal/documents', key + '.json'),
+        resolve(projectRoot, 'src/legal/documents', key + '.json'),
         'utf8'
       )
     );
-    const target = resolve(root, 'src/pages', key);
+    const target = resolve(projectRoot, 'src/pages', key);
     const revision = registrationDocument(source, key);
     registrationDocuments.push(revision);
     await mkdir(target, { recursive: true });
@@ -210,7 +210,7 @@ export async function build() {
   try {
     const source = JSON.parse(
       await readFile(
-        resolve(root, 'src/legal/documents', consent + '.json'),
+        resolve(projectRoot, 'src/legal/documents', consent + '.json'),
         'utf8'
       )
     );
@@ -219,9 +219,9 @@ export async function build() {
     if (error.code !== 'ENOENT') throw error;
   }
   if (consentRevision) registrationDocuments.push(consentRevision);
-  await mkdir(resolve(root, 'src/pages', consent), { recursive: true });
+  await mkdir(resolve(projectRoot, 'src/pages', consent), { recursive: true });
   await writeFile(
-    resolve(root, 'src/pages', consent, 'index.html'),
+    resolve(projectRoot, 'src/pages', consent, 'index.html'),
     shell(
       consent,
       'Согласие на обработку персональных данных',
@@ -231,9 +231,9 @@ export async function build() {
       consentRevision?.revisionId ?? ''
     )
   );
-  await mkdir(resolve(root, 'src/files/legal'), { recursive: true });
+  await mkdir(resolve(projectRoot, 'src/files/legal'), { recursive: true });
   await writeFile(
-    resolve(root, 'src/files/legal/registration-documents.json'),
+    resolve(projectRoot, 'src/files/legal/registration-documents.json'),
     JSON.stringify(
       {
         schemaVersion: 1,
@@ -242,11 +242,6 @@ export async function build() {
       null,
       2
     ) + '\n'
-  );
-  await mkdir(resolve(root, 'src/pages/prices'), { recursive: true });
-  await writeFile(
-    resolve(root, 'src/pages/prices/index.html'),
-    '<!doctype html><html lang="ru"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta http-equiv="refresh" content="0;url=/offer/#tariffs"><link rel="canonical" href="https://showme.menu/offer/#tariffs"><title>Тарифы и оплата | Showme.menu</title></head><body><a href="/offer/#tariffs">Тарифы и оплата</a></body></html>'
   );
 }
 

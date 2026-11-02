@@ -1,0 +1,95 @@
+.tariffs {
+  font-weight: 500;
+
+  &__container {
+    min-inline-size: 0;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--indent-xl);
+  }
+
+  &__title {
+    scroll-margin-block-start: var(--indent-md);
+  }
+
+  &__price-card {
+    display: grid;
+    justify-items: center;
+    gap: var(--indent-lg);
+    text-align: center;
+  }
+
+  &__price-details {
+    display: grid;
+    justify-items: center;
+    gap: var(--indent-xs);
+  }
+
+  &__price {
+    font-size: var(--display-md);
+    font-weight: 700;
+    line-height: 1;
+    white-space: nowrap;
+  }
+
+  &__currency {
+    color: var(--main-color);
+  }
+
+  &__price-caption {
+    font-size: var(--text-lg);
+    color: var(--text-secondary-color);
+  }
+
+  &__action {
+    display: grid;
+    justify-items: center;
+    gap: var(--indent-xxs);
+    min-inline-size: 0;
+  }
+
+  &__button {
+    max-inline-size: 100%;
+  }
+
+  &__payment-note {
+    max-inline-size: 42rem;
+    color: var(--text-secondary-color);
+    font-size: var(--text-sm);
+    line-height: normal;
+  }
+
+  &__section {
+    display: grid;
+    gap: var(--indent-md);
+    min-inline-size: 0;
+  }
+
+  &__section-title {
+    font-size: var(--heading-sm);
+  }
+
+  &__features,
+  &__steps {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+
+    @include media(md) {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
+
+  &__features {
+    gap: var(--indent-lg);
+  }
+
+  &__steps {
+    gap: var(--indent-xxs);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+}

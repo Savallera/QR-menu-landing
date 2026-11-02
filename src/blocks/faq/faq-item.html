@@ -1,0 +1,11 @@
+<details class="faq__item" @@if (context.open) {open}>
+  <summary class="faq__question">
+    <span class="faq__question-text">@@question</span>
+    <span class="faq__toggle" aria-hidden="true">
+      <svg class="faq__icon" viewBox="0 0 24 24">
+        <use href="/images/icons.svg?v=@@buildVersion#chevron-down"></use>
+      </svg>
+    </span>
+  </summary>
+  <div class="faq__answer">@@include("@@answer")</div>
+</details>

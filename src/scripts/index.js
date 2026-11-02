@@ -1,4 +1,6 @@
 import '../blocks/preloader/preloader.js';
+import '../blocks/page/page.js';
+import '../blocks/reveal/reveal.js';
 import '../blocks/header/header.js';
 import '../blocks/lang/lang.js';
 import '../blocks/advantages/advantages.js';
@@ -7,3 +9,4 @@ import '../blocks/why/why.js';
 import '../blocks/step/step.js';
 import '../blocks/hiw/hiw.js';
 import '../blocks/footer/footer.js';
+import '../blocks/faq/faq.js';

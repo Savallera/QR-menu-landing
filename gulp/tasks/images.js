@@ -12,7 +12,7 @@ import avif from 'gulp-avif';
 export const imagesDev = gulp.parallel(
   function copyImages() {
     return gulp
-      .src([...path.images.src, ...path.svg.src])
+      .src([...path.images.src, ...path.images.optimized, ...path.svg.src])
       .pipe(newer(path.images.dest))
       .pipe(gulp.dest(path.images.dest));
   },
@@ -51,5 +51,6 @@ export default () => {
     .pipe(newer(path.svg.dest))
     .pipe(imagemin())
 
+    .pipe(gulp.src(path.images.optimized, { allowEmpty: true }))
     .pipe(gulp.dest(path.images.dest));
 };

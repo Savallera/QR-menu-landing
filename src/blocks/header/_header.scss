@@ -4,7 +4,7 @@
   z-index: 100;
   display: flex;
   align-items: center;
-  gap: var(--indent-lg);
+  gap: var(--indent-md);
   padding: var(--indent-xs) var(--indent-main-wide);
   transform: translateY(var(--header-scroll-offset, 0px));
 
@@ -159,7 +159,7 @@
 
     display: flex;
     flex-wrap: wrap;
-    gap: 0 var(--indent-lg);
+    gap: 0 var(--indent-md);
 
     @include media(md, max) {
       flex-direction: column;
@@ -213,40 +213,49 @@
     }
   }
 
-  // Язык (сам переключатель и его видимость в blocks/lang)
+  // Шапка управляет размещением и видимостью своих переключателей языка.
   &__language {
     @include media(xl, max) {
       grid-area: 1/2/2/3;
       justify-self: end;
     }
+
+    @include media(md, max) {
+      display: none;
+    }
+
+    &_place_bar {
+      display: none;
+
+      @include media(md, max) {
+        display: flex;
+      }
+    }
   }
 
   &__login-button {
     flex: none;
+    display: none;
 
     &_place_menu {
-      display: none;
+      display: inline-flex;
     }
 
-    @include media(xs, max) {
-      &_place_menu {
+    @include media(xs) {
+      @include media(md, max) {
         display: inline-flex;
+
+        &_place_menu {
+          display: none;
+        }
       }
     }
 
-    @include media(md, max) {
+    @include media(xl) {
       display: inline-flex;
 
       &_place_menu {
         display: none;
-      }
-    }
-
-    @include media(xl, max) {
-      display: none;
-
-      &_place_menu {
-        display: inline-flex;
       }
     }
   }
@@ -254,7 +263,7 @@
   @include media(md, max) {
     gap: var(--indent-sm);
 
-    // на узком телефоне в строке шапки логотип, язык, «Войти» и бургер
+    // На узком телефоне в строке шапки логотип, язык и бургер.
     @include media(xs, max) {
       gap: var(--indent-xs);
 

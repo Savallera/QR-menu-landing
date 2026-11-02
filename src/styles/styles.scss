@@ -13,13 +13,15 @@
 // @import '../blocks/icon/icon';
 // @import '../blocks/icon-button/icon-button';
 @import '../blocks/preloader/preloader';
+@import '../blocks/reveal/reveal';
 @import '../blocks/button/button';
+@import '../blocks/link/link';
 // @import '../blocks/field/field';
 
 // layout
 @import '../blocks/page/page';
-@import '../blocks/header/header';
 @import '../blocks/lang/lang';
+@import '../blocks/header/header';
 @import '../blocks/section/section';
 @import '../blocks/footer/footer';
 
@@ -46,6 +48,8 @@
 @import '../blocks/legal-document/legal-document';
 @import '../blocks/contact-details/contact-details';
 @import '../blocks/breadcrumbs/breadcrumbs';
+@import '../blocks/tariffs/tariffs';
+@import '../blocks/faq/faq';
 
 .skiptranslate {
   display: none;

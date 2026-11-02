@@ -5,18 +5,10 @@
     }
   }
 
-  &__title {
-    line-height: normal;
-  }
-
   &__title-line {
     @include media(lg) {
       display: block;
     }
-  }
-
-  &__description {
-    line-height: normal;
   }
 
   &__card {
@@ -73,21 +65,6 @@
     font-weight: 500;
     line-height: normal;
     color: var(--text-secondary-color);
-  }
-
-  &__card-terms-link {
-    color: var(--main-color);
-    text-decoration: none;
-    text-underline-offset: 0.2em;
-
-    &:hover {
-      text-decoration: underline;
-    }
-
-    &:focus-visible {
-      outline: 2px solid;
-      outline-offset: 4px;
-    }
   }
 
   &__card-total-price {

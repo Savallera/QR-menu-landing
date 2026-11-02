@@ -1,1 +1,19 @@
-<!doctype html><html lang="ru"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta http-equiv="refresh" content="0;url=/offer/#tariffs"><link rel="canonical" href="https://showme.menu/offer/#tariffs"><title>Тарифы и оплата | Showme.menu</title></head><body><a href="/offer/#tariffs">Тарифы и оплата</a></body></html>
+<!doctype html>
+<html lang="ru" dir="ltr">
+  <!-- prettier-ignore -->
+  @@include("../../blocks/head/head.html", {"title":"Тарифы и оплата | Showme.menu","description":"Единый тариф Showme.menu: 0,40 USD за ресторан ежедневно. Возможности сервиса, бесплатный период, порядок оплаты и ответы на вопросы.","ogTitle":"Тарифы и оплата | Showme.menu","ogUrl":"https://showme.menu/prices/","ogImage":"https://showme.menu/images/social-image.jpg","ogLocale":"ru_RU","robots":"index, follow","pageLanguage":"","legalDocumentRevision":""})
+  <body>
+    <div class="page">
+      <a class="page__skip-link" href="#page-title">К содержимому</a>
+      @@include("../../blocks/header/header.html")
+      <main class="page__content reveal">
+        @@include("../../blocks/tariffs/tariffs.html")
+        <!-- prettier-ignore -->
+        @@include("../../blocks/faq/faq.html", {"titleId":"payment-faq-title","title":"Вопросы об оплате","modifier":"faq_background_pattern","description":"../tariffs/faq-description.html","items":"../tariffs/faq-items.html","footer":"../tariffs/faq-footer.html"})
+      </main>
+      @@include("../../blocks/footer/footer.html")
+    </div>
+    <script src="/scripts/documents.js?v=@@buildVersion"></script>
+    @@include("../../blocks/page-language/page-language.html")
+  </body>
+</html>

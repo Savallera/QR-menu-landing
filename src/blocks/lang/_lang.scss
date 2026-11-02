@@ -1,4 +1,4 @@
-// Переключатель языка: как BtnLang на формах входа в админку
+// Переключатель языка с поиском и прокручиваемым списком.
 .lang {
   position: relative;
   display: flex;
@@ -9,120 +9,163 @@
 
     display: flex;
     align-items: center;
-    gap: 0.5em;
-    padding: 0.5em;
+    gap: var(--indent-3xs);
+    padding: var(--indent-xxs) var(--indent-xs);
     color: var(--text-secondary-color);
+    background-color: var(--bg-main-color);
+    font-size: var(--text-control);
     font-weight: 700;
     cursor: pointer;
     border-radius: var(--border-radius-sm);
-    transition: color 0.3s;
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+    transition:
+      color 200ms ease,
+      background-color 200ms ease,
+      outline-color 200ms ease;
 
     &:hover,
     &[aria-expanded='true'] {
       color: var(--main-color);
     }
 
+    &[aria-expanded='true'] {
+      background-color: var(--bg-secondary-color);
+    }
+
     &:focus-visible {
-      outline: 2px solid;
+      outline-color: currentColor;
     }
   }
 
   &__icon {
     flex: none;
-    inline-size: 1.5em;
-    block-size: 1.5em;
+    inline-size: 1.5rem;
+    block-size: 1.5rem;
   }
 
   // выпадающая панель: поиск сверху, под ним прокручиваемый список
   &__panel {
     position: absolute;
-    inset: calc(100% + 6px) 0 auto auto;
+    inset-block-start: calc(100% + var(--indent-4xs));
+    inset-inline-end: 0;
     z-index: 30;
-    padding: 6px;
-    inline-size: 270px;
-    background: #ffffff;
-    border: 1px solid var(--grey-200, #e3e4e3);
-    border-radius: 12px;
-    box-shadow: 0 8px 24px rgb(0 0 0 / 12%);
-
-    // в мобильном меню переключатель стоит внизу по центру:
-    // панель раскрывается вверх, иначе уходит за нижний и правый край экрана
-    @include media(md, max) {
-      inset: auto auto calc(100% + 6px) 50%;
-      transform: translateX(-50%);
-      inline-size: min(270px, calc(100vw - 32px));
-    }
+    display: flex;
+    flex-direction: column;
+    gap: var(--indent-3xs);
+    padding: var(--indent-3xs);
+    inline-size: 18.625rem;
+    max-inline-size: calc(100vi - var(--indent-main-wide) * 2);
+    max-block-size: min(
+      27.875rem,
+      calc(100dvb - var(--header-block-size) - var(--indent-xxs) * 2)
+    );
+    background-color: var(--bg-main-color);
+    border: 1px solid var(--grey-200);
+    border-radius: var(--border-radius-sm);
+    box-shadow: var(--box-shadow-md);
 
     &[hidden] {
       display: none;
     }
   }
 
-  // в строке шапки на телефоне панель привязана к самой шапке, как меню
-  // под бургером: правее кнопки языка ещё «Войти» и бургер, и панель,
-  // выровненная по кнопке, уходила за левый край экрана
-  // экземпляров два: в меню шапки (компьютер) и в строке шапки (телефон),
-  // где его видно сразу, а не в меню под бургером (тикет #4717).
-  // Правила здесь, а не в шапке: блок подключается позже и перебил бы их
+  // Панель переключателя в строке шапки привязана к шапке целиком.
   &_place_bar {
-    display: none;
-
     @include media(md, max) {
-      display: flex;
       position: static;
     }
   }
 
-  // в узкой шапке телефона кнопка компактнее: код языка остаётся, по нему
-  // видно, какой язык выбран, но места на 320px впритык
+  // До md у кнопки одинаковые отступы, а до xs скрывается глобус.
   &_place_bar &__button {
     @include media(md, max) {
-      gap: 0.25em;
-      padding: 0.25em;
+      padding: var(--indent-control);
     }
   }
 
   &_place_bar &__icon {
     @include media(xs, max) {
-      inline-size: 1.25em;
-      block-size: 1.25em;
+      display: none;
     }
   }
 
   &_place_bar &__panel {
     @include media(md, max) {
-      inset: 100% var(--indent-main-wide) auto auto;
-      transform: none;
+      // Кнопка высотой 3rem расположена по центру шапки.
+      inset-block-start: calc(50% + 1.5rem + var(--indent-4xs));
+      inset-inline-end: var(--indent-main-wide);
     }
   }
 
-  &__search {
-    inline-size: 100%;
-    margin-block-end: 4px;
-    padding: 8px 10px;
-    font: inherit;
-    font-size: 13px;
-    color: var(--text-main-color, #2f3c33);
-    background: #fafbf9;
-    border: 1px solid #dfe3dc;
-    border-radius: 8px;
-    outline: none;
+  &__search-field {
+    display: flex;
+    flex: none;
+    align-items: center;
+    gap: var(--indent-3xs);
+    padding: var(--indent-control) var(--indent-xxs);
+    color: var(--text-main-color);
+    background-color: var(--bg-main-color);
+    border: 1px solid var(--grey-400);
+    border-radius: var(--border-radius-xs);
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+    transition:
+      border-color 200ms ease,
+      outline-color 200ms ease;
 
-    &:focus {
+    &:focus-within {
       border-color: var(--main-color);
-      background: #ffffff;
+      outline-color: var(--main-color);
+    }
+  }
+
+  &__search-icon {
+    flex: none;
+    inline-size: 1.25rem;
+    block-size: 1.25rem;
+    fill: currentColor;
+    color: var(--text-tetriary-color);
+  }
+
+  &__search {
+    @extend %reset-input;
+
+    min-inline-size: 0;
+    padding: 0;
+    font: inherit;
+    font-size: var(--text-control);
+    font-weight: 500;
+    line-height: 1.2;
+    color: inherit;
+    background: none;
+
+    &::placeholder {
+      color: var(--text-tetriary-color);
+      opacity: 1;
     }
   }
 
   &__list {
     @extend %reset-list;
 
-    max-block-size: min(320px, 60vh);
+    display: grid;
+    align-content: start;
+    gap: var(--indent-4xs);
+    min-block-size: 0;
     overflow: auto;
     overscroll-behavior: contain;
+    scrollbar-gutter: stable;
+    scrollbar-width: thin;
+    scrollbar-color: var(--grey-200) transparent;
 
-    @include media(md, max) {
-      max-block-size: min(280px, 45vh);
+    &::-webkit-scrollbar {
+      inline-size: 0.375rem;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: var(--grey-200);
+      border-radius: var(--border-radius-sm);
     }
   }
 
@@ -131,55 +174,103 @@
 
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: var(--indent-3xs);
     inline-size: 100%;
-    padding: 7px 10px;
-    border-radius: 8px;
-    font-size: 13px;
+    padding: var(--indent-3xs) var(--indent-xxs);
+    border-radius: var(--border-radius-xs);
+    font-size: var(--text-control);
+    font-weight: 500;
+    line-height: 1.5;
     text-align: start;
-    color: var(--text-main-color, #2f3c33);
+    color: var(--text-main-color);
     cursor: pointer;
+    outline: 2px solid transparent;
+    outline-offset: -2px;
+    transition:
+      color 200ms ease,
+      outline-color 200ms ease;
 
-    &:hover {
-      background: #f7faf1;
+    &:hover,
+    &:focus-visible {
+      color: var(--main-color);
+    }
+
+    &:focus-visible {
+      outline-color: var(--main-color);
     }
 
     &_active {
-      background: #f2f7e8;
-      font-weight: 600;
+      color: var(--main-color);
+      background-color: var(--bg-secondary-color);
+      font-weight: 700;
     }
+  }
+
+  &__labels {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--indent-3xs);
+    min-inline-size: 0;
+  }
+
+  &__option-name {
+    min-inline-size: 0;
+    overflow-wrap: anywhere;
   }
 
   &__check {
     flex: none;
-    inline-size: 14px;
-    color: #65a30d;
+    inline-size: 1.25rem;
+    block-size: 1.25rem;
+    fill: currentColor;
   }
 
   &__option-local {
-    margin-inline-start: auto;
-    padding-inline-start: 8px;
-    font-size: 12px;
-    color: var(--text-secondary-color, #647067);
+    max-inline-size: 50%;
+    font-size: var(--text-xs);
+    font-weight: 500;
+    color: var(--text-secondary-color);
+    overflow-wrap: anywhere;
+    transition: color 200ms ease;
+
+    .lang__option:hover &,
+    .lang__option:focus-visible & {
+      color: var(--main-color);
+    }
   }
 
   &__section {
-    padding: 10px 10px 4px;
-    font-size: 11px;
+    padding: var(--indent-3xs) var(--indent-xxs) 0;
+    font-size: var(--text-xs);
+    font-weight: 600;
+    line-height: 1.2;
     text-transform: uppercase;
-    letter-spacing: 0.04em;
-    color: var(--text-secondary-color, #8b948d);
+    color: var(--text-tetriary-color);
+
+    &_spaced {
+      margin-block-start: var(--indent-4xs);
+    }
+  }
+
+  &__divider {
+    margin-block: var(--indent-4xs);
+    border-block-start: 1px solid var(--grey-200);
   }
 
   &__empty {
-    padding: 10px;
-    font-size: 13px;
-    color: var(--text-secondary-color, #8b948d);
+    padding: var(--indent-xxs);
+    font-size: var(--text-control);
+    color: var(--text-secondary-color);
   }
-}
 
-.header__menu .lang {
-  @include media(md, max) {
-    display: none;
+  @media (prefers-reduced-motion: reduce) {
+    &__button,
+    &__search-field,
+    &__option,
+    &__option-local {
+      transition: none;
+    }
   }
 }

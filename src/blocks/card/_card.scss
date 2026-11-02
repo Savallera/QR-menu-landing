@@ -77,6 +77,14 @@
     }
   }
 
+  &__number {
+    display: block;
+    margin-block-end: var(--indent-sm);
+    color: var(--main-color);
+    font-size: var(--heading-sm);
+    font-weight: 700;
+  }
+
   &__title {
     font-size: var(--heading-xs);
     font-weight: 700;

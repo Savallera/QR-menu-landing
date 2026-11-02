@@ -1,0 +1,119 @@
+.faq {
+  font-weight: 500;
+
+  &__container {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    min-inline-size: 0;
+  }
+
+  &_background_pattern &__container::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background-image: url('../images/faq-pattern.webp');
+    background-size: cover;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    pointer-events: none;
+  }
+
+  &__description {
+    color: var(--text-accent-secondary-color);
+  }
+
+  &__items {
+    display: grid;
+    gap: var(--indent-md);
+    min-inline-size: 0;
+  }
+
+  &__item {
+    padding: var(--indent-sm);
+    border-radius: var(--border-radius-md);
+    background-color: var(--grey-700);
+    min-inline-size: 0;
+
+    &_animating {
+      overflow: hidden;
+    }
+  }
+
+  &__question {
+    display: flex;
+    align-items: center;
+    gap: var(--indent-xxs);
+    list-style: none;
+    font-size: var(--heading-xs);
+    font-weight: 700;
+    line-height: normal;
+    cursor: pointer;
+
+    &::-webkit-details-marker {
+      display: none;
+    }
+
+    &:focus-visible {
+      outline: 2px solid currentColor;
+      outline-offset: 4px;
+      border-radius: var(--border-radius-sm);
+    }
+  }
+
+  &__question-text {
+    flex: 1;
+    min-inline-size: 0;
+  }
+
+  &__toggle {
+    flex: none;
+    display: grid;
+    place-items: center;
+    padding: 1rem;
+    border: 1px solid var(--grey-200);
+    border-radius: var(--border-radius-sm);
+    color: var(--grey-300);
+  }
+
+  &__icon {
+    display: block;
+    inline-size: 1.25rem;
+    block-size: 1.25rem;
+    fill: currentColor;
+    transition: transform 320ms ease-in-out;
+
+    @include media(lg) {
+      inline-size: 1.5rem;
+      block-size: 1.5rem;
+    }
+  }
+
+  &__item[open]:not(.faq__item_closing) &__toggle {
+    color: var(--white);
+    border-color: var(--main-color);
+    background-color: var(--main-color);
+  }
+
+  &__item[open]:not(.faq__item_closing) &__icon {
+    transform: scale(1, -1);
+  }
+
+  &__answer {
+    margin-block-start: var(--indent-xxs);
+    color: var(--text-accent-secondary-color);
+    font-size: var(--text-md);
+  }
+
+  &__footer {
+    color: var(--text-accent-secondary-color);
+    font-size: var(--text-sm);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    &__icon {
+      transition: none;
+    }
+  }
+}

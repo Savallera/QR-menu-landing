@@ -1,0 +1,16 @@
+<section class="section faq @@modifier" aria-labelledby="@@titleId">
+  <div
+    class="section__indent section__card section__card_bg_accent faq__container"
+  >
+    <h2 class="section__title" id="@@titleId">@@title</h2>
+    @@if (context.description) {
+    <div class="section__description faq__description">
+      @@include("@@description")
+    </div>
+    }
+    <div class="faq__items">@@include("@@items")</div>
+    @@if (context.footer) {
+    <div class="faq__footer">@@include("@@footer")</div>
+    }
+  </div>
+</section>

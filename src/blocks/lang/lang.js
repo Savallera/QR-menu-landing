@@ -86,6 +86,7 @@ function languageRows(current, query) {
     { kind: 'option', item: byCode(current) },
     ...(popular.length ? [{ kind: 'section', key: 'popular' }] : []),
     ...popular.map((item) => ({ kind: 'option', item })),
+    { kind: 'divider' },
     { kind: 'section', key: 'all' },
     ...sorted.filter((item) => item.code !== current).map((item) => ({ kind: 'option', item })),
   ];
@@ -113,7 +114,10 @@ function initLanguageSwitch(root) {
     list.innerHTML = languageRows(current, search.value)
       .map((row) => {
         if (row.kind === 'section') {
-          return `<li class="lang__section" role="presentation">${escapeHtml(pickerText(current, row.key))}</li>`;
+          return `<li class="lang__section${row.key === 'popular' ? ' lang__section_spaced' : ''}" role="presentation">${escapeHtml(pickerText(current, row.key))}</li>`;
+        }
+        if (row.kind === 'divider') {
+          return '<li class="lang__divider" role="presentation"></li>';
         }
         if (row.kind === 'empty') {
           return `<li class="lang__empty" role="presentation">${escapeHtml(pickerText(current, 'empty'))}</li>`;
@@ -122,9 +126,15 @@ function initLanguageSwitch(root) {
         const selected = item.code === current;
         return (
           `<li role="presentation"><button type="button" role="option" class="lang__option${selected ? ' lang__option_active' : ''}" aria-selected="${selected}" data-lang-option="${item.code}">` +
-          `<span class="lang__check" aria-hidden="true">${selected ? '✓' : ''}</span>` +
-          `<span dir="auto">${escapeHtml(item.name)}</span>` +
-          (item.local ? `<span class="lang__option-local">${escapeHtml(item.local)}</span>` : '') +
+          '<span class="lang__labels">' +
+          `<span class="lang__option-name" dir="auto">${escapeHtml(item.name)}</span>` +
+          (item.local
+            ? `<span class="lang__option-local">${escapeHtml(item.local)}</span>`
+            : '') +
+          '</span>' +
+          (selected
+            ? '<svg class="lang__check" aria-hidden="true" viewBox="0 0 24 24"><use href="/images/icons.svg#check"></use></svg>'
+            : '') +
           '</button></li>'
         );
       })

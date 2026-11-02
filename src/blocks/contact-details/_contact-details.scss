@@ -54,20 +54,8 @@
     display: flex;
     align-items: center;
     gap: var(--indent-xxs);
-    color: var(--main-color);
     font-size: var(--text-lg);
     font-weight: 700;
-    text-decoration: none;
-
-    &:hover {
-      text-decoration: underline;
-      text-underline-offset: 0.2em;
-    }
-
-    &:focus-visible {
-      outline: 2px solid currentColor;
-      outline-offset: 4px;
-    }
   }
 
   &__contact-icon {

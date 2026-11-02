@@ -1,0 +1,155 @@
+<section class="section section_no-indent tariffs" aria-labelledby="page-title">
+  <div class="section__indent tariffs__container">
+    @@include("../breadcrumbs/breadcrumbs.html", {"title":"Тарифы"})
+    <div class="tariffs__content">
+      <h1 class="section__title tariffs__title" id="page-title" tabindex="-1">
+        <span class="text-decor text-decor_secondary">Один тариф</span>
+        для вашего ресторана
+      </h1>
+      <div class="card card_theme_bg-secondary tariffs__price-card">
+        <div class="tariffs__price-details">
+          <p class="tariffs__price notranslate" translate="no" dir="ltr">
+            0,40 <span class="tariffs__currency">$</span>
+          </p>
+          <p class="tariffs__price-caption">за каждый ресторан ежедневно</p>
+        </div>
+        <div class="tariffs__action">
+          <a
+            class="button button_theme_main button_content_icon-arrow-next tariffs__button"
+            href="https://admin.showme.menu/auth/signup"
+            data-service-link
+          >
+            <span class="button__text">Попробовать бесплатно</span>
+            <span class="button__icon">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <use
+                  href="/images/icons.svg?v=@@buildVersion#arrow-right"
+                ></use>
+              </svg>
+            </span>
+          </a>
+          <p class="tariffs__payment-note">
+            Бесплатный период 14 дней при первой регистрации. Курс и итоговая
+            сумма видны перед подтверждением платежа. Оплата в рублях по
+            официальному курсу ЦБ РФ.
+          </p>
+        </div>
+      </div>
+      <section
+        class="tariffs__section"
+        aria-labelledby="tariffs-features-title"
+      >
+        <h2
+          class="section__title tariffs__section-title"
+          id="tariffs-features-title"
+        >
+          Возможности сервиса
+        </h2>
+        <div class="tariffs__features">
+          <article class="card card_content_border card_theme_outline">
+            <span class="card__icon">
+              <svg viewBox="0 0 32 32" aria-hidden="true">
+                <use href="/images/icons.svg?v=@@buildVersion#images"></use>
+              </svg>
+            </span>
+            <h3 class="card__title">Меню с фотографиями</h3>
+            <div class="card__description">
+              <p>
+                Покажите гостям блюда, фотографии и подробный состав в
+                электронном меню.
+              </p>
+            </div>
+          </article>
+          <article class="card card_content_border card_theme_outline">
+            <span class="card__icon">
+              <svg viewBox="0 0 32 32" aria-hidden="true">
+                <use href="/images/icons.svg?v=@@buildVersion#tools"></use>
+              </svg>
+            </span>
+            <h3 class="card__title">Меню под вашим контролем</h3>
+            <div class="card__description">
+              <p>
+                Редактируйте позиции и используйте стоп-лист, когда блюдо
+                недоступно.
+              </p>
+            </div>
+          </article>
+          <article class="card card_content_border card_theme_outline">
+            <span class="card__icon">
+              <svg viewBox="0 0 32 32" aria-hidden="true">
+                <use href="/images/icons.svg?v=@@buildVersion#analytics"></use>
+              </svg>
+            </span>
+            <h3 class="card__title">Заказы и статистика</h3>
+            <div class="card__description">
+              <p>
+                Принимайте заказы от гостей и отслеживайте статистику заказов и
+                выручки.
+              </p>
+            </div>
+          </article>
+        </div>
+      </section>
+      <section class="tariffs__section" aria-labelledby="tariffs-payment-title">
+        <h2
+          class="section__title tariffs__section-title"
+          id="tariffs-payment-title"
+        >
+          Как устроена оплата
+        </h2>
+        <ol class="tariffs__steps">
+          <li class="card card_theme_bg-secondary">
+            <span
+              class="card__number notranslate"
+              translate="no"
+              aria-hidden="true"
+              >01</span
+            >
+            <h3 class="card__title">14 дней бесплатно</h3>
+            <div class="card__description">
+              <p>
+                При первой регистрации организации вы получаете 14 календарных
+                дней без списаний с баланса.
+              </p>
+            </div>
+          </li>
+          <li class="card card_theme_bg-secondary">
+            <span
+              class="card__number notranslate"
+              translate="no"
+              aria-hidden="true"
+              >02</span
+            >
+            <h3 class="card__title">Пополнение баланса</h3>
+            <div class="card__description">
+              <p>
+                Баланс в
+                <span class="notranslate" translate="no" dir="ltr">USD</span>,
+                оплата в рублях через
+                <span class="notranslate" translate="no">CloudPayments</span> по
+                курсу ЦБ. Курс и обе суммы покажем до оплаты.
+              </p>
+            </div>
+          </li>
+          <li class="card card_theme_bg-secondary">
+            <span
+              class="card__number notranslate"
+              translate="no"
+              aria-hidden="true"
+              >03</span
+            >
+            <h3 class="card__title">Оплата за каждый день</h3>
+            <div class="card__description">
+              <p>
+                После бесплатного периода в начале каждых 24 часов доступа
+                списывается по
+                <span class="notranslate" translate="no" dir="ltr">0,40 $</span>
+                за каждый активный ресторан.
+              </p>
+            </div>
+          </li>
+        </ol>
+      </section>
+    </div>
+  </div>
+</section>

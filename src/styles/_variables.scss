@@ -30,6 +30,9 @@
   --main-font-family: 'Raleway', sans-serif;
 
   // indent
+  --indent-4xs: 0.25rem; // 4
+  --indent-3xs: 0.5rem; // 8
+  --indent-control: 0.75rem; // 12
   --indent-xxs: 1rem; // 16
   --indent-xs: clamp(0.75rem, 0.5739rem + 0.7512vw, 1.25rem); // 20
   --indent-sm: clamp(1rem, 0.8239rem + 0.7512vw, 1.5rem); // 24
@@ -55,10 +58,13 @@
   --heading-sm: clamp(1.25rem, 0.8099rem + 1.8779vw, 2.5rem); // 40
   --heading-md: clamp(1.5rem, 0.7077rem + 3.3803vw, 3.75rem); // 60
 
+  --text-xs: 0.75rem;
+  --text-control: 1rem;
   --text-sm: 0.875rem;
   --text-md: 1rem;
   --text-lg: 1.25rem;
 
+  --border-radius-xs: 1rem; // 16px
   --border-radius-sm: 1.5rem; // 24px
   --border-radius-md: 2.25rem; // 36px
   --border-radius-lg: clamp(3.5rem, 3.3239rem + 0.7512vw, 4rem); // 48-64
