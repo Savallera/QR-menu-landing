@@ -71,9 +71,9 @@
     color: var(--text-accent-secondary-color);
     font-size: var(--text-md);
     font-weight: 500;
-  }
 
-  &__button {
-    margin-block-start: auto;
+    & > p:not(:last-child) {
+      padding-bottom: 1em;
+    }
   }
 }
